@@ -1,3 +1,4 @@
+﻿Content-Type: application/javascript; charset=UTF-8
 var ka = 0
 
 while (ka <= 590) {
