@@ -1,4 +1,6 @@
 ﻿Content-Type: application/javascript; charset=UTF-8
+$( document ).ready(function() {
+
 var ka = 0
 
 while (ka <= 590) {
@@ -38,3 +40,4 @@ else {$('.no-kinks').hide();}
 });
 });
 
+});
