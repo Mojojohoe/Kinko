@@ -1,5 +1,4 @@
-﻿Content-Type: application/javascript; charset=UTF-8
-$( document ).ready(function() {
+﻿$( document ).ready(function() {
 
 var ka = 0
 
