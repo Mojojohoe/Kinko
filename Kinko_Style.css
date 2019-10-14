@@ -117,7 +117,10 @@
 	padding: 5px;
 	border-radius: 5px;
 }
-
+.ckr{
+	border:#442D5F;
+	border-radius:2px;
+}
 .scroll {
 	width: 20px;
 	height: 200px;
