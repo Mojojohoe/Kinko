@@ -156,7 +156,7 @@
 }
 
 .results {
-	background-image: src("https://i.imgur.com/XxcQGjP.png");
+	background-image: src("https://mojojohoe.github.io/Kinko/Carbon.png");
 	background-repeat: repeat;
 }
 
@@ -179,7 +179,7 @@
 .kinko-table {
 	border-collapse: collapse;
 	color: #efefef;
-	background: url(https://i.imgur.com/XxcQGjP.png);
+	background: url(https://mojojohoe.github.io/Kinko/Carbon.png);
 	width: 100%;
 	table-layout: fixed;
 	font-family: 'Quicksand', sans-serif;
@@ -190,7 +190,7 @@
 	width: 100%;
 	border-radius: 5px 5px 5px 5px;
 	border: 1px solid #000000;
-	background: linear-gradient(rgba(47, 30, 51, 0.78), rgba(47, 30, 51, 0.78)), url(https://i.imgur.com/XxcQGjP.png);
+	background: linear-gradient(rgba(47, 30, 51, 0.78), rgba(47, 30, 51, 0.78)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
 	font-family: 'Quicksand', sans-serif;
 }
 
@@ -201,7 +201,7 @@
 }
 
 .kinko-kn {
-	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://i.imgur.com/XxcQGjP.png);
+	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
 	border: 1px solid #363239;
 }
 
@@ -212,14 +212,14 @@
 }
 
 .kinko-kd {
-	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://i.imgur.com/XxcQGjP.png);
+	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
 	border: 1px solid #363239;
 }
 
 .kinko-kp {
 	min-width: 180px;
 	padding: 20px;
-	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://i.imgur.com/XxcQGjP.png);
+	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
 	text-align: left;
 	border: 1px solid #363239;
 }
