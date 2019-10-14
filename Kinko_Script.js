@@ -3,7 +3,13 @@
 var ka = 0
 
 while (ka <= 2000) {
-$('.kp' + ka).wrap('<tr class="trow" id="tr' + ka + '"><td></td></tr>'); 
+
+if ($('.kp' + ka).hasClass("ck")) {
+            $('.kp' + ka).wrap('<tr class="trow ckr" id="tr' + ka + '"><td></td></tr>'); 
+        }
+else{
+	$('.kp' + ka).wrap('<tr class="trow" id="tr' + ka + '"><td></td></tr>'); 
+}
 $('#tr' + ka).prepend('<td class="kname" id="kn' + ka + '"></td><td class="kdesc" id="kd' + ka + '"></td>'); 
 ka++; 
 }
