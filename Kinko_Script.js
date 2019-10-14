@@ -2,12 +2,12 @@
 
 var ka = 0
 
-while (ka <= 700) {
+while (ka <= 2000) {
 $('.kp' + ka).wrap('<tr class="trow" id="tr' + ka + '"><td></td></tr>'); 
 $('#tr' + ka).prepend('<td class="kname" id="kn' + ka + '"></td><td class="kdesc" id="kd' + ka + '"></td>'); 
 ka++; 
 }
-while (ka == 701) {
+while (ka == 2001) {
 $('.trow').wrapAll('<table class="kinko-table results"><tbody></tbody></table>'); 
 $('.results').prepend('<thead><tr><th class="kinko-kn"><h2>Kink Name</h2></th><th class="kinko-kd"><h2>Description</h2></th><th class="kinko-kp"><h2>Preference</h2></th></tr><tr class="warning no-kinks"><td colspan="4">No results</td></tr></thead>'); 
 ka++;
@@ -656,7 +656,7 @@ $(".p70").text("■■■■■■■□□□ 70 %");
 $(".p80").text("■■■■■■■■□□ 80 %");
 $(".p90").text("■■■■■■■■■□ 90 %");
 $(".p100").text("■■■■■■■■■■ 100%");
-$(".p999").text("\u2045\u2046\u2045\u2046\u2045\u2046\u2045\u2046\u2045\u2046\u2045\u2046\u2045\u2046\u2045\u2046\u2045\u2046\u2045\u2046 200%");
+$(".p999").text("♥♥♥♥♥♥♥♥♥♥ 200%");
 $(".preq").text("REQUIRED FOR PLAY");
 $(document).ready(function() {
 $(".search").keyup(function () {
