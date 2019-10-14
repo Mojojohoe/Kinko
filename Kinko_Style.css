@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand&display=swap);
+
 .p0 {
 	color: #ea9999;
 	white-space: nowrap;
@@ -170,7 +172,6 @@
 }
 
 .kinko-table {
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	border-collapse: collapse;
 	color: #efefef;
 	background: url(https://i.imgur.com/XxcQGjP.png);
@@ -183,6 +184,7 @@
 	border-radius: 5px 5px 5px 5px;
 	border: 1px solid #000000;
 	background: linear-gradient(rgba(47, 30, 51, 0.78), rgba(47, 30, 51, 0.78)), url(https://i.imgur.com/XxcQGjP.png);
+	font-family: 'Quicksand', sans-serif;
 }
 
 .kinko-kn,
