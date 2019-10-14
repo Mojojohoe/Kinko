@@ -227,7 +227,7 @@
 	border: 1px solid #000000;
 	width: 100%;
 }
-thead{
+.results{
 	width:100%;
 }
 .kinko-table thead,
@@ -241,6 +241,7 @@ thead{
 	box-shadow: 0px 26px 37px -17px rgba(0, 0, 0, 0.75);
 	z-index: 2;
 	position: relative;
+	width:100%;
 }
 
 .kinko-table tbody {
