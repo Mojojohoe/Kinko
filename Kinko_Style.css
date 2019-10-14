@@ -162,12 +162,6 @@ charset="UTF-8" .p0 {
 	color: rgba(30, 27, 27, 1.00);
 }
 
-input.search,
-select,
-textarea {
-	color: #ff0000;
-}
-
 .search {
 	padding: 3px;
 	margin: 10px;
