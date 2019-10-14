@@ -126,8 +126,18 @@ Content-Type: text/css; charset="UTF-8"
   padding:20px; 
 }
 .results{
-	background-image:src="https://i.imgur.com/XxcQGjP.png";
+	background-image:src("https://i.imgur.com/XxcQGjP.png");
 	background-repeat:repeat;
+}
+.search{
+	padding:3px;
+	margin:10px;
+	min-width:200px;
+	width:30%;
+	color:rgba(30,27,27,1.00);
+}
+input.search, select, textarea{
+    color: #ff0000;
 }
 .search{
 	padding:3px;
