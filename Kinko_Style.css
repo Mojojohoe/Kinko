@@ -227,7 +227,9 @@
 	border: 1px solid #000000;
 	width: 100%;
 }
-
+thead{
+	width:100%;
+}
 .kinko-table thead,
 .kinko-table tbody {
 	display: block;
