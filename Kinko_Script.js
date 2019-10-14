@@ -645,6 +645,7 @@ $("#kn631").text("Younger Characters");$("#kd631").text("Expresses a preference 
 $("#kn632").text("Zoophilia");$("#kd632").text("Refers to a sapient character engaging in a sexual act with a non-sapient animal, or playing a non-sapient animal in an RP and being engaged by a sapient character.");
 $("#kn633").text("Roleplay Planning");$("#kd633").text("Expresses an interest in OOC discussion before the roleplay begins in order to plan and flesh out any ideas, plots, settings and kinks. Suggests the player desires to know what is going to loosely happen.");
 $("#kn634").text("Roleplay Winging ");$("#kd634").text("Expresses an interest in minimal OOC discussion before the roleplay begins. Suggests the player wishes to experience key details of the roleplay as a surprise. ");
+$("#kn635").text("Preygasm");$("#kd635").text("Suggests that the character in the prey role gains significant mental or physical pleasure from the act of being eaten or digested. ");
 $(".p0").text("□□□□□□□□□□ 000%");
 $(".p10").text("■□□□□□□□□□ 10 %");
 $(".p20").text("■■□□□□□□□□ 20 %");
