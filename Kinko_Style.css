@@ -258,3 +258,66 @@
 .kinko-table tbody::-webkit-scrollbar-thumb {
 	background: rgba(94, 89, 95, 0.92);
 }
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* We're doing mobiles and small screens. Getting them display as block and adding individual headers. */
+	
+	.kinko-table table, .kinko-table thead, .kinko-table tbody, .kinko-table th, .kinko-table td, .kinko-table tr { 
+		display: block; 
+	}
+	.kinko-table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	.kinko-kn, .kname{
+	width:100%;
+	padding-top:25px !important;
+	}
+	.kinko-kn, .kdesc{
+	width:100%;
+	padding-top:25px !important;
+	}
+	[class^="kp"]{
+	margin:0px;
+	font-size:100%;
+	}	
+	.kname::before{
+	content:"Kink Name";
+	color:#847A8A;
+	}
+	.kdesc::before{
+	content:"Kink Description";
+	color:#847A8A;
+	}	
+	[class^="kp"]::before{
+	content:"Preference";
+	color:#847A8A;
+	position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+	}	
+	.trow{
+		border: 2px solid #000000;
+	}
+	.kinko-table td { 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	.kinko-table td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+}
