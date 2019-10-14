@@ -118,8 +118,8 @@
 	border-radius: 5px;
 }
 .ckr{
-	border:#442D5F;
-	border-radius:2px;
+	border:#442D5F !important;
+	border-radius:2px !important;
 }
 .scroll {
 	width: 20px;
