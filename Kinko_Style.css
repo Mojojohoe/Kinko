@@ -240,6 +240,7 @@
 	width:100%;
 	font-size:1.5vw;
 	line-height:10%;
+	white-space:nowrap;
 }
 
 .kinko-table tbody {
