@@ -239,6 +239,7 @@
 	position: relative;
 	width:100%;
 	font-size:1.5vw;
+	line-height:10%;
 }
 
 .kinko-table tbody {
@@ -258,6 +259,7 @@
 .kinko-table tbody::-webkit-scrollbar-thumb {
 	background: rgba(94, 89, 95, 0.92);
 }
+
 @media 
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
