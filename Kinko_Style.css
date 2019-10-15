@@ -217,8 +217,7 @@
 }
 
 .kinko-kp {
-	min-width: 180px;
-	padding: 20px;
+	padding: 1.5vw;
 	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
 	text-align: left;
 	border: 1px solid #363239;
@@ -239,7 +238,7 @@
 	z-index: 2;
 	position: relative;
 	width:100%;
-	font-size:2vw;
+	font-size:1.5vw;
 }
 
 .kinko-table tbody {
