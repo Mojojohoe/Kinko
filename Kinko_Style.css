@@ -293,11 +293,11 @@ only screen and (max-width: 760px),
 	content:"Kink Description";
 	color:#847A8A;
 	}	
-	.kdesc::after{
+	[class^="kp"]::before{
 	content:"Preference";
 	color:#847A8A;
 	position:absolute;
-    top: 6px;
+    top: 2px;
     left: 6px;
     width: 45%;
     padding-right: 10px;
