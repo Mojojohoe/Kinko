@@ -318,6 +318,7 @@ a.kinko_ttips span {
     white-space: pre-line;
 	font-size:90%;
 	padding:10px;
+	font-weight:normal;
 	
 }
 a:hover.kinko_ttips span {
