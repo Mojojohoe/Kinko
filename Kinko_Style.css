@@ -303,8 +303,8 @@ a.kinko_ttips {
 a.kinko_ttips span {
 	position: absolute;
 	color: #FFFFFF;
-	background: #222024;
-	border: 2px solid rgba(57, 31, 109, 0.8);
+	background: rgba(34,32,36,0.9);
+	border: 2px solid rgba(57, 31, 109, 0.6);
 	line-height: 25px;
 	text-align: center;
 	visibility: hidden;
@@ -316,6 +316,7 @@ a.kinko_ttips span {
     height:fit-content;
     white-space: pre-line;
 	font-size:90%;
+	padding:10px;
 }
 
 a.kinko_ttips span:before {
