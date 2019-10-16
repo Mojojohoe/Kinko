@@ -311,16 +311,15 @@ a.kinko_ttips span {
 	border-radius: 11px;
 	overflow-wrap: break-word;
 	top: 50%;
+    right:40px;
     width: auto;
     min-width: 200px;
-    width:70vw;
     height:fit-content;
     white-space: pre-line;
 	font-size:90%;
 	padding:10px;
 	
 }
-
 a:hover.kinko_ttips span {
 	visibility: visible;
 	margin-top: -25px;
