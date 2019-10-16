@@ -303,14 +303,14 @@ a.kinko_ttips {
 a.kinko_ttips span {
 	position: absolute;
 	color: #FFFFFF;
-	background: rgba(34,32,36,0.9);
+	background: rgba(34,32,36,1) !important;
 	border: 2px solid rgba(57, 31, 109, 0.6);
 	line-height: 25px;
 	text-align: center;
 	visibility: hidden;
 	border-radius: 11px;
 	overflow-wrap: break-word;
-	top: 40%;
+	top: -8px;
     right:40px;
     width:70vw;
     height:fit-content;
