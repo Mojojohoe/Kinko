@@ -354,7 +354,7 @@ only screen and (max-width: 1200px) {
     transform: 
     rotate(270deg);
 }
-.kinko-kp h2{
+.kinko-kp{
 	min-width:0px;
 }
 .kinko-table thead tr {
