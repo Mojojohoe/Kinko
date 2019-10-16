@@ -310,7 +310,7 @@ a.kinko_ttips span {
 	visibility: hidden;
 	border-radius: 11px;
 	overflow-wrap: break-word;
-	top: -8px;
+	top: 50%;
     right:40px;
     width:70vw;
     height:fit-content;
@@ -375,6 +375,7 @@ only screen and (max-width: 1200px) {
 }
 [class^="kp"]{
 	font-size:80%;
+	margin-top: 25px;
 }
 .kname, .kdesc{
     padding:5px;
@@ -384,6 +385,9 @@ only screen and (max-width: 1200px) {
 	padding-right:0px;
 	padding-top:5px;
 	padding-bottom:5px;
+}
+.trow{
+	padding-left: 15px;
 }
 }
 @media only screen and (max-width: 830px),
@@ -456,15 +460,11 @@ only screen and (max-width: 1200px) {
 		left: 300px;
 		padding-right: 10px;
 	}
-	a:hover.kinko_ttips span {
-		visibility: visible;
-		opacity: 0.8;
-		left: 150px;
-		top: 50%;
-		margin-top: -25px;
-		margin-right: 15px;
-		z-index: 999;
-	}
+	.tih {
+	top: -5px;
+	right: -90vw;
+
+}
 }
 
 #logo {
