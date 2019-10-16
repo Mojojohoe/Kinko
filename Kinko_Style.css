@@ -353,6 +353,7 @@ only screen and (max-width: 1200px) {
 	.kinko-kn h2,.kinko-kd h2,.kinko-kp h2{
     transform: 
     rotate(270deg);
+	padding:5px;
 }
 .kinko-kp{
 	min-width:0px;
