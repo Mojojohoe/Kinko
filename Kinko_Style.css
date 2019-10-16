@@ -302,15 +302,16 @@ a.kinko_ttips {
 
 a.kinko_ttips span {
 	position: absolute;
-	width: 140px;
 	color: #FFFFFF;
 	background: #222024;
 	border: 2px solid rgba(57, 31, 109, 0.42);
-	height: 50px;
 	line-height: 50px;
 	text-align: center;
 	visibility: hidden;
 	border-radius: 11px;
+	overflow-wrap: break-word;
+	top: 50%;
+	left:0px;
 }
 
 a.kinko_ttips span:before {
@@ -342,8 +343,6 @@ a.kinko_ttips span:after {
 a:hover.kinko_ttips span {
 	visibility: visible;
 	opacity: 0.8;
-	left: -200px;
-	top: 50%;
 	margin-top: -25px;
 	margin-right: 15px;
 	z-index: 999;
