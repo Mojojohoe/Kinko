@@ -692,6 +692,6 @@ if(jobCount == '0') {$('.no-kinks').show();}
 else {$('.no-kinks').hide();}
 });
 });
-$('.kinko input:first-child').prepend('<a href="https://docs.google.com/document/d/1yhEH7iI3VL28bO8IMriYNNZpIWMYNdzz5lYoG-ndLC0/edit?usp=sharing" target="_blank"><img id="logo" src="https://mojojohoe.github.io/Kinko/Kinko.png"></a>');
+$('.kinko input:first-child').after('<a href="https://docs.google.com/document/d/1yhEH7iI3VL28bO8IMriYNNZpIWMYNdzz5lYoG-ndLC0/edit?usp=sharing" target="_blank"><img id="logo" src="https://mojojohoe.github.io/Kinko/Kinko.png"></a>');
 
 });
