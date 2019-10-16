@@ -321,32 +321,6 @@ a.kinko_ttips span {
 	
 }
 
-a.kinko_ttips span:before {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 100%;
-	margin-top: -12px;
-	width: 0;
-	height: 0;
-	border-left: 12px solid #251D35;
-	border-top: 12px solid transparent;
-	border-bottom: 12px solid transparent;
-}
-
-a.kinko_ttips span:after {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 100%;
-	margin-top: -8px;
-	width: 0;
-	height: 0;
-	border-left: 8px solid #222024;
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent;
-}
-
 a:hover.kinko_ttips span {
 	visibility: visible;
 	margin-top: -25px;
