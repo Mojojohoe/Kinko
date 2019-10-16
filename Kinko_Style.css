@@ -1,4 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand&display=swap);
+body::after{
+   position:absolute; width:0; height:0; overflow:hidden; z-index:-1; 
+   content:url(https://mojojohoe.github.io/Kinko/Tooltip2.png);
+}
 
 .p0 {
 	color: #ea9999;
@@ -70,7 +74,7 @@
 	color: #b29bf5;
 	white-space: nowrap;
 	font-size: 130%;
-	font-weight:bold;
+	font-weight: bold;
 }
 
 .pask {
@@ -117,11 +121,13 @@
 	padding: 5px;
 	border-radius: 5px;
 }
-.ckr{
-	outline: 4px solid rgba(55,46,71,0.65);
+
+.ckr {
+	outline: 4px solid rgba(55, 46, 71, 0.65);
 	outline-offset: 0px;
 	outline-offset: -5px;
 }
+
 .scroll {
 	width: 20px;
 	height: 200px;
@@ -158,7 +164,7 @@
 .results {
 	background-image: src("https://mojojohoe.github.io/Kinko/Carbon.png");
 	background-repeat: repeat;
-	width:100% !important;
+	width: 100% !important;
 }
 
 .search {
@@ -211,13 +217,18 @@
 	padding: 20px;
 }
 
+.kdesc {
+	padding-right: 5% !important;
+}
+
 .kinko-kd {
 	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
 	border: 1px solid #363239;
 }
 
 .kinko-kp {
-	padding: 1.5vw;
+	min-width: 180px;
+	padding: 20px;
 	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
 	text-align: left;
 	border: 1px solid #363239;
@@ -225,7 +236,9 @@
 
 .trow {
 	border: 1px solid #000000;
+	width: 100%;
 }
+
 .kinko-table thead,
 .kinko-table tbody {
 	display: block;
@@ -237,10 +250,7 @@
 	box-shadow: 0px 26px 37px -17px rgba(0, 0, 0, 0.75);
 	z-index: 2;
 	position: relative;
-	width:100%;
-	font-size:1vw;
-	line-height:10%;
-	white-space:nowrap;
+	width: 100%;
 }
 
 .kinko-table tbody {
@@ -261,64 +271,170 @@
 	background: rgba(94, 89, 95, 0.92);
 }
 
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+[class^="kp"] img {
+	width: 32px;
+	position: absolute;
+	top: 0px;
+	left: -50px;
+	padding-right: 10px;
+}
 
+.tih {
+	width: 32px;
+	height: 32px;
+	background: url(https://mojojohoe.github.io/Kinko/Tooltip1.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0px;
+	left: -50px;
+	padding-right: 10px;
+}
+
+.tih:hover {
+	background: url(https://mojojohoe.github.io/Kinko/Tooltip2.png);
+	background-repeat: no-repeat;
+}
+
+a.kinko_ttips {
+	position: relative;
+	display: inline;
+}
+
+a.kinko_ttips span {
+	position: absolute;
+	width: 140px;
+	color: #FFFFFF;
+	background: #222024;
+	border: 2px solid rgba(57, 31, 109, 0.42);
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	visibility: hidden;
+	border-radius: 11px;
+}
+
+a.kinko_ttips span:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	margin-top: -12px;
+	width: 0;
+	height: 0;
+	border-left: 12px solid #251D35;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+}
+
+a.kinko_ttips span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	margin-top: -8px;
+	width: 0;
+	height: 0;
+	border-left: 8px solid #222024;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+
+a:hover.kinko_ttips span {
+	visibility: visible;
+	opacity: 0.8;
+	left: -200px;
+	top: 50%;
+	margin-top: -25px;
+	margin-right: 15px;
+	z-index: 999;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
 	/* We're doing mobiles and small screens. Getting them display as block and adding individual headers. */
-	
-	.kinko-table table, .kinko-table thead, .kinko-table tbody, .kinko-table th, .kinko-table td, .kinko-table tr { 
-		display: block; 
+	.kinko-table table,
+	.kinko-table thead,
+	.kinko-table tbody,
+	.kinko-table th,
+	.kinko-table td,
+	.kinko-table tr {
+		display: block;
 	}
-	.kinko-table thead tr { 
+	.kinko-table thead tr {
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
-	.kinko-kn, .kname{
-	width:90%;
-	padding-top:25px !important;
+	.kinko-kn,
+	.kname {
+		width: 90%;
+		padding-top: 25px !important;
 	}
-	.kinko-kn, .kdesc{
-	width:90%;
-	padding-top:25px !important;
+	.kinko-kn,
+	.kdesc {
+		width: 90%;
+		padding-top: 25px !important;
 	}
-	[class^="kp"]{
-	margin:0px;
-	font-size:100%;
-	}	
-	.kname::before{
-	content:"Kink Name";
-	color:#847A8A;
+	[class^="kp"] {
+		margin: 0px;
+		font-size: 100%;
 	}
-	.kdesc::before{
-	content:"Kink Description";
-	color:#847A8A;
-	}	
-	[class^="kp"]::before{
-	content:"Preference";
-	color:#847A8A;
-	position:absolute;
-    top: -2px;
-    left: 6px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
-	}	
-	.trow{
-		border: 2px solid rgba(178,167,177,0.57);
+	.kname::before {
+		content: "Kink Name";
+		color: #847A8A;
 	}
-	.kinko-table td { 
+	.kdesc::before {
+		content: "Kink Description";
+		color: #847A8A;
+	}
+	[class^="kp"]::before {
+		content: "Preference";
+		color: #847A8A;
+		position: absolute;
+		top: -2px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+	.trow {
+		border: 2px solid rgba(178, 167, 177, 0.57);
+	}
+	.kinko-table td {
 		position: relative;
-		padding-left: 50%; 
+		padding-left: 50%;
 	}
-	
-	.kinko-table td:before { 
+	.kinko-table td:before {
 		position: absolute;
 		top: 6px;
 		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
+		width: 45%;
+		padding-right: 10px;
 		white-space: nowrap;
 	}
+	[class^="kp"] img {
+		width: 32px;
+		position: absolute;
+		top: -3px;
+		left: 300px;
+		padding-right: 10px;
+	}
+	a:hover.kinko_ttips span {
+		visibility: visible;
+		opacity: 0.8;
+		left: 150px;
+		top: 50%;
+		margin-top: -25px;
+		margin-right: 15px;
+		z-index: 999;
+	}
+}
+
+#logo {
+	content: url('https://mojojohoe.github.io/Kinko/Kinko.png');
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	width: 100px;
+	padding: 20px;
 }

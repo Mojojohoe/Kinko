@@ -3,7 +3,9 @@
 var ka = 0
 
 while (ka <= 2000) {
-
+if ($('.kp' + ka).hasClass('tt')) {
+            $('.kp' + ka).prepend('<a class="kinko_ttips ttip' + ka + '" href="#"><div class="tih"></div><span id="ttxt' + ka + '"></span></a>'); 
+}
 if ($('.kp' + ka).hasClass("ck")) {
             $('.kp' + ka).wrap('<tr class="trow ckr" id="tr' + ka + '"><td></td></tr>'); 
         }
@@ -690,6 +692,6 @@ if(jobCount == '0') {$('.no-kinks').show();}
 else {$('.no-kinks').hide();}
 });
 });
-
+$('.kinko').prepend('<a href="https://docs.google.com/document/d/1yhEH7iI3VL28bO8IMriYNNZpIWMYNdzz5lYoG-ndLC0/edit?usp=sharing" target="_blank"><img id="logo" src="https://mojojohoe.github.io/Kinko/Kinko.png"></a>');
 
 });
