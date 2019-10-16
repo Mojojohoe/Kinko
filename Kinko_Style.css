@@ -303,9 +303,8 @@ a.kinko_ttips {
 a.kinko_ttips span {
 	position: absolute;
 	color: #FFFFFF;
-	background: rgba(34,32,36,1) !important;
+	background: rgba(34,32,36,1.00) !important;
 	border: 2px solid rgba(57, 31, 109, 0.6);
-	opacity:100% !important;
 	line-height: 25px;
 	text-align: center;
 	visibility: hidden;
