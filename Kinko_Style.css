@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand&display=swap);
+
 body::after{
    position:absolute; width:0; height:0; overflow:hidden; z-index:-1; 
    content:url(https://mojojohoe.github.io/Kinko/Tooltip2.png);
@@ -218,7 +219,7 @@ body::after{
 }
 
 .kdesc {
-	padding-right: 10% !important;
+	padding-right: 5% !important;
 }
 
 .kinko-kd {
@@ -312,11 +313,11 @@ a.kinko_ttips span {
 	overflow-wrap: break-word;
 	top: 50%;
     right:40px;
-    width: auto;
+    width:;
     min-width: 200px;
     height:fit-content;
     white-space: pre-line;
-	font-size:90%;
+	font-size:1rem;
 	padding:10px;
 	font-weight:normal;
 	
