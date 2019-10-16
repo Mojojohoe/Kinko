@@ -654,19 +654,19 @@ $("#kn632").text("Zoophilia");$("#kd632").text("Refers to a sapient character en
 $("#kn633").text("Roleplay Planning");$("#kd633").text("Expresses an interest in OOC discussion before the roleplay begins in order to plan and flesh out any ideas, plots, settings and kinks. Suggests the player desires to know what is going to loosely happen.");
 $("#kn634").text("Roleplay Winging ");$("#kd634").text("Expresses an interest in minimal OOC discussion before the roleplay begins. Suggests the player wishes to experience key details of the roleplay as a surprise. ");
 $("#kn635").text("Preygasm");$("#kd635").text("Suggests that the character in the prey role gains significant mental or physical pleasure from the act of being eaten or digested. ");
-$(".p0").text("□□□□□□□□□□ 000%");
-$(".p10").text("■□□□□□□□□□ 10 %");
-$(".p20").text("■■□□□□□□□□ 20 %");
-$(".p30").text("■■■□□□□□□□ 30 %");
-$(".p40").text("■■■■□□□□□□ 40 %");
-$(".p50").text("■■■■■□□□□□ 50 %");
-$(".p60").text("■■■■■■□□□□ 60 %");
-$(".p70").text("■■■■■■■□□□ 70 %");
-$(".p80").text("■■■■■■■■□□ 80 %");
-$(".p90").text("■■■■■■■■■□ 90 %");
-$(".p100").text("■■■■■■■■■■ 100%");
-$(".p999").text("♥♥♥♥♥♥♥♥♥♥ 200%");
-$(".preq").text("REQUIRED FOR PLAY");
+$(".p0").append("□□□□□□□□□□ 000%");
+$(".p10").append("■□□□□□□□□□ 10 %");
+$(".p20").append("■■□□□□□□□□ 20 %");
+$(".p30").append("■■■□□□□□□□ 30 %");
+$(".p40").append("■■■■□□□□□□ 40 %");
+$(".p50").append("■■■■■□□□□□ 50 %");
+$(".p60").append("■■■■■■□□□□ 60 %");
+$(".p70").append("■■■■■■■□□□ 70 %");
+$(".p80").append("■■■■■■■■□□ 80 %");
+$(".p90").append("■■■■■■■■■□ 90 %");
+$(".p100").append("■■■■■■■■■■ 100%");
+$(".p999").append("♥♥♥♥♥♥♥♥♥♥ 200%");
+$(".preq").append("REQUIRED FOR PLAY");
 $(document).ready(function() {
 $(".search").keyup(function () {
 var searchTerm = $(".search").val();
