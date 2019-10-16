@@ -364,6 +364,15 @@ only screen and (max-width: 1200px) {
 	padding:0px;
 	height:200px;
 }
+[class^="kn"]{
+	font-size:80%;
+}
+[class^="kd"]{
+	font-size:80%;
+}
+[class^="kp"]{
+	font-size:80%;
+}
 }
 @media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px) {
