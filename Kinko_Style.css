@@ -432,8 +432,6 @@ a:hover.kinko_ttips span {
 
 #logo {
 	content: url('https://mojojohoe.github.io/Kinko/Kinko.png');
-	position: relative;
-	top: 10px;
-	left: 500px;
 	width: 100px;
+	float:right;
 }
