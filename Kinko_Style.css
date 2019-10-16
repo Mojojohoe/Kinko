@@ -304,19 +304,18 @@ a.kinko_ttips span {
 	position: absolute;
 	color: #FFFFFF;
 	background: #222024;
-	border: 2px solid rgba(57, 31, 109, 0.42);
+	border: 2px solid rgba(57, 31, 109, 0.8);
 	line-height: 25px;
 	text-align: center;
 	visibility: hidden;
 	border-radius: 11px;
 	overflow-wrap: break-word;
-	top: 50%;
-	left:0px;
+	top: 40%;
     right:40px;
     width:70vw;
     height:fit-content;
     white-space: pre-line;
-	font-size:100%;
+	font-size:90%;
 }
 
 a.kinko_ttips span:before {
