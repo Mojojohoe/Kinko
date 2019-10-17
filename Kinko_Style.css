@@ -374,14 +374,14 @@ only screen and (max-width: 1200px) {
 	height: 15px;
 	top: 0px;
 	left: -40px;
-	background-size:cover;
+	background-size:contain;
 }
 .tih:hover {
 	width: 15px;
 	height: 15px;
 	top: 0px;
 	left: -40px;
-	background-size:cover;
+	background-size:contain;
 }
 @media only screen and (max-width: 830px),
 (min-device-width: 838px) and (max-device-width: 1024px) {
