@@ -327,6 +327,14 @@ a:hover.kinko_ttips span {
 	margin-right: 15px;
 	z-index: 999;
 }
+#logo {
+	content: url('https://mojojohoe.github.io/Kinko/Kinko.png');
+	width: 100px;
+	float:right;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:20px;
+}
 @media 
 only screen and (max-width: 1200px) {
 	.kinko-kn h2,.kinko-kd h2,.kinko-kp h2{
@@ -448,13 +456,4 @@ a.kinko_ttips span {
     top: -60px;
     left: -60px;
 }
-}
-
-#logo {
-	content: url('https://mojojohoe.github.io/Kinko/Kinko.png');
-	width: 100px;
-	float:right;
-	padding-top:10px;
-	padding-bottom:10px;
-	padding-right:20px;
 }
