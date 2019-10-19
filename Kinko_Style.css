@@ -463,6 +463,11 @@ only screen and (max-width: 1200px) {
     right: -200px;
 	left:inherit;
 }
+	.tih:hover {
+	top: -5px;
+    right: -200px;
+	left:inherit;
+}
 a.kinko_ttips span {
     top: -60px;
     left: -60px;
