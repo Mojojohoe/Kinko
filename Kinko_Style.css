@@ -205,17 +205,20 @@ body::after{
 .kname {
 	width: 10%;
 	padding: 20px;
+	text-align:center;
 }
 
 .kinko-kn {
 	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
 	border: 1px solid #363239;
+	text-align:center;
 }
 
 .kinko-kd,
 .kdesc {
 	width: 90%;
 	padding: 20px;
+	text-align:center;
 }
 
 .kdesc {
@@ -316,7 +319,7 @@ a.kinko_ttips span {
     min-width: 200px;
     height:fit-content;
     white-space: pre-line;
-	font-size:1rem;
+	font-size:2rem;
 	padding:10px;
 	font-weight:normal;
 	
