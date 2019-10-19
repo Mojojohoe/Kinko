@@ -205,20 +205,20 @@ body::after{
 .kname {
 	width: 10%;
 	padding: 20px;
-	text-align:center;
+
 }
 
 .kinko-kn {
 	background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
 	border: 1px solid #363239;
-	text-align:center;
+
 }
 
 .kinko-kd,
 .kdesc {
 	width: 90%;
 	padding: 20px;
-	text-align:center;
+
 }
 
 .kdesc {
@@ -246,6 +246,7 @@ body::after{
 .kinko-table thead,
 .kinko-table tbody {
 	display: block;
+	text-align:center;
 }
 
 .kinko-table thead {
