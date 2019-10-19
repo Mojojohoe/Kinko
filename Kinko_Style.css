@@ -317,10 +317,10 @@ a.kinko_ttips span {
 	overflow-wrap: break-word;
 	top: 50%;
     right:40px;
-    min-width: 200px;
+    min-width: 300px;
     height:fit-content;
     white-space: pre-line;
-	font-size:2rem;
+	font-size:18px;
 	padding:10px;
 	font-weight:normal;
 	
