@@ -5,73 +5,73 @@ body::after{
    content:url(https://mojojohoe.github.io/Kinko/Tooltip2.png);
 }
 
-.p0 {
+.00 {
 	color: #ea9999;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-.p10 {
+.10 {
 	color: #f9b89c;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-.p20 {
+.20 {
 	color: #f9cb9c;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-.p30 {
+.30 {
 	color: #f9d79c;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-.p40 {
+.40 {
 	color: #ffe599;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-.p50 {
+.50 {
 	color: #f8ff99;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-.p60 {
+.60 {
 	color: #dcff99;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-.p70 {
+.70 {
 	color: #cbff99;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-.p80 {
+.80 {
 	color: #baff93;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-.p90 {
+.90 {
 	color: #97ff7f;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-p.100 {
+.100 {
 	color: #75f868;
 	white-space: nowrap;
 	font-size: 130%;
 }
 
-.p999 {
+.200 {
 	color: #b29bf5;
 	white-space: nowrap;
 	font-size: 130%;
@@ -84,7 +84,7 @@ p.100 {
 	font-size: 130%;
 }
 
-.pna {
+.-10 {
 	color: #b7b7b7;
 	white-space: nowrap;
 	font-size: 130%;
@@ -114,7 +114,7 @@ p.100 {
 	font-size: 150%;
 }
 
-.preq {
+.999 {
 	color: #f1c232;
 	background-color: #D12828;
 	white-space: nowrap;
@@ -361,7 +361,7 @@ only screen and (max-width: 1200px) {
 [class^="kd"]{
 	font-size:80%;
 }
-[class^="kp"]{
+[id^="kp"]{
 	font-size:80%;
 }
 .kname, .kdesc{
@@ -413,7 +413,7 @@ only screen and (max-width: 1200px) {
 		width: 90%;
 		padding-top: 25px !important;
 	}
-	[class^="kp"] {
+	[id^="kp"] {
 		margin: 0px;
 		margin-top: 25px;
 		font-size: 100%;
@@ -451,7 +451,7 @@ only screen and (max-width: 1200px) {
 		padding-right: 10px;
 		white-space: nowrap;
 	}
-	[class^="kp"] img {
+	[id^="kp"] img {
 		width: 32px;
 		position: absolute;
 		top: -3px;
