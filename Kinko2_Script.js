@@ -3,7 +3,7 @@
 var ka = 0
 
 while (ka <= 2000) {
-if ($('#kp' + ka).hasClass('tt')) {
+if ($('#kp' + ka).data('info')) {
             $('#kp' + ka).prepend('<a class="kinko_ttips ttip' + ka + '" href="#"><div class="tih"></div><span id="ttxt' + ka + '"></span></a>'); 
 }
 if ($('#kp' + ka).hasClass("ck")) {
