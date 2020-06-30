@@ -666,20 +666,20 @@ $("#kn642").text("Younger Characters");$("#kd642").text("Expresses a preference 
 $("#kn643").text("Zoophilia");$("#kd643").text("Refers to a sapient character engaging in a sexual act with a non-sapient animal, or playing a non-sapient animal in an RP and being engaged by a sapient character.");
 
 
-  $(".p0").append("□□□□□□□□□□ 000 %");
- $(".p10").append("■□□□□□□□□□ 010 %");
- $(".p20").append("■■□□□□□□□□ 020 %");
- $(".p30").append("■■■□□□□□□□ 030 %");
- $(".p40").append("■■■■□□□□□□ 040 %");
- $(".p50").append("■■■■■□□□□□ 050 %");
- $(".p60").append("■■■■■■□□□□ 060 %");
- $(".p70").append("■■■■■■■□□□ 070 %");
- $(".p80").append("■■■■■■■■□□ 080 %");
- $(".p90").append("■■■■■■■■■□ 090 %");
-$(".p100").append("■■■■■■■■■■ 100 %");
-$(".p999").append("♥♥♥♥♥♥♥♥♥♥ 200%");
-$(".pna").append("N / A");
-$(".preq").append("REQUIRED FOR PLAY");
+  $(".00").append("□□□□□□□□□□ 000 %");
+ $(".10").append("■□□□□□□□□□ 010 %");
+ $(".20").append("■■□□□□□□□□ 020 %");
+ $(".30").append("■■■□□□□□□□ 030 %");
+ $(".40").append("■■■■□□□□□□ 040 %");
+ $(".50").append("■■■■■□□□□□ 050 %");
+ $(".60").append("■■■■■■□□□□ 060 %");
+ $(".70").append("■■■■■■■□□□ 070 %");
+ $(".80").append("■■■■■■■■□□ 080 %");
+ $(".90").append("■■■■■■■■■□ 090 %");
+$(".100").append("■■■■■■■■■■ 100 %");
+$(".200").append("♥♥♥♥♥♥♥♥♥♥ 200%");
+$(".-10").append("N / A");
+$(".999").append("REQUIRED FOR PLAY");
 $(document).ready(function() {
 $(".search").keyup(function () {
 var searchTerm = $(".search").val();
