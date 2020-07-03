@@ -705,6 +705,6 @@ if(jobCount == '0') {$('.no-kinks').show();}
 else {$('.no-kinks').hide();}
 });
 });
-$('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/index" target="_blank"><img id="logo" src="https://mojojohoe.github.io/Kinko/Kinko.png"></a>');
+$('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/index"><img id="logo" src="https://mojojohoe.github.io/Kinko/Kinko.png"></a>');
 
 });
