@@ -3,6 +3,7 @@ body{
 	background:#282828;
 	color:rgba(217,225,229,1.00);
 	font-family: 'Raleway', sans-serif;
+	overflow:hidden;
 }
 .results tr[visible='false'],
 .no-kinks {
@@ -30,7 +31,7 @@ tr{
 	border-left: 2px solid #413E45;
 }
 .zone{
-	height:500px;
+	height:40%;
 	overflow-y:scroll;
 	overflow-x:hidden;
 	border:2px solid #413E45;
@@ -193,6 +194,7 @@ button img:hover{
 	vertical-align:central;
 	display: inline-block;
 	margin: auto;
+	padding-top:1px;
 }
 .addbox{
 	overflow-x:hidden;
@@ -209,7 +211,148 @@ button img:hover{
 	height:50px;
 	margin: 10px auto 20px;
 }
+#big{
+	height:100px;
+	margin: auto;
+	margin-top:30vh;
+	text-align:center;
+	display: block;
+}
+.intro-text{
+	width:40%;
+	margin: auto;
+	text-align:center;
+	display: block;
+}
+.intro{
+	display:none;
+	width:100vw;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	left:0;
+
+}
+.intro-exit{
+	-webkit-animation: scale-out-ver-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: scale-out-ver-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+.tool{
+	display:none;
+		-webkit-animation: slide-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.beginbutton {
+background: #3C3854;
+background-image: -webkit-linear-gradient(top, #3C3854, #49417C);
+background-image: -moz-linear-gradient(top, #3C3854, #49417C);
+background-image: -ms-linear-gradient(top, #3C3854, #49417C);
+background-image: -o-linear-gradient(top, #3C3854, #49417C);
+background-image: linear-gradient(to bottom, #3C3854, #49417C);
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+color: #D9E1E5;
+font-size: 20px;
+font-weight: 100;
+padding: 8px;
+box-shadow: 1px 1px 20px 0px #000000;
+-webkit-box-shadow: 1px 1px 20px 0px #000000;
+-moz-box-shadow: 1px 1px 20px 0px #000000;
+text-shadow: 1px 1px 20px #000000;
+border: solid #25213E 1px;
+text-decoration: none;
+display: inline-block;
+cursor: pointer;
+text-align: center;
+width:150px;
+}
+
+.beginbutton:hover {
+border: solid #5333ED 1px;
+background: #49417C;
+background-image: -webkit-linear-gradient(top, #49417C, #3C3854);
+background-image: -moz-linear-gradient(top, #49417C, #3C3854);
+background-image: -ms-linear-gradient(top, #49417C, #3C3854);
+background-image: -o-linear-gradient(top, #49417C, #3C3854);
+background-image: linear-gradient(to bottom, #49417C, #3C3854);
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+text-decoration: none;
+}
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+}
+@-webkit-keyframes scale-out-ver-top {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 0;
+  }
+}
+@keyframes scale-out-ver-top {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 0;
+  }
+}
+.disabled{
+	opacity:0.3;
+}
+
 </style>
+<div class="intro">
+<img id="big" align="middle" src="https://mojojohoe.github.io/Kinko/Kinko.png">
+<div class="intro-text">
+Hello.<br>
+Welcome to Kinko.<br>
+A tool for sharing your kinks and roleplaying preferences as an interactive HTML file.<br><br>
+Kinko is designed to offer an easy way to specify your likes, dislikes and requirements for ERP. <br>Currently it can only output a HTML file. This can be either opened, copied and embedded on any website that allows JavaScript, or shared as a web-page via messaging services such as Discord. Although for security reasons it’s recommended you only open HTML files from people you trust. <br><br>
+In the future, Kinko might expand into something more. With ways of comparing kinks with other people. For the time being it’s just a novel tool for those who have a use for it. 
+<br><br>
+Click the begin button to start. You can hover over buttons to context information, and press the ? button to open the tutorial page if you're stuck. <br><br>
+<button onclick='Begin()' class="beginbutton">Begin</button>
+</div>
+
+</div>
+<div class="tool">
 <a href="https://ko-fi.com/mojojohoe" target="_blank" title="Buy me a Coffee <3" class="kofi"><img height="100px" src="https://mojojohoe.github.io/Kinko/Mug-02-Full2.gif"></a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
@@ -219,9 +362,10 @@ button img:hover{
 <input type='text' class='search' placeholder='INPUT SEARCH CRITERIA'>
 <button onclick='Save()' title="Save" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-save.png"></button>
 <button onclick='Load()' title="Load" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-load.png"></button>
-<button onclick='Import()' title="Import" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-import.png"></button>
+<button  title="Import" class="saveload disabled"><img src="https://mojojohoe.github.io/Kinko/Ico-import.png"></button>
 <button onclick='Download()' title="Download" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-down.png"></button>
-
+<a href="https://mojojohoe.github.io/Kinko/help" target="_blank" class="help"><button title="Tutorial" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-help.png"></button></a>
+<button onclick='Erase()' title="New" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-new.png"></button>
 </div>
 
 <div class="zone">
@@ -398,6 +542,7 @@ button img:hover{
 <tr id="kb_167"><th id="kbn_167"><input type='checkbox' class='kb' id="167" onclick='Show(this.id)'>Emasculation</th><th id="kd_167">The act whereby the genitalia are removed by magical or surgical means, usually the penis and / or the testicles. May also imply humiliation; e.g. to render a male less of a man.</th></tr>
 <tr id="kb_168"><th id="kbn_168"><input type='checkbox' class='kb' id="168" onclick='Show(this.id)'>Endosoma</th><th id="kd_168">Vore that focuses on the ‘safe’ containment within the predator. Does not necessarily mean the prey is willing or comfortable. </th></tr>
 <tr id="kb_169"><th id="kbn_169"><input type='checkbox' class='kb' id="169" onclick='Show(this.id)'>Enemas</th><th id="kd_169">The application of a liquid, typically warm water or a body fluid, to the intestines of a character, often to clean them out, but sometimes as a form of discipline or sexual gratification, or receiving such actions; might imply a form of administration other than phallic penetration.</th></tr>
+
 <tr id="kb_170"><th id="kbn_170"><input type='checkbox' class='kb' id="170" onclick='Show(this.id)'>Equines</th><th id="kd_170">Horses, donkeys, mules, zebra, centauri etc.</th></tr>
 <tr id="kb_171"><th id="kbn_171"><input type='checkbox' class='kb' id="171" onclick='Show(this.id)'>Excessive Precum</th><th id="kd_171">Engaging in an RP in which a character produces a larger than average amount of precum; typically unrealistic.</th></tr>
 <tr id="kb_172"><th id="kbn_172"><input type='checkbox' class='kb' id="172" onclick='Show(this.id)'>Excessive Semen</th><th id="kd_172">Engaging in an RP in which a character produces a larger than average amount of semen; typically unrealistic.</th></tr>
@@ -878,6 +1023,9 @@ button img:hover{
 </tbody>
 </table>
 </div>
+<!-- <div class="addbox">
+<button onclick='New()' title="Add Custom Kink"><img src="https://mojojohoe.github.io/Kinko/Ico-pos.png"></button>
+</div> -->
 <div class="zone">
 <table id="enabled">
 
@@ -894,7 +1042,7 @@ button img:hover{
 </div>
 <div id="load">
 </div>
-
+</div>
 
 <script>
 /**
@@ -1202,6 +1350,13 @@ if (r == true) {
 		
 		$( "#load").html(localStorage.getItem('Kinko-KCode'));
 		
+		$('.kb').each(function(i, obj) {
+			$(this).prop( "checked", false );
+			var no = $(this).attr('id');
+			$("#kb_" + no).attr("style", "");
+		})
+		$('#enabled').empty();
+		
 		$('#load > p').each(function(i, obj) {
 		var current_id = $(this).attr('id');
 		var current_class = $(this).attr('class');
@@ -1367,4 +1522,55 @@ function download(filename, text) {
 }
 };
 </script>
+<script>
+/**
+ * INTRO
+ * Makes the intro only happen once.
+ */ 
+ $( document ).ready(function() {
+	 if (localStorage.getItem("Kinko-Intro") === null) {
+		 $('.intro').css("display", "block");
+		 }
+		else{
+			$('.tool').css("display", "block");
+			$('.intro').css("display", "none");
+}
+ });
+ function Begin() {
+localStorage.setItem('Kinko-Intro', 1);
+$('.intro').addClass("intro-exit");
+			 
+$('.tool').delay(1000).show();
+}
 
+</script>
+<script>
+/**
+ * ERASE
+ * Destroys everything.
+ */ 
+ function Erase() {
+var r = confirm("Are you sure you wish to erase all data? This will destroy all saves and clear all preferences?");
+if (r == true) {
+	 var s = confirm("This will erase anything stored. Only what you have downloaded will survive. Are you sure?");
+	 if (s == true) {
+		$('.kb').each(function(i, obj) {
+			$(this).prop( "checked", false );
+			var no = $(this).attr('id');
+			$("#kb_" + no).attr("style", "");
+		})
+		$('#enabled').empty();
+		$('#load').empty();
+		$('#temp').empty();
+		$('#code').empty();
+		$('#bcode').empty();
+		localStorage.clear();
+
+}
+else{
+}
+}
+else{
+}
+ };
+</script>
