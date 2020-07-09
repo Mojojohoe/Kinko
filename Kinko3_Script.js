@@ -708,3 +708,12 @@ else {$('.no-kinks').hide();}
 $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/index"><img id="logo" src="https://mojojohoe.github.io/Kinko/Kinko.png"></a>');
 
 });
+
+    function Compare(){
+		if (localStorage.getItem("Kinko-ACode") === null) {
+			alert("You don't currenly have anything locally saved. This may be because you haven't created a local save yet, or it has been deleted.");
+		}
+		else{
+			alert("Successfully found a local save.");
+		}
+	}
