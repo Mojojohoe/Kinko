@@ -718,7 +718,7 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 		
 	
 	$('.kinko').prepend('<xmp type="hidden" id="kinko-temp"/></xmp>');
-	$( "kinko-temp").text(localStorage.getItem('Kinko-ACode'));
+	$( "#kinko-temp").text(localStorage.getItem('Kinko-ACode'));
 	
  /**
  * SAVE
