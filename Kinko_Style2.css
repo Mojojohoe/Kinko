@@ -387,7 +387,7 @@ only screen and (max-width: 1200px) {
 	left: -40px;
 	background-size:contain;
 }
- .kinko .kcom {
+ #kcom {
 	box-shadow:inset 0px 0px 15px 3px #593961;
 	background:linear-gradient(to bottom, #4e3e52 5%, #47354d 100%);
 	background-color:#4e3e52;
@@ -401,11 +401,11 @@ only screen and (max-width: 1200px) {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #372c3d;
 }
-.kinko .kcom:hover {
+#kcom:hover {
 	background:linear-gradient(to bottom, #47354d 5%, #4e3e52 100%);
 	background-color:#47354d;
 }
-.kinko .kcom:active {
+#kcom:active {
 	position:relative;
 	top:1px;
 }
