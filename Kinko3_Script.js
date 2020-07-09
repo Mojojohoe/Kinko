@@ -711,9 +711,74 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 
     function Compare(){
 		if (localStorage.getItem("Kinko-ACode") === null) {
-			alert("You don't currenly have anything locally saved. This may be because you haven't created a local save yet, or it has been deleted.");
+			alert("You don't currenly have a Kinko profile saved on this computer. This may be because you haven't created one yet, or it has been deleted. To create your own click the logo to be taken to the tool.");
 		}
 		else{
-			alert("Successfully found a local save.");
+			
+		
+	
+	$('.kinko').prepend('<xmp type="hidden" id="kinko-temp"/></xmp>');
+	$( "kinko-temp").html(localStorage.getItem('Kinko-ACode'));
+	
+ /**
+ * SAVE
+ * Prompts the user if they wish to overwrite their save.
+
+	
+		
+		
+		$('.kb').each(function(i, obj) {
+			$(this).prop( "checked", false );
+			var no = $(this).attr('id');
+			$("#kb_" + no).attr("style", "");
+		})
+		$('#enabled').empty();
+		
+		$('#load > p').each(function(i, obj) {
+		var current_id = $(this).attr('id');
+		var current_class = $(this).attr('class');
+		var num = current_id.replace(/kp/, '');
+		var class_no = current_class.replace(/p/, '');
+		
+		$( "#" + num ).prop( "checked", true );
+		$( "#" + num  ).trigger( "onclick" );
+		
+		if (class_no >= 0 && class_no <= 100){
+			$("#rsv_" + num).html( class_no + "%");
+			$("#rsv_" + num).css( "background-color", "rgb(102," + class_no * 2.5 + ", 20)" );
+			$("#KI-S_" + num).prop("value", class_no / 10);
+		}
+		else if (class_no == -10){
+		$( "#KI-NA_" + num ).prop( "checked", true );
+		$( "#KI-NA_" + num ).trigger( "onclick" );
+		$( "#rsv_" + num).text( "N/A" );		
+		$( "#rsv_" + num).css( "background-color", "#66717A" );
+		}
+		else if (class_no == 999){
+		$( "#KI-R_" + num ).prop( "checked", true );
+		$( "#KI-R_" + num ).trigger( "onclick" );
+		$( "#rsv_" + num).text( "Required" );		
+		$( "#rsv_" + num).css( "background-color", "#D57A20" );		
+		}
+		else if (class_no == 200){
+		$( "#KI-F_" + num ).prop( "checked", true );
+		$( "#KI-F_" + num ).trigger( "onclick" );
+		$( "#rsv_" + num).text( "200%" );
+		$( "#rsv_" + num).css( "background-color", "#9D97F0" );
+		}
+		else{
+		$("#KI-S_" + num).prop("value", 0);
+		$( "#rsv_" + num).text( "?" );	
+		$( "#rsv_" + num).css( "background-color", "#483749" );
+		}
+		
+		if ($(this).data("info") === 'tt'){
+		var regex_load = "\\\('#ttxt" + num + "'\\\)\\\.html\\\('\(\.\*\?\)'\\\);";
+		var custom_code = $('<div />').html(localStorage.getItem('Kinko-CCode')).text();
+		var comment = custom_code.match(RegExp(regex_load));
+			$('#kpb-C_' + num).val(comment[1]);
+			
+	 */		
+			
 		}
 	}
