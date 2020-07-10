@@ -737,10 +737,10 @@ $('.kbut').after('<div class="k_select"><select><option value="1">Matched prefer
 }
 }
 
-function comparison()
+function comparison(){
 	
 	
-		$('#kinko-temp > p').each(function(i, obj) {
+$('#kinko-temp > p').each(function(i, obj) {
 		var c_id = $(this).attr('id');
 		var c_class = $(this).attr('class');
 		var num = c_id.replace(/kp/, '');
