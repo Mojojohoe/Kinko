@@ -742,9 +742,6 @@ function comparison(){
 		});
 }	
 		
-		
-}
-
 	
  /**
  * SAVE
