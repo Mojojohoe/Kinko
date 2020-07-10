@@ -816,7 +816,7 @@ $(document).on('change', '.k_select', function() {
   var rank = $('.k_select').find(":selected").val();
   console.log(rank);
 
-if ( rank === 1 ) {	
+if ( rank == 1 ) {	
   comparison();
 $('.kinko-table').find('.trow').sort(function(b, a) {
     return +$(a).data('rank') - +$(b).data('rank');
@@ -824,14 +824,14 @@ $('.kinko-table').find('.trow').sort(function(b, a) {
 .appendTo('.kinko-table');
 console.log("Triggered 1");
 }
-else if ( rank === 2 ) {	
+else if ( rank == 2 ) {	
    comparison();
 
 
 $('.trow').each(function(index) { 
     if($(this).attr('data-rank') == '0')
     {
-        $(this).attr('data-rank', '15');
+       $(this).attr('data-rank', '15');
     }
 });
 
