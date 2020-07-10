@@ -835,7 +835,7 @@ function c_sort_az(){
 $('.kinko-table').find('.trow').sort(function(a, b) {
     return +$(a).data('rank') - +$(b).data('rank');
 })
-.appendTo('.kinko-table');
+.appendTo('.kinko-table tbody');
 console.log("Sorted A to Z");	
 }
 function c_sort_za(){
@@ -843,7 +843,7 @@ function c_sort_za(){
 $('.kinko-table').find('.trow').sort(function(a, b) {
     return +$(b).data('rank') - +$(a).data('rank');
 })
-.appendTo('.kinko-table');
+.appendTo('.kinko-table tbody');
 console.log("Sorted Z to A");
 }
  /**
