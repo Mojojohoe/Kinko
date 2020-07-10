@@ -811,16 +811,17 @@ $('.kinko-table').find('.trow').sort(function(b, a) {
 
 $('.k_select').on('change', function() {
   var rank = this.value;
-  
+  console.log("Triggered");
   if ( rank == 1 ) {	
   comparison();
 $('.kinko-table').find('.trow').sort(function(b, a) {
     return +$(a).data('rank') - +$(b).data('rank');
 })
 .appendTo('.kinko-table');
+console.log("Triggered 1");
 }
 
-  if ( rank == 2 ) {	
+if ( rank == 2 ) {	
    comparison();
    
  		$('.trow').each(function(i, obj) {
@@ -835,6 +836,7 @@ $('.kinko-table').find('.trow').sort(function(a, b) {
     return +$(a).data('rank') - +$(b).data('rank');
 })
 .appendTo('.kinko-table');
+console.log("Triggered 2");
 }
 
 });
