@@ -802,39 +802,29 @@ $('#kinko-temp > p').each(function(i, obj) {
  		 })[c_pref];
 		
 		$( "#tr" + num).attr('data-rank', c_key);
-		 console.log("Rank is " + c_key); 
 		$( "#tr" + num).css( "background-color", c_colour );
-		console.log("Comparison colouring has been called.");
 		}		
 		});
 
 
 
-$('.kinko-table').find('.trow').sort(function(b, a) {
-   return +$(a).data('rank') - +$(b).data('rank');
-})
-.appendTo('.kinko-table');
-console.log("Sorting initial");
+c_sort_az()
 
 }
 
 $(document).on('change', '.k_select', function() {
   var rank = $('.k_select').find(":selected").val();
-console.log("Selection input has been triggered.");
 
 if ( rank == 1 ) {	
   comparison();
- console.log("rank is 1 so we're going to loop through all of the kinks that are rank 15 and set them to 0"); 
 $('.trow').each(function(index) { 
     if($(this).attr('data-rank') == '15')
     {
        $(this).attr('data-rank', '0');
     }
 });  
-$('.kinko-table').find('.trow').sort(function(b, a) {
-    return +$(a).data('rank') - +$(b).data('rank');
-})
-.appendTo('.kinko-table');
+
+c_sort_za()
 
 }
 else if ( rank == 2 ) {	
@@ -846,14 +836,26 @@ $('.trow').each(function(index) {
        $(this).attr('data-rank', '15');
     }
 });
+
+}
+
+});
+function c_sort_az(){
+	
 $('.kinko-table').find('.trow').sort(function(a, b) {
     return +$(a).data('rank') - +$(b).data('rank');
 })
 .appendTo('.kinko-table');
-}
-
-});
 	
+}
+function c_sort_za(){
+	
+$('.kinko-table').find('.trow').sort(function(b, a) {
+    return +$(a).data('rank') - +$(b).data('rank');
+})
+.appendTo('.kinko-table');
+	
+}
  /**
  * SAVE
  * Prompts the user if they wish to overwrite their save.
