@@ -814,8 +814,9 @@ $('.kinko-table').find('.trow').sort(function(b, a) {
 }	
 $(document).on('change', '.k_select', function() {
   var rank = this.value;
-  console.log("Triggered");
-  if ( rank == 1 ) {	
+  console.log(rank);
+
+if ( rank == 1 ) {	
   comparison();
 $('.kinko-table').find('.trow').sort(function(b, a) {
     return +$(a).data('rank') - +$(b).data('rank');
