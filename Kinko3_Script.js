@@ -15,11 +15,14 @@ else{
 $('#tr' + ka).prepend('<td class="kname" id="kn' + ka + '"></td><td class="kdesc" id="kd' + ka + '"></td>'); 
 ka++; 
 }
+$('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
+$('.kbut').after('<div class="select"><select><option>--Select--</option><option>Hello 1</option><option>Hello 2</option><option>Hello 3</option><option>Hello 4</option></select><div class="select_arrow"></div></div>');
 while (ka == 2001) {
 $('.trow').wrapAll('<table class="kinko-table results"><tbody></tbody></table>'); 
 $('.results').prepend('<thead><tr><th class="kinko-kn"><h2>Kink Name</h2></th><th class="kinko-kd"><h2>Description</h2></th><th class="kinko-kp"><h2>Preference</h2></th></tr><tr class="warning no-kinks"><td colspan="4">No results</td></tr></thead>'); 
 ka++;
 }
+
 
 
 $("#kn2").text("3+ Penetration");$("#kd2").text("The act of penetrating a single character with three or more objects, including but not limited to cocks, sex toys, hands, etc., or receiving such actions.");
@@ -744,53 +747,53 @@ function comparison(){
 		var o_pref = o_class.replace(/p/, '');
 		
 		var o_key = ({
-        "999" : "13",
-        "200" : "12",
-        "100" : "11",
-        "90"  : "10",
-        "80"  : "9",
-		"70"  : "8",
-		"60"  : "7",
-		"50"  : "6",
-		"40"  : "5",
-		"30"  : "4",
-		"20"  : "3",
-		"10"  : "2",
-		"0"   : "1",
-		"-10" : "0",
+        "999" : "14",
+        "200" : "13",
+        "100" : "12",
+        "90"  : "11",
+        "80"  : "10",
+		"70"  : "9",
+		"60"  : "8",
+		"50"  : "7",
+		"40"  : "6",
+		"30"  : "5",
+		"20"  : "4",
+		"10"  : "3",
+		"0"   : "2",
+		"-10" : "1",
  		 })[o_pref];
 		
 		var c_key = ({
-        "999" : "13",
-        "200" : "12",
-        "100" : "11",
-        "90"  : "10",
-        "80"  : "9",
-		"70"  : "8",
-		"60"  : "7",
-		"50"  : "6",
-		"40"  : "5",
-		"30"  : "4",
-		"20"  : "3",
-		"10"  : "2",
-		"0"   : "1",
-		"-10" : "0",
+        "999" : "14",
+        "200" : "13",
+        "100" : "12",
+        "90"  : "11",
+        "80"  : "10",
+		"70"  : "9",
+		"60"  : "8",
+		"50"  : "7",
+		"40"  : "6",
+		"30"  : "5",
+		"20"  : "4",
+		"10"  : "3",
+		"0"   : "2",
+		"-10" : "1",
  		 })[c_pref];
 		 
 		 var c_colour = ({
-        "999" : "rgba(155, 245, 242, 0.2)",
-        "200" : "rgba(178, 155, 245, 0.2)",
-        "100" : "rgba(117, 248, 104, 0.2)",
-        "90"  : "rgba(151, 255, 127, 0.2)",
-        "80"  : "rgba(186, 255, 147, 0.2)",
-		"70"  : "rgba(203, 255, 153, 0.2)",
-		"60"  : "rgba(220, 255, 153, 0.2)",
-		"50"  : "rgba(248, 255, 153, 0.2)",
-		"40"  : "rgba(255, 229, 153, 0.2)",
-		"30"  : "rgba(249, 215, 156, 0.2)",
-		"20"  : "rgba(249, 203, 156, 0.2)",
-		"10"  : "rgba(249, 184, 156, 0.2)",
-		"0"   : "rgba(234, 153, 153, 0.2)",
+        "999" : "rgba(155, 245, 242, 0.3)",
+        "200" : "rgba(178, 155, 245, 0.3)",
+        "100" : "rgba(117, 248, 104, 0.3)",
+        "90"  : "rgba(151, 255, 127, 0.3)",
+        "80"  : "rgba(186, 255, 147, 0.3)",
+		"70"  : "rgba(203, 255, 153, 0.3)",
+		"60"  : "rgba(220, 255, 153, 0.3)",
+		"50"  : "rgba(248, 255, 153, 0.3)",
+		"40"  : "rgba(255, 229, 153, 0.3)",
+		"30"  : "rgba(249, 215, 156, 0.3)",
+		"20"  : "rgba(249, 203, 156, 0.3)",
+		"10"  : "rgba(249, 184, 156, 0.3)",
+		"0"   : "rgba(234, 153, 153, 0.3)",
 		"-10" : "rgba(183, 183, 183, 0.5)",
  		 })[c_pref];
 		
