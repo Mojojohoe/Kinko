@@ -803,12 +803,9 @@ $('#kinko-temp > p').each(function(i, obj) {
 		
 		$( "#tr" + num).attr('data-rank', c_key);
 		$( "#tr" + num).css( "background-color", c_colour );
-		}		
+		}	
+		c_sort_az()	
 		});
-
-
-
-c_sort_az()
 
 }
 
