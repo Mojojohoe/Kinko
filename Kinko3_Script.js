@@ -828,8 +828,9 @@ else if ( rank === 2 ) {
    comparison();
 
 		$('.trow[data-rank="0"]').each(function(){
-		$(this).attr('data-rank', 15);
 		console.log(this);
+		$(this).attr('data-rank', '15');
+		console.log("done a thing");
 		});
    
 $('.kinko-table').find('.trow').sort(function(a, b) {
