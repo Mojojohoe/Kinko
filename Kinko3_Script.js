@@ -835,22 +835,25 @@ $('#kinko-temp > p').each(function(i, obj) {
  		 })[o_pref];
 		
 		var c_key = ({
-        "999" : 14 - o_key,
-        "200" : 13 - o_key,
-        "100" : 12 - o_key,
-        "90"  : 11 - o_key,
-        "80"  : 10 - o_key,
-		"70"  : 9 - o_key,
-		"60"  : 8 - o_key,
-		"50"  : 7 - o_key,
-		"40"  : 6 - o_key,
-		"30"  : 5 - o_key,
-		"20"  : 4 - o_key,
-		"10"  : 3 - o_key,
-		"0"   : 2 - o_key,
-		"-10" : 1 - o_key,
+        "999" : 14,
+        "200" : 13,
+        "100" : 12,
+        "90"  : 11,
+        "80"  : 10,
+		"70"  : 9,
+		"60"  : 8,
+		"50"  : 7,
+		"40"  : 6,
+		"30"  : 5,
+		"20"  : 4,
+		"10"  : 3,
+		"0"   : 2,
+		"-10" : 1,
  		 })[c_pref];
-		console.log(c_key)
+		 
+		 c_key = c_key - o_key;
+		 
+		console.log(c_key);
 		
 		$( "#tr" + num).attr('data-rank', c_key);
 		}	
