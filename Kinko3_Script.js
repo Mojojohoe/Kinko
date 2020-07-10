@@ -818,20 +818,20 @@ $('#kinko-temp > p').each(function(i, obj) {
 		var o_pref = o_class.replace(/p/, '');
 		
 		var o_key = ({
-        "999" : "14",
-        "200" : "13",
-        "100" : "12",
-        "90"  : "11",
-        "80"  : "10",
-		"70"  : "9",
-		"60"  : "8",
-		"50"  : "7",
-		"40"  : "6",
-		"30"  : "5",
-		"20"  : "4",
-		"10"  : "3",
-		"0"   : "2",
-		"-10" : "1",
+        "999" : 14,
+        "200" : 13,
+        "100" : 12,
+        "90"  : 11,
+        "80"  : 10,
+		"70"  : 9,
+		"60"  : 8,
+		"50"  : 7,
+		"40"  : 6,
+		"30"  : 5,
+		"20"  : 4,
+		"10"  : 3,
+		"0"   : 2,
+		"-10" : 1,
  		 })[o_pref];
 		
 		var c_key = ({
@@ -850,6 +850,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		"0"   : 2 - o_key,
 		"-10" : 1 - o_key,
  		 })[c_pref];
+		console.log(c_key)
 		
 		$( "#tr" + num).attr('data-rank', c_key);
 		}	
@@ -874,7 +875,6 @@ $('.trow').each(function(index) {
     if($(this).attr('data-rank') == 0)
     {
        $(this).attr('data-rank', 15);
-	   console.log("Making " + this + " 15!");
     }
 });
 c_sort_az();
@@ -895,8 +895,7 @@ function c_sort_az(){
 $('.kinko-table').find('.trow').sort(function(a, b) {
     return +$(a).data('rank') - +$(b).data('rank');
 })
-.appendTo('.kinko-table tbody');
-console.log("Sorted A to Z");	
+.appendTo('.kinko-table tbody');	
 }
 function c_sort_za(){
 	
@@ -904,7 +903,6 @@ $('.kinko-table').find('.trow').sort(function(a, b) {
     return +$(b).attr("data-rank") - +$(a).attr("data-rank");
 })
 .appendTo('.kinko-table tbody');
-console.log("Sorted Z to A");
 }
  /**
  * SAVE

@@ -282,7 +282,7 @@ body::after{
     position: relative;
     display: inline-block;
     margin-bottom: 15px;
-    width: 30%;
+    width: 35%;
 }    .k_select select {
         display: inline-block;
         width: 100%;
