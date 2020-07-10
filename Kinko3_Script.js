@@ -729,7 +729,7 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 
 function comparison(){
 	
-		$('.kinko > tr').each(function(i, obj) {
+		$('.trow').each(function(i, obj) {
 		$(this).attr('data-rank', 0);
 		});
 	
@@ -800,7 +800,7 @@ function comparison(){
 		
 		}		
 		});
-		var $wrapper = $('.kinko-table > tbody');
+		var $wrapper = $('.kinko-table');
 
 $wrapper.find('.trow').sort(function(a, b) {
     return +a.dataset.rank - +b.dataset.rank;
