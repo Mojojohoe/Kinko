@@ -829,15 +829,13 @@ if ( rank == 2 ) {
    comparison();
 
 		$('.trow[data-rank="0"]').each(function(){
-		$(this).data('rank', 15);
-		console.log("Doin' a rank son.");
+		$(this).data('rank', '15');
 		});
    
 $('.kinko-table').find('.trow').sort(function(a, b) {
     return +$(a).data('rank') - +$(b).data('rank');
 })
 .appendTo('.kinko-table');
-console.log("Triggered 2");
 }
 
 });
