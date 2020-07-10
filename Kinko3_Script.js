@@ -731,7 +731,6 @@ $('.kbut').after('<div class="k_select"><select><option value="1">Matched prefer
 		$('.trow').each(function(i, obj) {
 		$(this).attr('data-rank', 0);
 		});
-		console.log("Initial data-rank setting has been called");
 		comparison();
 }			
 }
@@ -804,9 +803,8 @@ $('#kinko-temp > p').each(function(i, obj) {
 		$( "#tr" + num).attr('data-rank', c_key);
 		$( "#tr" + num).css( "background-color", c_colour );
 		}	
-		c_sort_az()	
 		});
-
+c_sort_az();
 }
 
 $(document).on('change', '.k_select', function() {
@@ -821,11 +819,10 @@ $('.trow').each(function(index) {
     }
 });  
 
-c_sort_za()
-
+c_sort_za();
 }
+
 else if ( rank == 2 ) {	
- console.log("rank is 2 so we're going to loop through all of the kinks that are rank 0 and set them to 15"); 
    comparison();
 $('.trow').each(function(index) { 
     if($(this).attr('data-rank') == '0')
@@ -833,7 +830,7 @@ $('.trow').each(function(index) {
        $(this).attr('data-rank', '15');
     }
 });
-
+c_sort_az()	
 }
 
 });
