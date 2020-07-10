@@ -803,7 +803,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		$( "#tr" + num).css( "background-color", c_colour );
 		}	
 		});
-c_sort_az();
+c_sort_za();
 }
 
 $(document).on('change', '.k_select', function() {
