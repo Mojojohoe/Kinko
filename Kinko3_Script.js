@@ -729,6 +729,10 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 
 function comparison(){
 	
+		$('.kinko > tr').each(function(i, obj) {
+		$(this).attr('data-rank', 0);
+		});
+	
 		$('#kinko-temp > p').each(function(i, obj) {
 		var c_id = $(this).attr('id');
 		var c_class = $(this).attr('class');
@@ -791,12 +795,17 @@ function comparison(){
 		"-10" : "rgba(183, 183, 183, 0.7)",
  		 })[c_pref];
 		
-		$( "#tr" + num).attr('data-rank', c_pref);
-		
+		$( "#tr" + num).data('rank', c_key);
 		$( "#tr" + num).css( "background-color", c_colour );
-		}
-			
+		
+		}		
 		});
+		var $wrapper = $('.kinko-table > tbody');
+
+$wrapper.find('.trow').sort(function(a, b) {
+    return +a.dataset.rank - +b.dataset.rank;
+})
+.appendTo($wrapper);
 }	
 		
 	
