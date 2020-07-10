@@ -829,7 +829,7 @@ if ( rank == 2 ) {
    comparison();
 
 		$('.trow[data-rank="0"]').each(function(){
-		$(this).data('rank', '15');
+		$(this).attr('data-rank', 15);
 		});
    
 $('.kinko-table').find('.trow').sort(function(a, b) {
