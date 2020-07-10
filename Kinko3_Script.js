@@ -810,7 +810,6 @@ $(document).on('change', '.k_select', function() {
   var rank = $('.k_select').find(":selected").val();
 
 if ( rank == 1 ) {	
-  comparison();
 $('.trow').each(function(index) { 
     if($(this).attr('data-rank') == '15')
     {
@@ -821,14 +820,13 @@ c_sort_za();
 }
 
 else if ( rank == 2 ) {	
-   comparison();
 $('.trow').each(function(index) { 
     if($(this).attr('data-rank') == '0')
     {
        $(this).attr('data-rank', '15');
     }
 });
-c_sort_az()	;
+c_sort_az();
 }
 
 });
