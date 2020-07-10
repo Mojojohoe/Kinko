@@ -842,7 +842,7 @@ console.log("Sorted A to Z");
 function c_sort_za(){
 	
 $('.kinko-table').find('.trow').sort(function(a, b) {
-    return +$(b).data('rank') - +$(a).data('rank');
+    return +$(b).attr("data-rank") - +$(a).attr("data-rank";
 })
 .appendTo('.kinko-table tbody');
 console.log("Sorted Z to A");
