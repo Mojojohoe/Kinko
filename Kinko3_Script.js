@@ -710,15 +710,41 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 });
 
     function Compare(){
-		if (localStorage.getItem("Kinko-ACode") === null) {
+		if (localStorage.getItem("Kinko-KCode") === null) {
 			alert("You don't currenly have a Kinko profile saved on this computer. This may be because you haven't created one yet, or it has been deleted. To create your own click the logo to be taken to the tool.");
 		}
 		else{
 			
-		
-	
+		if ( $( "#kinko-temp" ).length ) {	
+    $( "#kinko-temp").html(localStorage.getItem('Kinko-KCode'));
+	comparison();
+}
+		else{
 	$('.kinko').prepend('<xmp type="hidden" id="kinko-temp"/></xmp>');
-	$( "#kinko-temp").text(localStorage.getItem('Kinko-ACode'));
+	$( "#kinko-temp").html(localStorage.getItem('Kinko-KCode'));
+	comparison();
+}				
+}
+}
+
+function comparison(){
+	
+		$('#kinko-temp > p').each(function(i, obj) {
+		var c_id = $(this).attr('id');
+		var c_class = $(this).attr('class');
+		var num = c_id.replace(/kp/, '');
+		var c_pref = current_class.replace(/p/, '');
+		
+		if ( $( "#kp" + num ).length ) {	
+		$( "#tr" + num).css( "background-color", "#9D97F0" );
+		}
+			
+		});
+}	
+		
+		
+}
+
 	
  /**
  * SAVE
@@ -778,7 +804,4 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 		var comment = custom_code.match(RegExp(regex_load));
 			$('#kpb-C_' + num).val(comment[1]);
 			
-	 */		
-			
-		}
-	}
+	 */	
