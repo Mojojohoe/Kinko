@@ -811,9 +811,9 @@ $(document).on('change', '.k_select', function() {
 
 if ( rank == 1 ) {	
 $('.trow').each(function(index) { 
-    if($(this).attr('data-rank') == '15')
+    if($(this).attr('data-rank') == 15)
     {
-    $(this).attr('data-rank', '0');
+    $(this).attr('data-rank', 0);
     }
 });  
 c_sort_za();
@@ -821,9 +821,9 @@ c_sort_za();
 
 else if ( rank == 2 ) {	
 $('.trow').each(function(index) { 
-    if($(this).attr('data-rank') == '0')
+    if($(this).attr('data-rank') == 0)
     {
-       $(this).attr('data-rank', '15');
+       $(this).attr('data-rank', 15);
     }
 });
 c_sort_az();
