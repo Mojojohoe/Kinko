@@ -175,7 +175,7 @@ body::after{
      padding: 5px 15px 5px 15px;
      font-size: 19px;
      border-width: 1px;
-     border-color: #cccccc;
+     border-color: rgba(118,107,126,0.69);
      background-color: #655368;
      color: #e9f1f3;
      border-style: solid;
