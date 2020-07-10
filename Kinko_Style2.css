@@ -172,7 +172,7 @@ body::after{
 	margin: 10px;
 	min-width: 200px;
 	width: 30%;
-     padding: 15px;
+     padding: 5px 15px 5px 15px;
      font-size: 19px;
      border-width: 1px;
      border-color: #cccccc;
