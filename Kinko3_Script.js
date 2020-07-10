@@ -813,7 +813,7 @@ $('.kinko-table').find('.trow').sort(function(b, a) {
 .appendTo('.kinko-table');
 }	
 $(document).on('change', '.k_select', function() {
-  var rank = $(this).find(":selected").val();
+  var rank = $('.k_select').find(":selected").val();
   console.log(rank);
 
 if ( rank == 1 ) {	
