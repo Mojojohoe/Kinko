@@ -827,13 +827,9 @@ console.log("Triggered 1");
 
 if ( rank == 2 ) {	
    comparison();
-   
- 		$('.trow').each(function(i, obj) {
-		
-		var okink = $(this + '[data-rank="0"]')
+
+		 $('.trow[data-rank="0"]').each(function(){
 		$(this).data('rank', 15);
-		
-		
 		});
    
 $('.kinko-table').find('.trow').sort(function(a, b) {
