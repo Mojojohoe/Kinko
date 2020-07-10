@@ -800,12 +800,11 @@ function comparison(){
 		
 		}		
 		});
-		var $wrapper = $('.kinko-table');
 
-$wrapper.find('.trow').sort(function(a, b) {
-    return +a.dataset.rank - +b.dataset.rank;
+$('.kinko-table').find('.trow').sort(function(a, b) {
+    return +$(a).data('rank') - +$(b).data('rank');
 })
-.appendTo($wrapper);
+.appendTo('.kinko-table');
 }	
 		
 	
