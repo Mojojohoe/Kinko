@@ -279,7 +279,7 @@ body::after{
     position: relative;
     display: inline-block;
     margin-bottom: 15px;
-    width: 100%;
+    width: 30%;
 }    .select select {
         display: inline-block;
         width: 100%;
