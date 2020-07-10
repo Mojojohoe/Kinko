@@ -729,9 +729,13 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 }
 
 function comparison(){
-if ( $('#k_select' ).length ) {		
+	
+if ($(".k_select")[0]){
+    
+} else {
 $('.kbut').after('<div class="k_select"><select><option value="1">Matched preferences at the top. Most liked to least liked.</option><option value="2">Matched preferences at the top. Least liked to most liked.</option><option value="3">Matched kinks ranked by compatibility. Most compatible to least.</option><option value="4">Matched kinks ranked by compatibility. Least compatible to most.</option></select><div class="select_arrow"></div></div>');
 }
+
 		$('.trow').each(function(i, obj) {
 		$(this).attr('data-rank', 0);
 		});
@@ -808,8 +812,7 @@ $('.kinko-table').find('.trow').sort(function(b, a) {
 })
 .appendTo('.kinko-table');
 }	
-
-$('.k_select').on('change', function() {
+$(document).on('change', '.k_select', function() {
   var rank = this.value;
   console.log("Triggered");
   if ( rank == 1 ) {	
