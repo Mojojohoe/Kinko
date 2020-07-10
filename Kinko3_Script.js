@@ -20,7 +20,6 @@ $('.trow').wrapAll('<table class="kinko-table results"><tbody></tbody></table>')
 $('.results').prepend('<thead><tr><th class="kinko-kn"><h2>Kink Name</h2></th><th class="kinko-kd"><h2>Description</h2></th><th class="kinko-kp"><h2>Preference</h2></th></tr><tr class="warning no-kinks"><td colspan="4">No results</td></tr></thead>'); 
 ka++;
 }
-$('.search').after('<div class="select"><select><option>--Select--</option><option>Hello 1</option><option>Hello 2</option><option>Hello 3</option><option>Hello 4</option></select><div class="select_arrow"></div></div>');
 $('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
 
 
@@ -731,6 +730,8 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 
 function comparison(){
 	
+$('.kbut').after('<div class="select"><select><option value="1">Matched preferences at the top. Most liked to least liked.</option><option value="2">Matched preferences at the top. Least liked to most liked.</option><option value="3">Matched kinks ranked by compatibility. Most compatible to least.</option><option value="4">Matched kinks ranked by compatibility. Least compatible to most.</option></select><div class="select_arrow"></div></div>');
+	
 		$('.trow').each(function(i, obj) {
 		$(this).attr('data-rank', 0);
 		});
@@ -807,7 +808,35 @@ $('.kinko-table').find('.trow').sort(function(b, a) {
 })
 .appendTo('.kinko-table');
 }	
+$('select').on('change', function() {
+  var rank = this.value;
+  
+  if ( rank == 1 ) {	
+  comparison();
+$('.kinko-table').find('.trow').sort(function(b, a) {
+    return +$(a).data('rank') - +$(b).data('rank');
+})
+.appendTo('.kinko-table');
+}
+
+  if ( rank == 2 ) {	
+   comparison();
+   
+ 		$('.trow').each(function(i, obj) {
 		
+		var okink = $(this + '[data-rank="0"'])
+		$(this).data('rank', 15);
+		
+		
+		});
+   
+$('.kinko-table').find('.trow').sort(function(a, b) {
+    return +$(a).data('rank') - +$(b).data('rank');
+})
+.appendTo('.kinko-table');
+}
+
+});
 	
  /**
  * SAVE
