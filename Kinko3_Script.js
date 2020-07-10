@@ -733,7 +733,7 @@ function comparison(){
 		var c_id = $(this).attr('id');
 		var c_class = $(this).attr('class');
 		var num = c_id.replace(/kp/, '');
-		var c_pref = current_class.replace(/p/, '');
+		var c_pref = c_class.replace(/p/, '');
 		
 		if ( $( "#kp" + num ).length ) {	
 		$( "#tr" + num).css( "background-color", "#9D97F0" );
