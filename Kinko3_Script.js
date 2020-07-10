@@ -774,7 +774,7 @@ function comparison(){
 		"-10" : "0",
  		 })[c_pref];
 		 
-		 var c_key = ({
+		 var c_colour = ({
         "999" : "rgba(155, 245, 242, 0.5)",
         "200" : "rgba(178, 155, 245, 0.5)",
         "100" : "rgba(117, 248, 104, 0.5)",
@@ -789,11 +789,11 @@ function comparison(){
 		"10"  : "rgba(249, 184, 156, 0.5)",
 		"0"   : "rgba(234, 153, 153, 0.5)",
 		"-10" : "rgba(183, 183, 183, 0.7)",
- 		 })[c_colour];
+ 		 })[c_pref];
 		
 		$( "#tr" + num).attr('data-rank', c_pref);
 		
-		$( "#tr" + num).css( "background-color", "#9D97F0" );
+		$( "#tr" + num).css( "background-color", c_colour );
 		}
 			
 		});
