@@ -833,7 +833,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		"0"   : 2,
 		"-10" : 1,
  		 })[o_pref];
-		
+		console.log(o_key);
 		var c_key = ({
         "999" : 14,
         "200" : 13,
@@ -850,6 +850,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		"0"   : 2,
 		"-10" : 1,
  		 })[c_pref];
+		 console.log(c_key);
 		 
 		 c_key = c_key - o_key;
 		 
