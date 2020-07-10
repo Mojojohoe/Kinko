@@ -827,11 +827,14 @@ console.log("Triggered 1");
 else if ( rank === 2 ) {	
    comparison();
 
-		$('.trow[data-rank="0"]').each(function(){
-		console.log(this);
-		$(this).attr('data-rank', '15');
-		console.log("done a thing");
-		});
+
+$('.trow').each(function(index) { 
+    if($(this).attr('data-rank') == '0')
+    {
+        $(this).attr('data-rank', '15');
+    }
+});
+
    
 $('.kinko-table').find('.trow').sort(function(a, b) {
     return +$(a).data('rank') - +$(b).data('rank');
