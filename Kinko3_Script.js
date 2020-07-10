@@ -801,7 +801,7 @@ function comparison(){
 		}		
 		});
 
-$('.kinko-table').find('.trow').sort(function(a, b) {
+$('.kinko-table').find('.trow').sort(function(b, a) {
     return +$(a).data('rank') - +$(b).data('rank');
 })
 .appendTo('.kinko-table');
