@@ -815,7 +815,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		
 		if ( $('#kp' + num ).not("#kinko-temp").length ) {	
 		
-		var o_class = $('tbody').find('#kp' + num).attr('class');
+		var o_class = $('#kp' + num).not("#kinko-temp").attr('class');
 		var o_pref = o_class.replace(/p/, '');
 		
 		var o_key = ({
