@@ -15,15 +15,13 @@ else{
 $('#tr' + ka).prepend('<td class="kname" id="kn' + ka + '"></td><td class="kdesc" id="kd' + ka + '"></td>'); 
 ka++; 
 }
-$('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
-$('.kbut').after('<div class="select"><select><option>--Select--</option><option>Hello 1</option><option>Hello 2</option><option>Hello 3</option><option>Hello 4</option></select><div class="select_arrow"></div></div>');
 while (ka == 2001) {
 $('.trow').wrapAll('<table class="kinko-table results"><tbody></tbody></table>'); 
 $('.results').prepend('<thead><tr><th class="kinko-kn"><h2>Kink Name</h2></th><th class="kinko-kd"><h2>Description</h2></th><th class="kinko-kp"><h2>Preference</h2></th></tr><tr class="warning no-kinks"><td colspan="4">No results</td></tr></thead>'); 
 ka++;
 }
-
-
+$('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
+$('.kbut').after('<div class="select"><select><option>--Select--</option><option>Hello 1</option><option>Hello 2</option><option>Hello 3</option><option>Hello 4</option></select><div class="select_arrow"></div></div>');
 
 $("#kn2").text("3+ Penetration");$("#kd2").text("The act of penetrating a single character with three or more objects, including but not limited to cocks, sex toys, hands, etc., or receiving such actions.");
 $("#kn3").text("Abrasions");$("#kd3").text("Engaging in a situation in which at least one character will receive abrasions, defined as scrapes that are at their mildest in severity capable of causing bleeding; typically administered via rough or coarse objects, such as sandpaper or cement.");
