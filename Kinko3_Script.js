@@ -828,8 +828,9 @@ console.log("Triggered 1");
 if ( rank == 2 ) {	
    comparison();
 
-		 $('.trow[data-rank="0"]').each(function(){
+		$('.trow[data-rank="0"]').each(function(){
 		$(this).data('rank', 15);
+		console.log("Doin' a rank son.");
 		});
    
 $('.kinko-table').find('.trow').sort(function(a, b) {
