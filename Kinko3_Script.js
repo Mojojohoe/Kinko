@@ -720,7 +720,7 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 	comparison();
 }
 		else{
-	$('.kinko').prepend('<xmp type="hidden" id="kinko-temp"/></xmp>');
+	$('.kinko').prepend('<div type="hidden" id="kinko-temp"/></div>');
 	$( "#kinko-temp").html(localStorage.getItem('Kinko-KCode'));
 	comparison();
 }				
