@@ -739,10 +739,8 @@ function comparison(){
 		var num = c_id.replace(/kp/, '');
 		var c_pref = c_class.replace(/p/, '');
 		
-		if ( $('#kinko-temp > #kp' + num ).length ) {	
-		console.log($('.kinko-table > #kp' + num).attr('class'));		
-		var o_class = $('.kinko-table > #kp' + num).attr('class');
-		console.log(o_class);
+		if ( $('#kp' + num ).not("#kinko-temp").length ) {	
+		var o_class = $('#kp' + num ).not("#kinko-temp").attr('class');
 		var o_pref = o_class.replace(/p/, '');
 		
 		var o_key = ({
