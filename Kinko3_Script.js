@@ -733,7 +733,7 @@ function comparison(){
 if ($(".k_select")[0]){
     
 } else {
-$('.kbut').after('<div class="k_select"><select><option value="1">Matched preferences at the top. Most liked to least liked.</option><option value="2">Matched preferences at the top. Least liked to most liked.</option><option value="3">Matched kinks ranked by compatibility. Most compatible to least.</option><option value="4">Matched kinks ranked by compatibility. Least compatible to most.</option></select><div class="select_arrow"></div></div>');
+$('.kbut').after('<div class="k_select"><select><option value="1">Matched preferences at the top. Most liked to least liked.</option><option value="2">Matched preferences at the top. Least liked to most liked.</option><option value="3">Matched kinks ranked by compatibility. Most compatible to least.</option><option value="4">Matched kinks ranked by compatibility. Least compatible to most.</option></select><div class="k_select_arrow"></div></div>');
 }
 
 		$('.trow').each(function(i, obj) {
@@ -813,7 +813,7 @@ $('.kinko-table').find('.trow').sort(function(b, a) {
 .appendTo('.kinko-table');
 }	
 $(document).on('change', '.k_select', function() {
-  var rank = this.value;
+  var rank = this.val();
   console.log(rank);
 
 if ( rank == 1 ) {	
