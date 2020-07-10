@@ -801,7 +801,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		"-10" : "rgba(183, 183, 183, 0.5)",
  		 })[c_pref];
 		
-		$( "#tr" + num).data('rank', c_key);
+		$( "#tr" + num).attr('data-rank', c_key);
 		 console.log("Rank is " + c_key); 
 		$( "#tr" + num).css( "background-color", c_colour );
 		console.log("Comparison colouring has been called.");
@@ -814,13 +814,13 @@ $('.kinko-table').find('.trow').sort(function(b, a) {
    return +$(a).data('rank') - +$(b).data('rank');
 })
 .appendTo('.kinko-table');
-
+console.log("Sorting initial");
 
 }
 
 $(document).on('change', '.k_select', function() {
   var rank = $('.k_select').find(":selected").val();
-
+console.log("Selection input has been triggered.");
 
 if ( rank == 1 ) {	
   comparison();
