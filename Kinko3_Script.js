@@ -840,8 +840,8 @@ console.log("Sorted A to Z");
 }
 function c_sort_za(){
 	
-$('.kinko-table').find('.trow').sort(function(b, a) {
-    return +$(a).data('rank') - +$(b).data('rank');
+$('.kinko-table').find('.trow').sort(function(a, b) {
+    return +$(b).data('rank') - +$(a).data('rank');
 })
 .appendTo('.kinko-table');
 console.log("Sorted Z to A");
