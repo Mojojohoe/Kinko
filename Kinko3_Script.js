@@ -808,14 +808,23 @@ $('.kbut').after('<div class="k_select"><select><option value="1">Matched prefer
 		}		
 		});
 
-$('.kinko-table').find('.trow').sort(function(b, a) {
-    return +$(a).data('rank') - +$(b).data('rank');
-})
-.appendTo('.kinko-table');
-console.log("We did the initial sorted of everything based on rank.");
+CSort();
+
+//$('.kinko-table').find('.trow').sort(function(b, a) {
+//   return +$(a).data('rank') - +$(b).data('rank');
+//})
+//.appendTo('.kinko-table');
+
+
 }
 
-	
+function CSort() {
+  $(".kinko-table .trow").sort(sort_li).appendTo('.kinko-table');
+  function sort_li(a, b) {
+    return ($(b).data('rank')) < ($(a).data('rank')) ? 1 : -1;
+}
+}
+
 $(document).on('change', '.k_select', function() {
   var rank = $('.k_select').find(":selected").val();
 
