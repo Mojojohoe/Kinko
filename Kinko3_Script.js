@@ -824,7 +824,7 @@ $('.kinko-table').find('.trow').sort(function(b, a) {
    
  		$('.trow').each(function(i, obj) {
 		
-		var okink = $(this + '[data-rank="0"'])
+		var okink = $(this + '[data-rank="0"]')
 		$(this).data('rank', 15);
 		
 		
