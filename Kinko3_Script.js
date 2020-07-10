@@ -740,7 +740,7 @@ function comparison(){
 		var c_pref = c_class.replace(/p/, '');
 		
 		if ( $('#kinko-temp > #kp' + num ).length ) {	
-		console.log('#kinko-temp > #kp' + num);		
+		console.log($('.kinko-table > #kp' + num).attr('class'));		
 		var o_class = $('.kinko-table > #kp' + num).attr('class');
 		console.log(o_class);
 		var o_pref = o_class.replace(/p/, '');
