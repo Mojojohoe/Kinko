@@ -718,18 +718,12 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 			
 		if ( $( "#kinko-temp" ).length ) {	
     $( "#kinko-temp").html(localStorage.getItem('Kinko-KCode'));
-	comparison();
 }
 		else{
 	$('.kinko').prepend('<div type="hidden" id="kinko-temp"/></div>');
 	$( "#kinko-temp").html(localStorage.getItem('Kinko-KCode'));
-	comparison();
-}				
-}
-}
 
-function comparison(){
-	
+}	
 if ($(".k_select")[0]){
     
 } else {
@@ -738,7 +732,13 @@ $('.kbut').after('<div class="k_select"><select><option value="1">Matched prefer
 		$(this).attr('data-rank', 0);
 		});
 		console.log("Initial data-rank setting has been called");
+		comparison();
+}			
 }
+}
+
+function comparison()
+	
 	
 		$('#kinko-temp > p').each(function(i, obj) {
 		var c_id = $(this).attr('id');
