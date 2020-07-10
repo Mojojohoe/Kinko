@@ -275,12 +275,12 @@ body::after{
 .kinko-table tbody::-webkit-scrollbar-thumb {
 	background: rgba(94, 89, 95, 0.92);
 }
-.kinko .select {
+.kinko .k_select {
     position: relative;
     display: inline-block;
     margin-bottom: 15px;
     width: 30%;
-}    .select select {
+}    .k_select select {
         display: inline-block;
         width: 100%;
         cursor: pointer;
@@ -294,19 +294,19 @@ body::after{
         -webkit-appearance: none;
         -moz-appearance: none;
     }
-        .select select::-ms-expand {
+        .k_select select::-ms-expand {
             display: none;
         }
-        .select select:hover,
-        .select select:focus {
+        .k_select select:hover,
+        .k_select select:focus {
             color: #fbf9fc;
             background: #746875;
         }
-        .select select:disabled {
+        .k_select select:disabled {
             opacity: 0.5;
             pointer-events: none;
         }
-.kinko .select_arrow {
+.kinko .k_select_arrow {
     position: absolute;
     top: 5px;
     right: 25px;
@@ -319,11 +319,11 @@ body::after{
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
-.kinko .select select:hover ~ .select_arrow,
-.kinko .select select:focus ~ .select_arrow {
+.kinko .k_select select:hover ~ .k_select_arrow,
+.kinko .k_select select:focus ~ .k_select_arrow {
     border-color: #000000;
 }
-.kinko .select select:disabled ~ .select_arrow {
+.kinko .k_select select:disabled ~ .k_select_arrow {
     border-top-color: #cccccc;
 }
 [class^="kp"] img {
