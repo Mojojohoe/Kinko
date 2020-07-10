@@ -411,6 +411,7 @@ a:hover.kinko_ttips span {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #372c3d;
 	outline:none;
+	margin-left:10px;
 }
 .kbut:hover{
 	background:linear-gradient(to bottom, #47354d 5%, #4e3e52 100%);
