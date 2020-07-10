@@ -813,8 +813,6 @@ $('#kinko-temp > p').each(function(i, obj) {
 		var num = c_id.replace(/kp/, '');
 		var c_pref = c_class.replace(/p/, '');
 		
-		if ( $('#kp' + num ).not("#kinko-temp").length ) {	
-		
 		var o_elem = $("#tr" + num + ' > p');
 		console.log(o_elem);
 		var o_class = $(o_elem).attr('class');
@@ -859,8 +857,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		 
 		console.log(c_key);
 		
-		$( "#tr" + num).attr('data-rank', c_key);
-		}	
+		$( "#tr" + num).attr('data-rank', c_key);	
 		});
 }
 
