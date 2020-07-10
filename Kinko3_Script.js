@@ -710,7 +710,7 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 
 });
 
-    function Compare(){
+function Compare(){
 		if (localStorage.getItem("Kinko-KCode") === null) {
 			alert("You don't currenly have a Kinko profile saved on this computer. This may be because you haven't created one yet, or it has been deleted. To create your own click the logo to be taken to the tool.");
 		}
@@ -726,19 +726,18 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 }	
 if ($(".k_select")[0]){
     
-} else {
+}
+else {
 $('.kbut').after('<div class="k_select"><select><option value="1">Matched preferences at the top. Most liked to least liked.</option><option value="2">Matched preferences at the top. Least liked to most liked.</option><option value="3">Matched kinks ranked by compatibility. Most compatible to least.</option><option value="4">Matched kinks ranked by compatibility. Least compatible to most.</option></select><div class="k_select_arrow"></div></div>');
 		$('.trow').each(function(i, obj) {
 		$(this).attr('data-rank', 0);
 		});
-		comparison();
-}			
+}	
+comparison();		
 }
 }
 
-function comparison(){
-	
-	
+function comparison(){	
 $('#kinko-temp > p').each(function(i, obj) {
 		var c_id = $(this).attr('id');
 		var c_class = $(this).attr('class');
@@ -815,10 +814,9 @@ if ( rank == 1 ) {
 $('.trow').each(function(index) { 
     if($(this).attr('data-rank') == '15')
     {
-       $(this).attr('data-rank', '0');
+    $(this).attr('data-rank', '0');
     }
 });  
-
 c_sort_za();
 }
 
@@ -830,7 +828,7 @@ $('.trow').each(function(index) {
        $(this).attr('data-rank', '15');
     }
 });
-c_sort_az()	
+c_sort_az()	;
 }
 
 });
@@ -840,7 +838,7 @@ $('.kinko-table').find('.trow').sort(function(a, b) {
     return +$(a).data('rank') - +$(b).data('rank');
 })
 .appendTo('.kinko-table');
-	
+console.log("Sorted A to Z");	
 }
 function c_sort_za(){
 	
@@ -848,7 +846,7 @@ $('.kinko-table').find('.trow').sort(function(b, a) {
     return +$(a).data('rank') - +$(b).data('rank');
 })
 .appendTo('.kinko-table');
-	
+console.log("Sorted Z to A");
 }
  /**
  * SAVE
