@@ -806,6 +806,56 @@ $('#kinko-temp > p').each(function(i, obj) {
 c_sort_za();
 }
 
+function compatibility(){	
+$('#kinko-temp > p').each(function(i, obj) {
+		var c_id = $(this).attr('id');
+		var c_class = $(this).attr('class');
+		var num = c_id.replace(/kp/, '');
+		var c_pref = c_class.replace(/p/, '');
+		
+		if ( $('#kp' + num ).not("#kinko-temp").length ) {	
+		var o_class = $('#kp' + num ).not("#kinko-temp").attr('class');
+		var o_pref = o_class.replace(/p/, '');
+		
+		var o_key = ({
+        "999" : "14",
+        "200" : "13",
+        "100" : "12",
+        "90"  : "11",
+        "80"  : "10",
+		"70"  : "9",
+		"60"  : "8",
+		"50"  : "7",
+		"40"  : "6",
+		"30"  : "5",
+		"20"  : "4",
+		"10"  : "3",
+		"0"   : "2",
+		"-10" : "1",
+ 		 })[o_pref];
+		
+		var c_key = ({
+        "999" : 14 - o_key,
+        "200" : 13 - o_key,
+        "100" : 12 - o_key,
+        "90"  : 11 - o_key,
+        "80"  : 10 - o_key,
+		"70"  : 9 - o_key,
+		"60"  : 8 - o_key,
+		"50"  : 7 - o_key,
+		"40"  : 6 - o_key,
+		"30"  : 5 - o_key,
+		"20"  : 4 - o_key,
+		"10"  : 3 - o_key,
+		"0"   : 2 - o_key,
+		"-10" : 1 - o_key,
+ 		 })[c_pref];
+		
+		$( "#tr" + num).attr('data-rank', c_key);
+		}	
+		});
+}
+
 $(document).on('change', '.k_select', function() {
   var rank = $('.k_select').find(":selected").val();
 
@@ -828,6 +878,15 @@ $('.trow').each(function(index) {
     }
 });
 c_sort_az();
+}
+
+else if ( rank == 3 ) {	
+compatibility();
+c_sort_az();
+}
+else if ( rank == 4 ) {	
+compatibility();
+c_sort_za();
 }
 
 });
