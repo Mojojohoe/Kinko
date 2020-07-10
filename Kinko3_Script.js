@@ -824,6 +824,7 @@ $('.trow').each(function(index) {
     if($(this).attr('data-rank') == 0)
     {
        $(this).attr('data-rank', 15);
+	   console.log("Making " + this + " 15!");
     }
 });
 c_sort_az();
