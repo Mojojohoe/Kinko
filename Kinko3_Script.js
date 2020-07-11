@@ -750,7 +750,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		
 		var c_pref = c_class.replace(/p/, '');
 		
-		if ( $('#kp' + num ).not("#kinko-temp").length ) {	
+		if ( $('#kp' + num ).length ) {	
 		
 		var c_key = ({
         "999" : 14,
