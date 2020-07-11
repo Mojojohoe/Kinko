@@ -730,7 +730,7 @@ if ($(".k_select")[0]){
 else {
 $('.kbut').after('<div class="k_select"><select><option value="1">Matched preferences at the top. Most liked to least liked.</option><option value="2">Matched preferences at the top. Least liked to most liked.</option><option value="3">Matched kinks ranked by compatibility. Most compatible to least.</option><option value="4">Matched kinks ranked by compatibility. Least compatible to most.</option></select><div class="k_select_arrow"></div></div>');
 		$('.trow').each(function(i, obj) {
-		$(this).attr('data-rank', 0);
+		$(this).attr('data-rank', -15);
 		});
 }	
 comparison();		
@@ -856,7 +856,7 @@ if ( rank == 1 ) {
 $('.trow').each(function(index) { 
     if($(this).attr('data-rank') == 15)
     {
-    $(this).attr('data-rank', 0);
+    $(this).attr('data-rank', -150);
     }
 });  
 c_sort_za();
@@ -864,7 +864,7 @@ c_sort_za();
 
 else if ( rank == 2 ) {	
 $('.trow').each(function(index) { 
-    if($(this).attr('data-rank') == 0)
+    if($(this).attr('data-rank') == -15)
     {
        $(this).attr('data-rank', 15);
     }
@@ -874,7 +874,7 @@ c_sort_az();
 
 else if ( rank == 3 ) {	
 $('.trow').each(function(index) { 
-    if($(this).attr('data-rank') == 0)
+    if($(this).attr('data-rank') == -15)
     {
        $(this).attr('data-rank', 15);
     }
@@ -883,8 +883,14 @@ compatibility();
 c_sort_za();
 }
 else if ( rank == 4 ) {	
+$('.trow').each(function(index) { 
+    if($(this).attr('data-rank') == 15)
+    {
+       $(this).attr('data-rank', -15);
+    }
+});
 compatibility();
-c_sort_za();
+c_sort_az();
 }
 
 });
