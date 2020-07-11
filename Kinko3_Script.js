@@ -740,30 +740,17 @@ comparison();
 function comparison(){	
 $('#kinko-temp > p').each(function(i, obj) {
 		var c_id = $(this).attr('id');
+		
+		var new_id = c_id.replace(/kp/, 'ckp');
+		
+		$(this).attr('id',new_id);
+		
 		var c_class = $(this).attr('class');
 		var num = c_id.replace(/kp/, '');
+		
 		var c_pref = c_class.replace(/p/, '');
 		
 		if ( $('#kp' + num ).not("#kinko-temp").length ) {	
-		var o_class = $('#kp' + num ).not("#kinko-temp").attr('class');
-		var o_pref = o_class.replace(/p/, '');
-		
-		var o_key = ({
-        "999" : "14",
-        "200" : "13",
-        "100" : "12",
-        "90"  : "11",
-        "80"  : "10",
-		"70"  : "9",
-		"60"  : "8",
-		"50"  : "7",
-		"40"  : "6",
-		"30"  : "5",
-		"20"  : "4",
-		"10"  : "3",
-		"0"   : "2",
-		"-10" : "1",
- 		 })[o_pref];
 		
 		var c_key = ({
         "999" : 14,
