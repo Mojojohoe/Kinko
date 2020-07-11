@@ -855,6 +855,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		"-10" : 1,
  		 })[c_pref];
 
+		 console.log("c_key is:" + c_key + " and o_key is" + o_key);
 		 
 		 c_key = c_key - o_key;
 		 
