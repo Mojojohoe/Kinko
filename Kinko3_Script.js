@@ -812,13 +812,10 @@ $('#kinko-temp > p').each(function(i, obj) {
 		var c_class = $(this).attr('class');
 		var num = c_id.replace(/kp/, '');
 		var c_pref = c_class.replace(/p/, '');
-		var o_elem = "#tr" + num;
 		
-		if ($(o_elem).length ) {
-		
-		console.log(o_elem);
-		
-		var o_class = $(o_elem).attr('class');
+		if ($("#tr" + num).length ) {
+	
+		var o_class = $("#tr" + num).attr('class');
 		var o_pref = o_class.replace(/p/, '');
 		
 		var o_key = ({
@@ -861,7 +858,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		 
 
 		
-		$( "#tr" + num).attr('data-rank', c_key);	
+		$( "#tr" + num ).attr('data-rank', c_key);	
 		}
 		});
 }
