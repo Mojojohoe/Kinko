@@ -746,7 +746,7 @@ $('#kinko-temp > p').each(function(i, obj) {
 		$(this).attr('id',new_id);
 		
 		var c_class = $(this).attr('class');
-		var num = c_id.replace(/kp/, '');
+		var num = c_id.replace(/ckp/, '');
 		
 		var c_pref = c_class.replace(/p/, '');
 		
@@ -797,12 +797,12 @@ function compatibility(){
 $('#kinko-temp > p').each(function(i, obj) {
 		var c_id = $(this).attr('id');
 		var c_class = $(this).attr('class');
-		var num = c_id.replace(/kp/, '');
+		var num = c_id.replace(/ckp/, '');
 		var c_pref = c_class.replace(/p/, '');
 		
 		if ($("#tr" + num).length ) {
 	
-		var o_class = $("#tr" + num + " > p").attr('class');
+		var o_class = $("#kp" + num).attr('class');
 		var o_pref = o_class.replace(/p/, '');
 		
 		var o_key = ({
