@@ -812,10 +812,12 @@ $('#kinko-temp > p').each(function(i, obj) {
 		var c_class = $(this).attr('class');
 		var num = c_id.replace(/kp/, '');
 		var c_pref = c_class.replace(/p/, '');
+		var o_elem = "#tr" + num;
 		
-		if ($("#tr" + num + ' > p').length ) {
-		var o_elem = $("#tr" + num + ' > p');
+		if ($(o_elem).length ) {
+		
 		console.log(o_elem);
+		
 		var o_class = $(o_elem).attr('class');
 		var o_pref = o_class.replace(/p/, '');
 		
