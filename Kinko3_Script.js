@@ -740,13 +740,12 @@ comparison();
 function comparison(){	
 $('#kinko-temp > p').each(function(i, obj) {
 		var c_id = $(this).attr('id');
-		
+		var num = c_id.replace(/kp/, '');
 		var new_id = c_id.replace(/kp/, 'ckp');
 		
 		$(this).attr('id',new_id);
 		
 		var c_class = $(this).attr('class');
-		var num = c_id.replace(/ckp/, '');
 		
 		var c_pref = c_class.replace(/p/, '');
 		
