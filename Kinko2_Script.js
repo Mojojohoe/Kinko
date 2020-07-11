@@ -20,7 +20,7 @@ $('.trow').wrapAll('<table class="kinko-table results"><tbody></tbody></table>')
 $('.results').prepend('<thead><tr><th class="kinko-kn"><h2>Kink Name</h2></th><th class="kinko-kd"><h2>Description</h2></th><th class="kinko-kp"><h2>Preference</h2></th></tr><tr class="warning no-kinks"><td colspan="4">No results</td></tr></thead>'); 
 ka++;
 }
-$('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
+//$('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
 
 
 $("#kn2").text("3+ Penetration");$("#kd2").text("The act of penetrating a single character with three or more objects, including but not limited to cocks, sex toys, hands, etc., or receiving such actions.");
