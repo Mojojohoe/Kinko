@@ -20,6 +20,7 @@ $('.trow').wrapAll('<table class="kinko-table results"><tbody></tbody></table>')
 $('.results').prepend('<thead><tr><th class="kinko-kn"><h2>Kink Name</h2></th><th class="kinko-kd"><h2>Description</h2></th><th class="kinko-kp"><h2>Preference</h2></th></tr><tr class="warning no-kinks"><td colspan="4">No results</td></tr></thead>'); 
 ka++;
 }
+$('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
 
 
 $("#kn2").text("3+ Penetration");$("#kd2").text("The act of penetrating a single character with three or more objects, including but not limited to cocks, sex toys, hands, etc., or receiving such actions.");
@@ -81,6 +82,7 @@ $("#kn57").text("Belly Play");$("#kd57").text("Play that revolves around the sto
 $("#kn58").text("Bimbofication");$("#kd58").text("Scenes in which someone is turned into a stereotypical bimbo, often including breast growth, intelligence-reduction, increased sex drive, and more subtle change to features such as hair-color or general appearance.");
 $("#kn59").text("Birthing");$("#kd59").text("Scenes in which someone goes into labor or gives birth; participants may derive sexual gratification from the experience.");
 $("#kn60").text("Biting");$("#kd60").text("The act of biting or being bitten; sometimes painful, sometimes playful.");
+
 $("#kn61").text("Blindfolds");$("#kd61").text("The use of blindfolds or other objects to obscure the vision of at least one character in a sexual context.");
 $("#kn62").text("Bloodplay");$("#kd62").text("Pertains to the inclusion of blood or the retrieval of blood in any form in a sexual context, or engaging in acts which will draw blood.");
 $("#kn63").text("Blueberrification");$("#kd63").text("The process of a character being inflated into a spherical shape by swelling with juice, accompanied by their skin turning into shades of blue (or other fruit hues).");
@@ -708,3 +710,261 @@ else {$('.no-kinks').hide();}
 $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/index"><img id="logo" src="https://mojojohoe.github.io/Kinko/Kinko.png"></a>');
 
 });
+
+function Compare(){
+		if (localStorage.getItem("Kinko-KCode") === null) {
+			alert("You don't currenly have a Kinko profile saved on this computer. This may be because you haven't created one yet, or it has been deleted. To create your own click the logo to be taken to the tool.");
+		}
+		else{
+			
+		if ( $( "#kinko-temp" ).length ) {	
+    $( "#kinko-temp").html(localStorage.getItem('Kinko-KCode'));
+}
+		else{
+	$('.kinko').prepend('<div type="hidden" id="kinko-temp"/></div>');
+	$( "#kinko-temp").html(localStorage.getItem('Kinko-KCode'));
+
+}	
+if ($(".k_select")[0]){
+    
+}
+else {
+$('.kbut').after('<div class="k_select"><select><option value="1">Matched preferences at the top. Most liked to least liked.</option><option value="2">Matched preferences at the top. Least liked to most liked.</option><option value="3">Matched kinks ranked by compatibility. Most compatible to least.</option><option value="4">Matched kinks ranked by compatibility. Least compatible to most.</option></select><div class="k_select_arrow"></div></div>');
+		$('.trow').each(function(i, obj) {
+		$(this).attr('data-rank', -15);
+		});
+}	
+comparison();		
+}
+}
+
+function comparison(){	
+$('#kinko-temp > p').each(function(i, obj) {
+		var c_id = $(this).attr('id');
+		var num = c_id.replace(/kp/, '');
+		var new_id = c_id.replace(/kp/, 'ckp');
+		
+		$(this).attr('id',new_id);
+		
+		var c_class = $(this).attr('class');
+		
+		var c_pref = c_class.replace(/p/, '');
+		
+		if ( $('#kp' + num ).length ) {	
+		
+		var c_key = ({
+        "999" : 14,
+        "200" : 13,
+        "100" : 12,
+        "90"  : 11,
+        "80"  : 10,
+		"70"  : 9,
+		"60"  : 8,
+		"50"  : 7,
+		"40"  : 6,
+		"30"  : 5,
+		"20"  : 4,
+		"10"  : 3,
+		"0"   : 2,
+		"-10" : 1,
+ 		 })[c_pref];
+		 
+		 var c_colour = ({
+        "999" : "rgba(155, 245, 242, 0.3)",
+        "200" : "rgba(178, 155, 245, 0.3)",
+        "100" : "rgba(117, 248, 104, 0.3)",
+        "90"  : "rgba(151, 255, 127, 0.3)",
+        "80"  : "rgba(186, 255, 147, 0.3)",
+		"70"  : "rgba(203, 255, 153, 0.3)",
+		"60"  : "rgba(220, 255, 153, 0.3)",
+		"50"  : "rgba(248, 255, 153, 0.3)",
+		"40"  : "rgba(255, 229, 153, 0.3)",
+		"30"  : "rgba(249, 215, 156, 0.3)",
+		"20"  : "rgba(249, 203, 156, 0.3)",
+		"10"  : "rgba(249, 184, 156, 0.3)",
+		"0"   : "rgba(234, 153, 153, 0.3)",
+		"-10" : "rgba(183, 183, 183, 0.5)",
+ 		 })[c_pref];
+		
+		$( "#tr" + num).attr('data-rank', c_key);
+		$( "#tr" + num).css( "background-color", c_colour );
+		}	
+		});
+c_sort_za();
+}
+
+function compatibility(){	
+$('#kinko-temp > p').each(function(i, obj) {
+		var c_id = $(this).attr('id');
+		var c_class = $(this).attr('class');
+		var num = c_id.replace(/ckp/, '');
+		var c_pref = c_class.replace(/p/, '');
+		
+		if ($("#tr" + num).length ) {
+	
+		var o_class = $("#kp" + num).attr('class');
+		var o_pref = o_class.replace(/p/, '');
+		
+		var o_key = ({
+        "999" : 14,
+        "200" : 13,
+        "100" : 12,
+        "90"  : 11,
+        "80"  : 10,
+		"70"  : 9,
+		"60"  : 8,
+		"50"  : 7,
+		"40"  : 6,
+		"30"  : 5,
+		"20"  : 4,
+		"10"  : 3,
+		"0"   : 2,
+		"-10" : 1,
+ 		 })[o_pref];
+
+		var c_key = ({
+        "999" : 14,
+        "200" : 13,
+        "100" : 12,
+        "90"  : 11,
+        "80"  : 10,
+		"70"  : 9,
+		"60"  : 8,
+		"50"  : 7,
+		"40"  : 6,
+		"30"  : 5,
+		"20"  : 4,
+		"10"  : 3,
+		"0"   : 2,
+		"-10" : 1,
+ 		 })[c_pref];
+		 
+		 c_key = c_key - o_key;
+		 
+		 if(c_key > 0){
+		c_key = c_key * -1;
+		 }
+		
+		$( "#tr" + num ).attr('data-rank', c_key);	
+		}
+		});
+}
+
+$(document).on('change', '.k_select', function() {
+  var rank = $('.k_select').find(":selected").val();
+
+if ( rank == 1 ) {	
+$('.trow').each(function(index) { 
+    if($(this).attr('data-rank') == 15)
+    {
+    $(this).attr('data-rank', -150);
+    }
+});  
+c_sort_za();
+}
+
+else if ( rank == 2 ) {	
+$('.trow').each(function(index) { 
+    if($(this).attr('data-rank') == -15)
+    {
+       $(this).attr('data-rank', 15);
+    }
+});
+c_sort_az();
+}
+
+else if ( rank == 3 ) {	
+$('.trow').each(function(index) { 
+    if($(this).attr('data-rank') == 15)
+    {
+       $(this).attr('data-rank', -15);
+    }
+});
+compatibility();
+c_sort_za();
+}
+else if ( rank == 4 ) {	
+$('.trow').each(function(index) { 
+    if($(this).attr('data-rank') == -15)
+    {
+       $(this).attr('data-rank', 15);
+    }
+});
+compatibility();
+c_sort_az();
+}
+
+});
+function c_sort_az(){
+	
+$('.kinko-table').find('.trow').sort(function(a, b) {
+    return +$(a).data('rank') - +$(b).data('rank');
+})
+.appendTo('.kinko-table tbody');	
+}
+function c_sort_za(){
+	
+$('.kinko-table').find('.trow').sort(function(a, b) {
+    return +$(b).attr("data-rank") - +$(a).attr("data-rank");
+})
+.appendTo('.kinko-table tbody');
+}
+ /**
+ * SAVE
+ * Prompts the user if they wish to overwrite their save.
+
+	
+		
+		
+		$('.kb').each(function(i, obj) {
+			$(this).prop( "checked", false );
+			var no = $(this).attr('id');
+			$("#kb_" + no).attr("style", "");
+		})
+		$('#enabled').empty();
+		
+		$('#load > p').each(function(i, obj) {
+		var current_id = $(this).attr('id');
+		var current_class = $(this).attr('class');
+		var num = current_id.replace(/kp/, '');
+		var class_no = current_class.replace(/p/, '');
+		
+		$( "#" + num ).prop( "checked", true );
+		$( "#" + num  ).trigger( "onclick" );
+		
+		if (class_no >= 0 && class_no <= 100){
+			$("#rsv_" + num).html( class_no + "%");
+			$("#rsv_" + num).css( "background-color", "rgb(102," + class_no * 2.5 + ", 20)" );
+			$("#KI-S_" + num).prop("value", class_no / 10);
+		}
+		else if (class_no == -10){
+		$( "#KI-NA_" + num ).prop( "checked", true );
+		$( "#KI-NA_" + num ).trigger( "onclick" );
+		$( "#rsv_" + num).text( "N/A" );		
+		$( "#rsv_" + num).css( "background-color", "#66717A" );
+		}
+		else if (class_no == 999){
+		$( "#KI-R_" + num ).prop( "checked", true );
+		$( "#KI-R_" + num ).trigger( "onclick" );
+		$( "#rsv_" + num).text( "Required" );		
+		$( "#rsv_" + num).css( "background-color", "#D57A20" );		
+		}
+		else if (class_no == 200){
+		$( "#KI-F_" + num ).prop( "checked", true );
+		$( "#KI-F_" + num ).trigger( "onclick" );
+		$( "#rsv_" + num).text( "200%" );
+		$( "#rsv_" + num).css( "background-color", "#9D97F0" );
+		}
+		else{
+		$("#KI-S_" + num).prop("value", 0);
+		$( "#rsv_" + num).text( "?" );	
+		$( "#rsv_" + num).css( "background-color", "#483749" );
+		}
+		
+		if ($(this).data("info") === 'tt'){
+		var regex_load = "\\\('#ttxt" + num + "'\\\)\\\.html\\\('\(\.\*\?\)'\\\);";
+		var custom_code = $('<div />').html(localStorage.getItem('Kinko-CCode')).text();
+		var comment = custom_code.match(RegExp(regex_load));
+			$('#kpb-C_' + num).val(comment[1]);
+			
+	 */	

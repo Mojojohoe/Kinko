@@ -388,7 +388,7 @@ Click the begin button to start. You can hover over buttons to context informati
 <tr id="kb_13"><th id="kbn_13"><input type='checkbox' class='kb' id="13" onclick='Show(this.id)'>Ageplay</th><th id="kd_13">Refers to scenes that involve one or more significantly underage characters, and putting a significant focus on that age aspect and it's involvement in the roleplay (such as highlighting youthfulness, immaturity, or the taboo nature of one's age). May include sexual interactions, but not necessarily.</th></tr>
 <tr id="kb_14"><th id="kbn_14"><input type='checkbox' class='kb' id="14" onclick='Show(this.id)'>Ahegao</th><th id="kd_14">Commonly referred to as 'fucked silly.' Refers to a character wearing a facial expression that signifies an immense amount of pleasure during sexual intercourse / or sexual arousal.</th></tr>
 <tr id="kb_15"><th id="kbn_15"><input type='checkbox' class='kb' id="15" onclick='Show(this.id)'>All the Way Through</th><th id="kd_15">The act of a character being penetrated by an object (generally in a nonharmful fashion), and having it extend out their other end - typically ass / vagina to mouth, vice versa, or other orifices in a less realistic fashion. May also include fluids being pumped into one end and coming out the other.</th></tr>
-<tr id="kb_16"><th id="kbn_16"><input type='checkbox' class='kb' id="16" onclick='Show(this.id)'>Alternative Alternative Vore</th><th id="kd_16">Vore methods that are considered alterative even within the voraphile community. These methods can include such methods hair, nasal or vore.</th></tr>
+<tr id="kb_16"><th id="kbn_16"><input type='checkbox' class='kb' id="16" onclick='Show(this.id)'>Alternative Alternative Vore</th><th id="kd_16">Vore methods that are considered alterative even within the voraphile community. These can include such methods as hair or nasal vore.</th></tr>
 <tr id="kb_17"><th id="kbn_17"><input type='checkbox' class='kb' id="17" onclick='Show(this.id)'>Alternative Pregnancy</th><th id="kd_17">Pregnancy that takes place in areas of the body other than the womb through vaginal means, such as the breasts, balls, limbs, tail, and so on.</th></tr>
 <tr id="kb_18"><th id="kbn_18"><input type='checkbox' class='kb' id="18" onclick='Show(this.id)'>Alternative Vore</th><th id="kd_18">The act of physically consuming another character, performed through an orifice other than the mouth, penis, vagina or anus, or receiving such actions.</th></tr>
 <tr id="kb_19"><th id="kbn_19"><input type='checkbox' class='kb' id="19" onclick='Show(this.id)'>Amphibians</th><th id="kd_19">Salamanders, Frogs, Toads, Newts, etc.</th></tr>
@@ -542,7 +542,6 @@ Click the begin button to start. You can hover over buttons to context informati
 <tr id="kb_167"><th id="kbn_167"><input type='checkbox' class='kb' id="167" onclick='Show(this.id)'>Emasculation</th><th id="kd_167">The act whereby the genitalia are removed by magical or surgical means, usually the penis and / or the testicles. May also imply humiliation; e.g. to render a male less of a man.</th></tr>
 <tr id="kb_168"><th id="kbn_168"><input type='checkbox' class='kb' id="168" onclick='Show(this.id)'>Endosoma</th><th id="kd_168">Vore that focuses on the ‘safe’ containment within the predator. Does not necessarily mean the prey is willing or comfortable. </th></tr>
 <tr id="kb_169"><th id="kbn_169"><input type='checkbox' class='kb' id="169" onclick='Show(this.id)'>Enemas</th><th id="kd_169">The application of a liquid, typically warm water or a body fluid, to the intestines of a character, often to clean them out, but sometimes as a form of discipline or sexual gratification, or receiving such actions; might imply a form of administration other than phallic penetration.</th></tr>
-
 <tr id="kb_170"><th id="kbn_170"><input type='checkbox' class='kb' id="170" onclick='Show(this.id)'>Equines</th><th id="kd_170">Horses, donkeys, mules, zebra, centauri etc.</th></tr>
 <tr id="kb_171"><th id="kbn_171"><input type='checkbox' class='kb' id="171" onclick='Show(this.id)'>Excessive Precum</th><th id="kd_171">Engaging in an RP in which a character produces a larger than average amount of precum; typically unrealistic.</th></tr>
 <tr id="kb_172"><th id="kbn_172"><input type='checkbox' class='kb' id="172" onclick='Show(this.id)'>Excessive Semen</th><th id="kd_172">Engaging in an RP in which a character produces a larger than average amount of semen; typically unrealistic.</th></tr>
@@ -1023,9 +1022,7 @@ Click the begin button to start. You can hover over buttons to context informati
 </tbody>
 </table>
 </div>
-<!-- <div class="addbox">
-<button onclick='New()' title="Add Custom Kink"><img src="https://mojojohoe.github.io/Kinko/Ico-pos.png"></button>
-</div> -->
+
 <div class="zone">
 <table id="enabled">
 
@@ -1271,11 +1268,12 @@ else {$('.no-kinks').hide();}
  * SLIDERS
  * I make sliders change the value of the tag when you use them.
  */
+ 
 var rangeSlider = function(){
   var slider = $('.rs'),
       range = $('.rs__range'),
       value = $('.rs__value');
-	  
+	   
     
   slider.each(function(){
     range.on('input', function(){
@@ -1283,13 +1281,19 @@ var rangeSlider = function(){
 	  $(this).next(value).css( "background-color", "rgb(102," + this.value * 25 + ", 20)" );
 	     var id = $(this).attr('id');
          var num = id.replace(/KI-S_/, '');
+    });
+
+  });
+  
+  range.on('change', function(){
+	     var id = $(this).attr('id');
+         var num = id.replace(/KI-S_/, '');	  
 $( "#kp" + num ).removeClass( "p0 p10 p20 p30 p40 p50 p60 p70 p80 p90 p100 p200 p-10 p999" ).addClass("p" + this.value * 10);
 Sort();
 $( "#code").text($('#temp').html());
-    });
-  });
+}); 	
+  
 };
-
 rangeSlider();
 </script>
 <script>
@@ -1321,7 +1325,7 @@ if (r == true) {
 var kinkcode = $('#code').text();
 var customcode = $('#bcode').html();
 
-var finalcode = "<div class='kinko'><input type='text' class='search' placeholder='INPUT SEARCH CRITERIA'><div class='pref-container'>" + kinkcode + "</div></div><sc" + "ript src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></sc" + "ript><scr" + "ipt type='text/javascript' src='https://mojojohoe.github.io/Kinko/Kinko2_Script.js'></scr" + "ipt> <scr" + "ipt>$( document ).ready(function() {" + customcode + "});</scr" + "ipt><link rel='stylesheet' type='text/css' href='https://mojojohoe.github.io/Kinko/Kinko_Style2.css'>";
+var finalcode = "<div class='kinko'><input type='text' class='search' placeholder='SEARCH YOUR KINKS'><div class='pref-container'>" + kinkcode + "</div></div><sc" + "ript src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></sc" + "ript><scr" + "ipt type='text/javascript' src='https://mojojohoe.github.io/Kinko/Kinko3_Script.js'></scr" + "ipt> <scr" + "ipt>$( document ).ready(function() {" + customcode + "});</scr" + "ipt><link rel='stylesheet' type='text/css' href='https://mojojohoe.github.io/Kinko/Kinko_Style2.css'>";
 
 localStorage.setItem('Kinko-ACode', finalcode);
 localStorage.setItem('Kinko-KCode', kinkcode);
@@ -1407,10 +1411,10 @@ if (r == true) {
 
 }
 }
-$( "#temp").html($('#load').html());
-$( "#code").text($('#temp').html());
+$("#temp").html($('#load').html());
+$("#code").text($('#temp').html());
 $('#load').empty();
-$( "#bcode").text(localStorage.getItem("Kinko-CCode"));
+$("#bcode").text(localStorage.getItem("Kinko-CCode"));
 };
 
 
@@ -1493,8 +1497,8 @@ function Import() {
 </script>
 <script>
 /**
- * IMPORT
- * Allows the user to input a previous script for loading.
+ * DOWNLOAD
+ * Downloads the Kinko as a html file
  */ 
 function Download() {
 	
@@ -1504,7 +1508,7 @@ let d = new Date();
 var kinkcode = $('#code').text();
 var customcode = $('#bcode').text();
 
-var finalcode = "<div class='kinko'><input type='text' class='search' placeholder='INPUT SEARCH CRITERIA'><div class='pref-container'>" + kinkcode + "</div></div><sc" + "ript src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></sc" + "ript><scr" + "ipt type='text/javascript' src='https://mojojohoe.github.io/Kinko/Kinko2_Script.js'></scr" + "ipt> <scr" + "ipt>$( document ).ready(function() {" + customcode + "});</scr" + "ipt><link rel='stylesheet' type='text/css' href='https://mojojohoe.github.io/Kinko/Kinko_Style2.css'>";
+var finalcode = "<div class='kinko'><input type='text' class='search' placeholder='SEARCH YOUR KINKS'><div class='pref-container'>" + kinkcode + "</div></div><sc" + "ript src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></sc" + "ript><scr" + "ipt type='text/javascript' src='https://mojojohoe.github.io/Kinko/Kinko3_Script.js'></scr" + "ipt> <scr" + "ipt>$( document ).ready(function() {" + customcode + "});</scr" + "ipt><link rel='stylesheet' type='text/css' href='https://mojojohoe.github.io/Kinko/Kinko_Style2.css'>";
 
 download("Kinko" + d + ".html",finalcode);
 
@@ -1574,3 +1578,4 @@ else{
 }
  };
 </script>
+<script>
