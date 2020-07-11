@@ -874,9 +874,9 @@ c_sort_az();
 
 else if ( rank == 3 ) {	
 $('.trow').each(function(index) { 
-    if($(this).attr('data-rank') == -15)
+    if($(this).attr('data-rank') == 15)
     {
-       $(this).attr('data-rank', 15);
+       $(this).attr('data-rank', -15);
     }
 });
 compatibility();
@@ -884,9 +884,9 @@ c_sort_za();
 }
 else if ( rank == 4 ) {	
 $('.trow').each(function(index) { 
-    if($(this).attr('data-rank') == 15)
+    if($(this).attr('data-rank') == -15)
     {
-       $(this).attr('data-rank', -15);
+       $(this).attr('data-rank', 15);
     }
 });
 compatibility();
