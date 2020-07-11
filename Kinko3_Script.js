@@ -837,12 +837,12 @@ $('#kinko-temp > p').each(function(i, obj) {
 		"0"   : 2,
 		"-10" : 1,
  		 })[c_pref];
-
-		 console.log("c_key is:" + c_key + " and o_key is" + o_key);
 		 
 		 c_key = c_key - o_key;
 		 
-
+		 if(c_key > 0){
+		c_key = c_key * -1;
+		 }
 		
 		$( "#tr" + num ).attr('data-rank', c_key);	
 		}
@@ -873,8 +873,14 @@ c_sort_az();
 }
 
 else if ( rank == 3 ) {	
+$('.trow').each(function(index) { 
+    if($(this).attr('data-rank') == 0)
+    {
+       $(this).attr('data-rank', 15);
+    }
+});
 compatibility();
-c_sort_az();
+c_sort_za();
 }
 else if ( rank == 4 ) {	
 compatibility();
