@@ -168,7 +168,7 @@ body::after{
 	width: 100% !important;
 }
 
-.search {
+.search .c_input{
 	margin: 10px;
 	min-width: 200px;
 	width: 30%;
@@ -421,6 +421,52 @@ a:hover.kinko_ttips span {
 .kbut:active{
 	position:relative;
 	top:1px;
+}
+.k_overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.k_overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.k_popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
+  border-radius: 10px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  border: 1px solid #363239;
+}
+.k_popup h2 {
+  margin-top: 0;
+  color: #AA8EB7;
+}
+.k_popup .k_close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #CEBFD4;
+}
+.k_popup .k_close:hover {
+  color: #C4829F;
+}
+.k_popup .k_content {
+  max-height: 30%;
+  overflow: auto;
 }
 @media 
 only screen and (max-width: 1200px) {
