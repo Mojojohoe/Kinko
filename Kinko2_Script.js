@@ -742,7 +742,8 @@ comparison();
 
 } catch (err) {
 
-$( "#k_mes" ).show();
+
+$("#k_mes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
 
 }	
 

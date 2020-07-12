@@ -435,10 +435,6 @@ a:hover.kinko_ttips span {
   opacity: 0;
   z-index:10;
 }
-.k_overlay:target {
-  visibility: visible;
-  opacity: 1;
-}
 .k_popup {
   margin: 70px auto;
   padding: 20px;
