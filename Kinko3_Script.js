@@ -740,7 +740,7 @@ comparison();
 
 } catch (err) {
 
-  var ErrorPrompt = prompt("Please paste your Kinko code in the box below. You can grab it by hitting the 'Copy to Clipboard' button on the tool-page", "Kinko Code Here");
+$( "#k_mes" ).show();
 
 }	
 
