@@ -21,7 +21,7 @@ $('.results').prepend('<thead><tr><th class="kinko-kn"><h2>Kink Name</h2></th><t
 ka++;
 }
 $('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
-$('.search').after("<div id='k_mes' class='k_overlay'><div class='k_popup'><h2>Oh... Hello...</h2><a class='k_close' onclick='exitC()' href='#'>&times;</a></div></div>");
+$('.search').after("<div id='k_mes' class='k_overlay'><div class='k_popup'><h2>Oh... Hello...</h2><a class='k_close' onclick='exitC()' href='#'>&times;</a><div id='k_content'></div></div></div>");
 
 
 
@@ -743,7 +743,7 @@ comparison();
 } catch (err) {
 
 $("#k_mes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-$(".k_content").html("This website is sandboxed (That's a good thing!). It means you will need to paste your Kinko code into the box below. If you <i>have</i> a Kinko code that is... If you click the Kinko logo, you will be taken to the tool.<br>There's a 'Copy Kinko Code to Clipboard' button.<br><input type='text' id='c_input' placeholder='Kinko Code Here :)'><br><button onclick='Compare2()' type='button' class='kbut'>Go!</button>")
+$("#k_content").html("This website is sandboxed (That's a good thing!). It means you will need to paste your Kinko code into the box below. If you <i>have</i> a Kinko code that is... If you click the Kinko logo, you will be taken to the tool.<br>There's a 'Copy Kinko Code to Clipboard' button.<br><input type='text' id='c_input' placeholder='Kinko Code Here :)'><br><button onclick='Compare2()' type='button' class='kbut'>Go!</button>")
 
 }	
 

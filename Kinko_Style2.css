@@ -445,7 +445,7 @@ a:hover.kinko_ttips span {
   border: 1px solid #363239;
   color:#C1D2D5;
 }
-.k_content {
+#k_content {
   margin:auto;
   text-align:center;
   font-size:18px;
