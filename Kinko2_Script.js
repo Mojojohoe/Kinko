@@ -756,6 +756,7 @@ function Compare2(){
 }
 		else{
 	$('.kinko').prepend('<div type="hidden" id="kinko-temp"/></div>');
+	var k_import = $( "#c_input").val();
     $( "#kinko-temp").html(k_import);
 }	
 console.log(k_import);
@@ -938,7 +939,6 @@ $('.kinko-table').find('.trow').sort(function(a, b) {
 })
 .appendTo('.kinko-table tbody');	
 }
-
 function c_sort_za(){
 	
 $('.kinko-table').find('.trow').sort(function(a, b) {
