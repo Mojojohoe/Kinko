@@ -168,7 +168,7 @@ body::after{
 	width: 100% !important;
 }
 
-.search .c_input{
+.search, .c_input{
 	margin: 10px;
 	min-width: 200px;
 	width: 30%;
