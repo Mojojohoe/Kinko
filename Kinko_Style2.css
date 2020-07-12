@@ -448,6 +448,10 @@ a:hover.kinko_ttips span {
   transition: all 5s ease-in-out;
   border: 1px solid #363239;
 }
+.k_content {
+  margin:auto;
+  text-align:center;
+}
 .k_popup h2 {
   margin-top: 0;
   color: #AA8EB7;
