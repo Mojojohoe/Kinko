@@ -749,14 +749,6 @@ $("#k_content").html("This website is sandboxed (That's a good thing!). It means
 
 }
 function Compare2(){
-
-
-if (localStorage.getItem("Kinko-KCode") === null) {
-$("#k_mes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-$(".k_content").html("You don't have a set of Kinko preferences saved. In order to create your own, click the Kinko logo to get taken to the tool.")
-		}
-		else{
-			
 		if ( $( "#kinko-temp" ).length ) {	
 		var k_import = $( "#k_input").val();
     $( "#kinko-temp").html(k_import);
@@ -776,7 +768,6 @@ $('.kbut').after('<div class="k_select"><select><option value="1">Matched prefer
 		});
 }	
 comparison();		
-}
 }
 function exitC(){
 $("#k_mes").css({opacity: 0, visibility: "hidden"});	
