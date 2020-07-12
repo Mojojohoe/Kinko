@@ -180,7 +180,7 @@ button{
 	outline:none;
 }
 .saveload{
-	transform: translate(+50%, +50%);
+	transform: translate(+40%, +40%);
 }
 button img{
 	width:50px;
@@ -190,11 +190,11 @@ button img:hover{
 }
 .header{
 	height:100px;
+	padding:10px;
+	margin:5px;
 	align-content:center;
 	vertical-align:central;
 	display: inline-block;
-	margin: auto;
-	padding-top:1px;
 }
 .addbox{
 	overflow-x:hidden;
@@ -239,8 +239,8 @@ button img:hover{
 }
 .tool{
 	display:none;
-		-webkit-animation: slide-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 .beginbutton {
 background: #3C3854;
@@ -281,26 +281,31 @@ background-image: linear-gradient(to bottom, #49417C, #3C3854);
 border-radius: 20px;
 text-decoration: none;
 }
-@-webkit-keyframes slide-top {
+@-webkit-keyframes slide-in-left {
   0% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
   }
 }
-@keyframes slide-top {
+@keyframes slide-in-left {
   0% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
   }
 }
+
 @-webkit-keyframes scale-out-ver-top {
   0% {
     -webkit-transform: scaleY(1);
@@ -336,10 +341,148 @@ text-decoration: none;
 .disabled{
 	opacity:0.3;
 }
-
+ .saveload {
+	 position: relative;
+	 display: inline-block;
+	 cursor: pointer;
+	 font-size: 52px;
+	 transition: all 0.4s ease-in;
+}
+ .saveload:before {
+	 content: '';
+	 background-color: aliceblue;
+	 border-radius: 50%;
+	 display: block;
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+	 transform: scale(0.001,0.001);
+}
+ .saveload:focus {
+	 outline: 0;
+	 color: #fff;
+}
+ .saveload:focus:before {
+	 animation: effect_dylan 0.8s ease-out;
+}
+ @keyframes effect_dylan {
+	 50% {
+		 transform: scale(1.5,1.5);
+		 opacity: 0;
+	}
+	 99% {
+		 transform: scale(0.001,0.001);
+		 opacity: 0;
+	}
+	 100% {
+		 transform: scale(0.001,0.001);
+		 opacity: 1;
+	}
+}
+ .kbut, .kbut2{
+	box-shadow:inset 0px 0px 15px 3px #593961;
+	background:linear-gradient(to bottom, #4e3e52 5%, #47354d 100%);
+	background-color:#4e3e52;
+	border-radius:17px;
+	border:1px solid #3f3442;
+	display:inline-block;
+	cursor:pointer;
+	color:#b1a2cf;
+	font-size: 19px;
+	padding: 5px 15px 5px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #372c3d;
+	outline:none;
+	margin-right:10px;
+	min-width:100px;
+}
+.kbut:hover{
+	background:linear-gradient(to bottom, #47354d 5%, #4e3e52 100%);
+	background-color:#47354d;
+}
+.kbut:active{
+	position:relative;
+	top:1px;
+}
+.k_overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index:10;
+}
+.k_popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: linear-gradient(rgba(133, 126, 135, 0.05), rgba(133, 126, 135, 0.05)), url(https://mojojohoe.github.io/Kinko/Carbon.png);
+  border-radius: 10px;
+  width: 30%;
+  position: relative;
+  border: 1px solid #363239;
+  color:#C1D2D5;
+}
+#k_content {
+  margin:auto;
+  text-align:center;
+  font-size:18px;
+}
+.k_popup h2 {
+  margin-top: 0;
+  color: #AA8EB7;
+}
+.k_popup .k_close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #CEBFD4;
+}
+.k_popup .k_close:hover {
+  color: #C4829F;
+}
+.k_popup .k_content {
+  max-height: 30%;
+  overflow: auto;
+}
+.search, #c_input{
+	margin: 10px;
+	min-width: 300px;
+	width: 30%;
+     padding: 5px 15px 5px 15px;
+     font-size: 19px;
+     border-width: 1px;
+     border-color: rgba(118,107,126,0.69);
+     background-color: #655368;
+     color: #e9f1f3;
+     border-style: solid;
+     border-radius: 35px;
+     box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+     text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+.brand{
+	display:inline-block;
+}
+.brand::after{
+	content:"V2.2.1";
+	color:#D1E6E7;
+	font-size:12px;
+	position:relative;
+	top:0;
+	left:0;	
+}
 </style>
 <div class="intro">
-<img id="big" align="middle" src="https://mojojohoe.github.io/Kinko/Kinko.png">V2.2.1
+<img id="big" align="middle" src="https://mojojohoe.github.io/Kinko/Kinko.png">
 <div class="intro-text">
 Hello.<br>
 Welcome to Kinko.<br>
@@ -350,22 +493,23 @@ In the future, Kinko might expand into something more. With ways of comparing ki
 Click the begin button to start. You can hover over buttons to context information, and press the ? button to open the tutorial page if you're stuck. <br><br>
 <button onclick='Begin()' class="beginbutton">Begin</button>
 </div>
-
 </div>
+<div id='k_mes' class='k_overlay'><div class='k_popup'><h2 id="k_title"></h2><a class='k_close' onclick='exitC()' href='#'>&times;</a><div id='k_content'></div></div></div>
 <div class="tool">
 <a href="https://ko-fi.com/mojojohoe" target="_blank" title="Buy me a Coffee <3" class="kofi"><img height="100px" src="https://mojojohoe.github.io/Kinko/Mug-02-Full2.gif"></a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
 
 <div class="header">
-<img id="logo" align="middle" src="https://mojojohoe.github.io/Kinko/Kinko.png">
+<div class="brand"><img id="logo" align="middle" src="https://mojojohoe.github.io/Kinko/Kinko.png"></div>
 <input type='text' class='search' placeholder='INPUT SEARCH CRITERIA'>
 <button onclick='Save()' title="Save" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-save.png"></button>
 <button onclick='Load()' title="Load" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-load.png"></button>
-<button  title="Import" class="saveload disabled"><img src="https://mojojohoe.github.io/Kinko/Ico-import.png"></button>
+<button  onclick='Import()' title="Import" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-import.png"></button>
 <button onclick='Download()' title="Download" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-down.png"></button>
 <a href="https://mojojohoe.github.io/Kinko/help" target="_blank" class="help"><button title="Tutorial" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-help.png"></button></a>
 <button onclick='Erase()' title="New" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-new.png"></button>
+<button onclick='Copy()' title="Copy Code to Clipboard" class="saveload"><img src="https://mojojohoe.github.io/Kinko/Ico-copy.png"></button>
 </div>
 
 <div class="zone">
@@ -1022,7 +1166,6 @@ Click the begin button to start. You can hover over buttons to context informati
 </tbody>
 </table>
 </div>
-
 <div class="zone">
 <table id="enabled">
 
@@ -1166,6 +1309,7 @@ $( "#code").text($('#temp').html());
 }
 
 };
+
 
 
 
@@ -1325,7 +1469,7 @@ if (r == true) {
 var kinkcode = $('#code').text();
 var customcode = $('#bcode').html();
 
-var finalcode = "<div class='kinko'><input type='text' class='search' placeholder='SEARCH YOUR KINKS'><div class='pref-container'>" + kinkcode + "</div></div><sc" + "ript src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></sc" + "ript><scr" + "ipt type='text/javascript' src='https://mojojohoe.github.io/Kinko/Kinko3_Script.js'></scr" + "ipt> <scr" + "ipt>$( document ).ready(function() {" + customcode + "});</scr" + "ipt><link rel='stylesheet' type='text/css' href='https://mojojohoe.github.io/Kinko/Kinko_Style2.css'>";
+var finalcode = GetCode();
 
 localStorage.setItem('Kinko-ACode', finalcode);
 localStorage.setItem('Kinko-KCode', kinkcode);
@@ -1492,7 +1636,85 @@ $( "#bcode").append(localStorage.getItem("Kinko-CCode"));
  * Allows the user to input a previous script for loading.
  */ 
 function Import() {
- var text = prompt("Import", "Paste the code from a previous download or export here:");
+$("#k_mes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+$("#k_content").html("Paste your Kinko code in the box below and we will import those preferences. If they’re the kinks you wanted to keep, make sure to save! <br>If you don’t know how to get your previous Kinko code, you will need to open up the previous HTML file you downloaded in a text editor, copy it all, and then paste it below.<br><input type='text' id='c_input' placeholder='Kinko Code Here :)'><br><button onclick='Import2()' type='button' class='kbut2'>Go!</button>")
+};
+function Import2() {
+exitC();
+		var k_import = $( "#c_input").val();
+		
+		var k_import = k_import.replace(/\<script src\='https\:\/\/ajax\.googleapis\.com\/ajax\/libs\/jquery\/3\.1\.0\/jquery\.min\.js'\>\<\/script\>\<script type\='text\/javascript' src\='https\:\/\/mojojohoe\.github\.io\/Kinko\/Kinko3_Script\.js'\>\<\/script\>/, '');
+		
+		var k_import = k_import.replace(/\<script\>\$\( document \)\.ready\(function\(\) \{/, '');
+		
+		var k_import = k_import.replace(/\}\);\<\/script\>\<link rel\='stylesheet' type\='text\/css' href\='https\:\/\/mojojohoe\.github\.io\/Kinko\/Kinko_Style2\.css'\>/, '');
+		
+		var k_import = k_import.replace(/\<div class\='kinko'\>\<input type\='text' class\='search' placeholder\='SEARCH YOUR KINKS'\>\<div class\='pref\-container'\>/, '');
+		
+		var k_import = k_import.replace(/\<\/div\>\<\/div\>/, '');
+		
+		
+		$( "#load").html(k_import);
+		
+		$("#bcode").text($("#load").html());
+		
+		$('.kb').each(function(i, obj) {
+			$(this).prop( "checked", false );
+			var no = $(this).attr('id');
+			$("#kb_" + no).attr("style", "");
+		})
+		$('#enabled').empty();
+		
+		$('#load > p').each(function(i, obj) {
+		var current_id = $(this).attr('id');
+		var current_class = $(this).attr('class');
+		var num = current_id.replace(/kp/, '');
+		var class_no = current_class.replace(/p/, '');
+		
+		$( "#" + num ).prop( "checked", true );
+		$( "#" + num  ).trigger( "onclick" );
+		
+		if (class_no >= 0 && class_no <= 100){
+			$("#rsv_" + num).html( class_no + "%");
+			$("#rsv_" + num).css( "background-color", "rgb(102," + class_no * 2.5 + ", 20)" );
+			$("#KI-S_" + num).prop("value", class_no / 10);
+		}
+		else if (class_no == -10){
+		$( "#KI-NA_" + num ).prop( "checked", true );
+		$( "#KI-NA_" + num ).trigger( "onclick" );
+		$( "#rsv_" + num).text( "N/A" );		
+		$( "#rsv_" + num).css( "background-color", "#66717A" );
+		}
+		else if (class_no == 999){
+		$( "#KI-R_" + num ).prop( "checked", true );
+		$( "#KI-R_" + num ).trigger( "onclick" );
+		$( "#rsv_" + num).text( "Required" );		
+		$( "#rsv_" + num).css( "background-color", "#D57A20" );		
+		}
+		else if (class_no == 200){
+		$( "#KI-F_" + num ).prop( "checked", true );
+		$( "#KI-F_" + num ).trigger( "onclick" );
+		$( "#rsv_" + num).text( "200%" );
+		$( "#rsv_" + num).css( "background-color", "#9D97F0" );
+		}
+		else{
+		$("#KI-S_" + num).prop("value", 0);
+		$( "#rsv_" + num).text( "?" );	
+		$( "#rsv_" + num).css( "background-color", "#483749" );
+		}
+		
+		if ($(this).data("info") === 'tt'){
+		var regex_load = "\\\('#ttxt" + num + "'\\\)\\\.html\\\('\(\.\*\?\)'\\\);";
+		
+		var bcode_content = $("#bcode").text();
+		var custom_code = $('<div />').html(bcode_content).text();
+		var comment = custom_code.match(RegExp(regex_load));
+			$('#kpb-C_' + num).val(comment[1]);
+		}		
+
+	});
+$("#code").text($('#temp').html());
+$('#load').empty();
 };
 </script>
 <script>
@@ -1505,10 +1727,7 @@ function Download() {
 
 let d = new Date();
 
-var kinkcode = $('#code').text();
-var customcode = $('#bcode').text();
-
-var finalcode = "<div class='kinko'><input type='text' class='search' placeholder='SEARCH YOUR KINKS'><div class='pref-container'>" + kinkcode + "</div></div><sc" + "ript src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></sc" + "ript><scr" + "ipt type='text/javascript' src='https://mojojohoe.github.io/Kinko/Kinko3_Script.js'></scr" + "ipt> <scr" + "ipt>$( document ).ready(function() {" + customcode + "});</scr" + "ipt><link rel='stylesheet' type='text/css' href='https://mojojohoe.github.io/Kinko/Kinko_Style2.css'>";
+var finalcode = GetCode();
 
 download("Kinko" + d + ".html",finalcode);
 
@@ -1569,7 +1788,6 @@ if (r == true) {
 		$('#code').empty();
 		$('#bcode').empty();
 		localStorage.clear();
-
 }
 else{
 }
@@ -1579,3 +1797,27 @@ else{
  };
 </script>
 <script>
+function GetCode() {
+var kinkcode = $('#code').text();
+var customcode = $('#bcode').text();	
+return "<div class='kinko'><input type='text' class='search' placeholder='SEARCH YOUR KINKS'><div class='pref-container'>" + kinkcode + "</div></div><sc" + "ript src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></sc" + "ript><scr" + "ipt type='text/javascript' src='https://mojojohoe.github.io/Kinko/Kinko3_Script.js'></scr" + "ipt> <scr" + "ipt>$( document ).ready(function() {" + customcode + "});</scr" + "ipt><link rel='stylesheet' type='text/css' href='https://mojojohoe.github.io/Kinko/Kinko_Style2.css'>";
+}
+</script>
+<script>
+function Copy() {
+$(".saveload").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', 
+    function() {
+var k_copy = GetCode();
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val(k_copy).select();
+  document.execCommand("copy");
+  $temp.remove();
+   }); 
+}
+</script>
+<script>
+function exitC(){
+$("#k_mes").css({opacity: 0, visibility: "hidden"});	
+}
+</script>
