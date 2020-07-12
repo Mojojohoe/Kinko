@@ -21,6 +21,8 @@ $('.results').prepend('<thead><tr><th class="kinko-kn"><h2>Kink Name</h2></th><t
 ka++;
 }
 $('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
+$('.search').after("<div id='k_mes' class='k_overlay'><div class='k_popup'><h2>Oh... Hello...</h2><a class='k_close' href='#'>&times;</a><div class='k_content'>This website is sandboxed (That's a good thing!). It means you will need to paste your Kinko code into the box below. If you <i>have</i> a Kinko code that is... If you click the Kinko logo, you will be taken to the tool.<br>There's a 'Copy Kinko Code to Clipboard' button.<input type='text' class='c_input' placeholder='Kinko Code Here :)'><br><button onclick='Compare2()' type='button' class='kbut'>Go!</button></div></div></div>");
+
 
 
 $("#kn2").text("3+ Penetration");$("#kd2").text("The act of penetrating a single character with three or more objects, including but not limited to cocks, sex toys, hands, etc., or receiving such actions.");
