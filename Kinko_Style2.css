@@ -445,7 +445,6 @@ a:hover.kinko_ttips span {
   border-radius: 10px;
   width: 30%;
   position: relative;
-  transition: all 5s ease-in-out;
   border: 1px solid #363239;
 }
 .k_content {
