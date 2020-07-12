@@ -750,6 +750,7 @@ $("#k_content").html("This website is sandboxed (That's a good thing!). It means
 }
 function Compare2(){
 	exitC();
+var k_import = $( "#c_input").val();	
 		if ( $( "#kinko-temp" ).length ) {	   
 }
 		else{
@@ -765,7 +766,7 @@ function Compare2(){
 		
 		var k_import = k_import.replace(/\<\/div\>\<\/div\>/, '');
 		
-var k_import = $( "#c_input").val();
+
 $( "#kinko-temp").html(k_import);	
 console.log(k_import);
 if ($(".k_select")[0]){
