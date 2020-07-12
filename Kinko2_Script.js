@@ -757,8 +757,8 @@ function Compare2(){
 		else{
 	$('.kinko').prepend('<div type="hidden" id="kinko-temp"/></div>');
     $( "#kinko-temp").html(k_import);
-
 }	
+console.log(k_import);
 if ($(".k_select")[0]){
     
 }
@@ -770,6 +770,7 @@ $(this).attr('data-rank', -15);
 }	
 comparison();		
 }
+
 function exitC(){
 $("#k_mes").css({opacity: 0, visibility: "hidden"});	
 }
@@ -937,6 +938,7 @@ $('.kinko-table').find('.trow').sort(function(a, b) {
 })
 .appendTo('.kinko-table tbody');	
 }
+
 function c_sort_za(){
 	
 $('.kinko-table').find('.trow').sort(function(a, b) {
