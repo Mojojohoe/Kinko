@@ -20,7 +20,9 @@ $('.trow').wrapAll('<table class="kinko-table results"><tbody></tbody></table>')
 $('.results').prepend('<thead><tr><th class="kinko-kn"><h2>Kink Name</h2></th><th class="kinko-kd"><h2>Description</h2></th><th class="kinko-kp"><h2>Preference</h2></th></tr><tr class="warning no-kinks"><td colspan="4">No results</td></tr></thead>'); 
 ka++;
 }
-//$('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
+$('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
+$('.search').after("<div id='k_mes' class='k_overlay'><div class='k_popup'><h2>Oh... Hello...</h2><a class='k_close' onclick='exitC()' href='#'>&times;</a></div></div>");
+
 
 
 $("#kn2").text("3+ Penetration");$("#kd2").text("The act of penetrating a single character with three or more objects, including but not limited to cocks, sex toys, hands, etc., or receiving such actions.");
@@ -82,7 +84,6 @@ $("#kn57").text("Belly Play");$("#kd57").text("Play that revolves around the sto
 $("#kn58").text("Bimbofication");$("#kd58").text("Scenes in which someone is turned into a stereotypical bimbo, often including breast growth, intelligence-reduction, increased sex drive, and more subtle change to features such as hair-color or general appearance.");
 $("#kn59").text("Birthing");$("#kd59").text("Scenes in which someone goes into labor or gives birth; participants may derive sexual gratification from the experience.");
 $("#kn60").text("Biting");$("#kd60").text("The act of biting or being bitten; sometimes painful, sometimes playful.");
-
 $("#kn61").text("Blindfolds");$("#kd61").text("The use of blindfolds or other objects to obscure the vision of at least one character in a sexual context.");
 $("#kn62").text("Bloodplay");$("#kd62").text("Pertains to the inclusion of blood or the retrieval of blood in any form in a sexual context, or engaging in acts which will draw blood.");
 $("#kn63").text("Blueberrification");$("#kd63").text("The process of a character being inflated into a spherical shape by swelling with juice, accompanied by their skin turning into shades of blue (or other fruit hues).");
@@ -712,7 +713,9 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 });
 
 function Compare(){
-		if (localStorage.getItem("Kinko-KCode") === null) {
+try {
+
+	if (localStorage.getItem("Kinko-KCode") === null) {
 			alert("You don't currenly have a Kinko profile saved on this computer. This may be because you haven't created one yet, or it has been deleted. To create your own click the logo to be taken to the tool.");
 		}
 		else{
@@ -736,8 +739,48 @@ $('.kbut').after('<div class="k_select"><select><option value="1">Matched prefer
 }	
 comparison();		
 }
-}
 
+} catch (err) {
+
+$("#k_mes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+$(".k_content").html("This website is sandboxed (That's a good thing!). It means you will need to paste your Kinko code into the box below. If you <i>have</i> a Kinko code that is... If you click the Kinko logo, you will be taken to the tool.<br>There's a 'Copy Kinko Code to Clipboard' button.<br><input type='text' id='c_input' placeholder='Kinko Code Here :)'><br><button onclick='Compare2()' type='button' class='kbut'>Go!</button>")
+
+}	
+
+}
+function Compare2(){
+
+
+if (localStorage.getItem("Kinko-KCode") === null) {
+$("#k_mes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+$(".k_content").html("You don't have a set of Kinko preferences saved. In order to create your own, click the Kinko logo to get taken to the tool.")
+		}
+		else{
+			
+		if ( $( "#kinko-temp" ).length ) {	
+		var k_import = $( "#k_input").val();
+    $( "#kinko-temp").html(localStorage.getItem(k_import));
+}
+		else{
+	$('.kinko').prepend('<div type="hidden" id="kinko-temp"/></div>');
+    $( "#kinko-temp").html(localStorage.getItem(k_import));
+
+}	
+if ($(".k_select")[0]){
+    
+}
+else {
+$('.kbut').after('<div class="k_select"><select><option value="1">Matched preferences at the top. Most liked to least liked.</option><option value="2">Matched preferences at the top. Least liked to most liked.</option><option value="3">Matched kinks ranked by compatibility. Most compatible to least.</option><option value="4">Matched kinks ranked by compatibility. Least compatible to most.</option></select><div class="k_select_arrow"></div></div>');
+		$('.trow').each(function(i, obj) {
+		$(this).attr('data-rank', -15);
+		});
+}	
+comparison();		
+}
+}
+function exitC(){
+$("#k_mes").css({opacity: 0, visibility: "hidden"});	
+}
 function comparison(){	
 $('#kinko-temp > p').each(function(i, obj) {
 		var c_id = $(this).attr('id');

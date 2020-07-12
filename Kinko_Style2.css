@@ -168,7 +168,7 @@ body::after{
 	width: 100% !important;
 }
 
-.search, .c_input{
+.search, .#c_input{
 	margin: 10px;
 	min-width: 200px;
 	width: 30%;
@@ -448,6 +448,7 @@ a:hover.kinko_ttips span {
 .k_content {
   margin:auto;
   text-align:center;
+  font-size:18px;
 }
 .k_popup h2 {
   margin-top: 0;
