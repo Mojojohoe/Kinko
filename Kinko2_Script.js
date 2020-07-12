@@ -758,7 +758,19 @@ function Compare2(){
 	$('.kinko').prepend('<div type="hidden" id="kinko-temp"/></div>');
 	var k_import = $( "#c_input").val();
     $( "#kinko-temp").html(k_import);
-}	
+}
+		var k_import = k_import.replace(/\<script src\='https\:\/\/ajax\.googleapis\.com\/ajax\/libs\/jquery\/3\.1\.0\/jquery\.min\.js'\>\<\/script\>\<script type\='text\/javascript' src\='https\:\/\/mojojohoe\.github\.io\/Kinko\/Kinko3_Script\.js'\>\<\/script\>/, '');
+		
+		var k_import = k_import.replace(/\<script\>\$\( document \)\.ready\(function\(\) \{/, '');
+		
+		var k_import = k_import.replace(/\}\);\<\/script\>\<link rel\='stylesheet' type\='text\/css' href\='https\:\/\/mojojohoe\.github\.io\/Kinko\/Kinko_Style2\.css'\>/, '');
+		
+		var k_import = k_import.replace(/\<div class\='kinko'\>\<input type\='text' class\='search' placeholder\='SEARCH YOUR KINKS'\>\<div class\='pref\-container'\>/, '');
+		
+		var k_import = k_import.replace(/\<\/div\>\<\/div\>/, '');
+		
+
+	
 console.log(k_import);
 if ($(".k_select")[0]){
     
