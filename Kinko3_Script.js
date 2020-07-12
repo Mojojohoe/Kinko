@@ -751,7 +751,7 @@ $("#k_content").html("This website is sandboxed (That's a good thing!). It means
 function Compare2(){
 	exitC();
 		if ( $( "#kinko-temp" ).length ) {	
-		var k_import = $( "#k_input").val();
+		var k_import = $( "#c_input").val();
     $( "#kinko-temp").html(k_import);
 }
 		else{

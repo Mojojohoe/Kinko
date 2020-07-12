@@ -129,7 +129,7 @@ body::after{
 	outline-offset: -5px;
 }
 
-.scroll {
+.kinko .scroll {
 	width: 20px;
 	height: 200px;
 	overflow: auto;
