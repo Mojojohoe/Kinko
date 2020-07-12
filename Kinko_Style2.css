@@ -297,6 +297,7 @@ body::after{
         -webkit-appearance: none;
         -moz-appearance: none;
 		font-size: 19px;
+		min-width:600px;
     }
         .k_select select::-ms-expand {
             display: none;
