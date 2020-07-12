@@ -750,14 +750,10 @@ $("#k_content").html("This website is sandboxed (That's a good thing!). It means
 }
 function Compare2(){
 	exitC();
-		if ( $( "#kinko-temp" ).length ) {	
-		var k_import = $( "#c_input").val();
-    $( "#kinko-temp").html(k_import);
+		if ( $( "#kinko-temp" ).length ) {	   
 }
 		else{
-	$('.kinko').prepend('<div type="hidden" id="kinko-temp"/></div>');
-	var k_import = $( "#c_input").val();
-    $( "#kinko-temp").html(k_import);
+	$('.kinko').prepend('<div type="hidden" id="kinko-temp"/></div>');   
 }
 		var k_import = k_import.replace(/\<script src\='https\:\/\/ajax\.googleapis\.com\/ajax\/libs\/jquery\/3\.1\.0\/jquery\.min\.js'\>\<\/script\>\<script type\='text\/javascript' src\='https\:\/\/mojojohoe\.github\.io\/Kinko\/Kinko3_Script\.js'\>\<\/script\>/, '');
 		
@@ -769,8 +765,8 @@ function Compare2(){
 		
 		var k_import = k_import.replace(/\<\/div\>\<\/div\>/, '');
 		
-
-	
+var k_import = $( "#c_input").val();
+$( "#kinko-temp").html(k_import);	
 console.log(k_import);
 if ($(".k_select")[0]){
     
