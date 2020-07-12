@@ -715,10 +715,6 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 function Compare(){
 try {
 
-	if (localStorage.getItem("Kinko-KCode") === null) {
-			alert("You don't currenly have a Kinko profile saved on this computer. This may be because you haven't created one yet, or it has been deleted. To create your own click the logo to be taken to the tool.");
-		}
-		else{
 			
 		if ( $( "#kinko-temp" ).length ) {	
     $( "#kinko-temp").html(localStorage.getItem('Kinko-KCode'));
@@ -738,8 +734,6 @@ $('.kbut').after('<div class="k_select"><select><option value="1">Matched prefer
 		});
 }	
 comparison();		
-}
-
 } catch (err) {
 
 $("#k_mes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
