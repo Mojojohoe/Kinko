@@ -398,7 +398,7 @@ a:hover.kinko_ttips span {
 	display:none;
 }
 
-.kbut{
+.kbut, .kbut2{
 	box-shadow:inset 0px 0px 15px 3px #593961;
 	background:linear-gradient(to bottom, #4e3e52 5%, #47354d 100%);
 	background-color:#4e3e52;
