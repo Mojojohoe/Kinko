@@ -20,9 +20,7 @@ $('.trow').wrapAll('<table class="kinko-table results"><tbody></tbody></table>')
 $('.results').prepend('<thead><tr><th class="kinko-kn"><h2>Kink Name</h2></th><th class="kinko-kd"><h2>Description</h2></th><th class="kinko-kp"><h2>Preference</h2></th></tr><tr class="warning no-kinks"><td colspan="4">No results</td></tr></thead>'); 
 ka++;
 }
-$('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
-$('.search').after("<div id='k_mes' class='k_overlay'><div class='k_popup'><h2>Oh... Hello...</h2><a class='k_close' href='#'>&times;</a><div class='k_content'>This website is sandboxed (That's a good thing!). It means you will need to paste your Kinko code into the box below. If you <i>have</i> a Kinko code that is... If you click the Kinko logo, you will be taken to the tool.<br>There's a 'Copy Kinko Code to Clipboard' button.<input type='text' class='c_input' placeholder='Kinko Code Here :)'><br><button onclick='Compare2()' type='button' class='kbut'>Go!</button></div></div></div>");
-
+//$('.search').after('<button onclick="Compare()" type="button" class="kbut">Compare</button>');
 
 
 $("#kn2").text("3+ Penetration");$("#kd2").text("The act of penetrating a single character with three or more objects, including but not limited to cocks, sex toys, hands, etc., or receiving such actions.");
@@ -84,6 +82,7 @@ $("#kn57").text("Belly Play");$("#kd57").text("Play that revolves around the sto
 $("#kn58").text("Bimbofication");$("#kd58").text("Scenes in which someone is turned into a stereotypical bimbo, often including breast growth, intelligence-reduction, increased sex drive, and more subtle change to features such as hair-color or general appearance.");
 $("#kn59").text("Birthing");$("#kd59").text("Scenes in which someone goes into labor or gives birth; participants may derive sexual gratification from the experience.");
 $("#kn60").text("Biting");$("#kd60").text("The act of biting or being bitten; sometimes painful, sometimes playful.");
+
 $("#kn61").text("Blindfolds");$("#kd61").text("The use of blindfolds or other objects to obscure the vision of at least one character in a sexual context.");
 $("#kn62").text("Bloodplay");$("#kd62").text("Pertains to the inclusion of blood or the retrieval of blood in any form in a sexual context, or engaging in acts which will draw blood.");
 $("#kn63").text("Blueberrification");$("#kd63").text("The process of a character being inflated into a spherical shape by swelling with juice, accompanied by their skin turning into shades of blue (or other fruit hues).");
@@ -713,9 +712,7 @@ $('.kinko input:first-child').after('<a href="https://mojojohoe.github.io/Kinko/
 });
 
 function Compare(){
-try {
-
-	if (localStorage.getItem("Kinko-KCode") === null) {
+		if (localStorage.getItem("Kinko-KCode") === null) {
 			alert("You don't currenly have a Kinko profile saved on this computer. This may be because you haven't created one yet, or it has been deleted. To create your own click the logo to be taken to the tool.");
 		}
 		else{
@@ -739,14 +736,6 @@ $('.kbut').after('<div class="k_select"><select><option value="1">Matched prefer
 }	
 comparison();		
 }
-
-} catch (err) {
-
-
-$("#k_mes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-
-}	
-
 }
 
 function comparison(){	
