@@ -759,11 +759,11 @@ $(".k_content").html("You don't have a set of Kinko preferences saved. In order 
 			
 		if ( $( "#kinko-temp" ).length ) {	
 		var k_import = $( "#k_input").val();
-    $( "#kinko-temp").html(localStorage.getItem(k_import));
+    $( "#kinko-temp").html(k_import);
 }
 		else{
 	$('.kinko').prepend('<div type="hidden" id="kinko-temp"/></div>');
-    $( "#kinko-temp").html(localStorage.getItem(k_import));
+    $( "#kinko-temp").html(k_import);
 
 }	
 if ($(".k_select")[0]){
