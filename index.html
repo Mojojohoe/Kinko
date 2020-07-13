@@ -1197,7 +1197,7 @@ function Show(x) {
 if ($('input#' + x).is(':checked')) {
 	$(z).css("background-color","#8AC863");
 	$(z).css("color","#302F32");
-	$( "#enabled").prepend( "<tr class='kp' id='kp_" + x + "'><th id='kpn_" + x + "'>" + name + "</th><th id='ks_" + x + "'><div class='rs'><input id='KI-S_" + x + "' class='rs__range' type='range' value='10' min='0'max='10' onclick='Pref(1, this.id)'><span class='rs__value' id='rsv_" + x + "'>?</span></div></th><th id='kpb-NA_" + x + "'><input type='checkbox' class='kb' id='KI-NA_" + x + "' onclick='Pref(2, this.id)'>N/A</th><th id='kpb-F_" + x + "'><input type='checkbox' class='kb' id='KI-F_" + x + "' onclick='Pref(3, this.id)'>Fave</th><th id='kpb-R_" + x + "'><input type='checkbox' class='kb' id='KI-R_" + x + "' onclick='Pref(4, this.id)'>Required</th><th><input type='text' placeholder='Comment if desired. You should be sparing with these.' maxlength='100' id='kpb-C_" + x + "' class='combox'><th></tr>" );
+	$( "#enabled").prepend( "<tr class='kp' id='kp_" + x + "'><th id='kpn_" + x + "'>" + name + "</th><th id='ks_" + x + "'><div class='rs'><input id='KI-S_" + x + "' class='rs__range' type='range' value='5.5' min='0' max='10' onclick='Pref(1, this.id)'><span class='rs__value' id='rsv_" + x + "'>?</span></div></th><th id='kpb-NA_" + x + "'><input type='checkbox' class='kb' id='KI-NA_" + x + "' onclick='Pref(2, this.id)'>N/A</th><th id='kpb-F_" + x + "'><input type='checkbox' class='kb' id='KI-F_" + x + "' onclick='Pref(3, this.id)'>Fave</th><th id='kpb-R_" + x + "'><input type='checkbox' class='kb' id='KI-R_" + x + "' onclick='Pref(4, this.id)'>Required</th><th><input type='text' placeholder='Comment if desired. You should be sparing with these.' maxlength='100' id='kpb-C_" + x + "' class='combox'><th></tr>" );
 	$( "#temp").append("<p class='p0' id='kp" + x +"'></p>")
 	$( "#code").text($('#temp').html());
 comment();
@@ -1805,6 +1805,10 @@ return "<div class='kinko'><input type='text' class='search' placeholder='SEARCH
 }
 </script>
 <script>
+/**
+ * COPY TO CLIPBOARD
+ * Gets the code and copies it to the users clipboard for pasting.
+ */ 
 function Copy() {
 $(".saveload").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', 
     function() {
