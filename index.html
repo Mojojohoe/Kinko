@@ -488,7 +488,7 @@ Hello.<br>
 Welcome to Kinko.<br>
 A tool for sharing your kinks and roleplaying preferences as an interactive HTML file.<br><br>
 Kinko is designed to offer an easy way to specify your likes, dislikes and requirements for ERP. <br>Currently it can only output a HTML file. This can be either opened, copied and embedded on any website that allows JavaScript, or shared as a web-page via messaging services such as Discord. Although for security reasons it’s recommended you only open HTML files from people you trust. <br><br>
-Kinko is a work in progress. Expect bugs, and often. If you enable loads of kinks and add lots of comments, expect lag when you press buttons while the scripts do their thing. Download backups often if you want to keep your progress safe from unforseen bugs. 
+In the future, Kinko might expand into something more. With ways of comparing kinks with other people. For the time being it’s just a novel tool for those who have a use for it. 
 <br><br>
 Click the begin button to start. You can hover over buttons to context information, and press the ? button to open the tutorial page if you're stuck. <br><br>
 <button onclick='Begin()' class="beginbutton">Begin</button>
@@ -1166,7 +1166,9 @@ Click the begin button to start. You can hover over buttons to context informati
 </tbody>
 </table>
 </div>
-
+<div class="addbox">
+<button onclick='New()' title="Add Custom Kink"><img src="https://mojojohoe.github.io/Kinko/Ico-pos.png"></button>
+</div>
 <div class="zone">
 <table id="enabled">
 
@@ -1197,7 +1199,7 @@ function Show(x) {
 if ($('input#' + x).is(':checked')) {
 	$(z).css("background-color","#8AC863");
 	$(z).css("color","#302F32");
-	$( "#enabled").prepend( "<tr class='kp' id='kp_" + x + "'><th id='kpn_" + x + "'>" + name + "</th><th id='ks_" + x + "'><div class='rs'><input id='KI-S_" + x + "' class='rs__range' type='range' value='5.5' min='0' max='10' onclick='Pref(1, this.id)'><span class='rs__value' id='rsv_" + x + "'>?</span></div></th><th id='kpb-NA_" + x + "'><input type='checkbox' class='kb' id='KI-NA_" + x + "' onclick='Pref(2, this.id)'>N/A</th><th id='kpb-F_" + x + "'><input type='checkbox' class='kb' id='KI-F_" + x + "' onclick='Pref(3, this.id)'>Fave</th><th id='kpb-R_" + x + "'><input type='checkbox' class='kb' id='KI-R_" + x + "' onclick='Pref(4, this.id)'>Required</th><th><input type='text' placeholder='Comment if desired. You should be sparing with these.' maxlength='100' id='kpb-C_" + x + "' class='combox'><th></tr>" );
+	$( "#enabled").prepend( "<tr class='kp' id='kp_" + x + "'><th id='kpn_" + x + "'>" + name + "</th><th id='ks_" + x + "'><div class='rs'><input id='KI-S_" + x + "' class='rs__range' type='range' value='10' min='0'max='10' onclick='Pref(1, this.id)'><span class='rs__value' id='rsv_" + x + "'>?</span></div></th><th id='kpb-NA_" + x + "'><input type='checkbox' class='kb' id='KI-NA_" + x + "' onclick='Pref(2, this.id)'>N/A</th><th id='kpb-F_" + x + "'><input type='checkbox' class='kb' id='KI-F_" + x + "' onclick='Pref(3, this.id)'>Fave</th><th id='kpb-R_" + x + "'><input type='checkbox' class='kb' id='KI-R_" + x + "' onclick='Pref(4, this.id)'>Required</th><th><input type='text' placeholder='Comment if desired. You should be sparing with these.' maxlength='100' id='kpb-C_" + x + "' class='combox'><th></tr>" );
 	$( "#temp").append("<p class='p0' id='kp" + x +"'></p>")
 	$( "#code").text($('#temp').html());
 comment();
@@ -1418,20 +1420,11 @@ var rangeSlider = function(){
   var slider = $('.rs'),
       range = $('.rs__range'),
       value = $('.rs__value');
-	   
-    
-  slider.each(function(){
-    range.on('input', function(){
-      $(this).next(value).html(this.value * 10 + "%");
-	  $(this).next(value).css( "background-color", "rgb(102," + this.value * 25 + ", 20)" );
+	    
+range.on('change', function(){
 	     var id = $(this).attr('id');
-         var num = id.replace(/KI-S_/, '');
-    });
-
-  });
-  
-  range.on('change', function(){
-	     var id = $(this).attr('id');
+		  $(this).next(value).html(this.value * 10 + "%");
+	  	  $(this).next(value).css( "background-color", "rgb(102," + this.value * 25 + ", 20)" );
          var num = id.replace(/KI-S_/, '');	  
 $( "#kp" + num ).removeClass( "p0 p10 p20 p30 p40 p50 p60 p70 p80 p90 p100 p200 p-10 p999" ).addClass("p" + this.value * 10);
 Sort();
@@ -1439,7 +1432,7 @@ $( "#code").text($('#temp').html());
 }); 	
   
 };
-rangeSlider();
+
 </script>
 <script>
 function Sort(){
@@ -1612,6 +1605,7 @@ $( document ).ready(function() {
 		else{
 		$("#KI-S_" + num).prop("value", 0);
 		$( "#rsv_" + num).text( "?" );	
+
 		$( "#rsv_" + num).css( "background-color", "#483749" );
 		}
 		
@@ -1805,10 +1799,6 @@ return "<div class='kinko'><input type='text' class='search' placeholder='SEARCH
 }
 </script>
 <script>
-/**
- * COPY TO CLIPBOARD
- * Gets the code and copies it to the users clipboard for pasting.
- */ 
 function Copy() {
 $(".saveload").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', 
     function() {
