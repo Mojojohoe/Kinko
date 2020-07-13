@@ -314,7 +314,7 @@ body::after{
 .kinko .k_select_arrow {
     position: absolute;
     top: 0;
-    right: 90%;
+    left: 90%;
     width: 16px;
     height: 16px;
     border: solid #7b7b7b;
