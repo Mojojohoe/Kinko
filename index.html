@@ -486,9 +486,9 @@ text-decoration: none;
 <div class="intro-text">
 Hello.<br>
 Welcome to Kinko.<br>
-A tool for sharing your kinks and roleplaying preferences as an interactive HTML file.<br><br>
-Kinko is designed to offer an easy way to specify your likes, dislikes and requirements for ERP. <br>Currently it can only output a HTML file. This can be either opened, copied and embedded on any website that allows JavaScript, or shared as a web-page via messaging services such as Discord. Although for security reasons it’s recommended you only open HTML files from people you trust. <br><br>
-In the future, Kinko might expand into something more. With ways of comparing kinks with other people. For the time being it’s just a novel tool for those who have a use for it. 
+A tool for sharing and comparing your kinks and roleplaying preferences as an interactive HTML file.<br><br>
+Kinko is designed to offer an easy way to specify your likes, dislikes and requirements for ERP. <br>Currently it can only output a HTML file or the raw code copied to clipboard to embedded on any website that allows JavaScript, or shared as a web-page via messaging services such as Discord. Although for security reasons it’s recommended you only open HTML files from people you trust. Kinko has a comparison feature that works with local saves or by pasting the code into a field for sandboxed websites.  <br><br>
+ 
 <br><br>
 Click the begin button to start. You can hover over buttons to context information, and press the ? button to open the tutorial page if you're stuck. <br><br>
 <button onclick='Begin()' class="beginbutton">Begin</button>
@@ -1166,9 +1166,9 @@ Click the begin button to start. You can hover over buttons to context informati
 </tbody>
 </table>
 </div>
-<div class="addbox">
+<!--<div class="addbox">
 <button onclick='New()' title="Add Custom Kink"><img src="https://mojojohoe.github.io/Kinko/Ico-pos.png"></button>
-</div>
+</div>-->
 <div class="zone">
 <table id="enabled">
 
@@ -1312,7 +1312,6 @@ $( "#code").text($('#temp').html());
 }
 
 };
-
 
 
 
@@ -1605,7 +1604,6 @@ $( document ).ready(function() {
 		else{
 		$("#KI-S_" + num).prop("value", 0);
 		$( "#rsv_" + num).text( "?" );	
-
 		$( "#rsv_" + num).css( "background-color", "#483749" );
 		}
 		
@@ -1710,6 +1708,7 @@ exitC();
 	});
 $("#code").text($('#temp').html());
 $('#load').empty();
+
 };
 </script>
 <script>
