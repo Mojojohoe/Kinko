@@ -11,6 +11,7 @@ body {
     height: 100vh;
     overflow: hidden;
     text-align: center;
+	background: linear-gradient(to bottom, #081b10 0%,#000000 100%);
 }
 .world{
    pointer-events:none;
@@ -19,9 +20,10 @@ body {
    width:310px;
    height:310px;
    left:50%;
-   top:50%;
+   top:85%;
    transform: translate(-50%, -50%);
    clip-path: circle(46% at 50% 50%);
+   background:#000;
 }
 #playB {
     position: absolute;
@@ -33,20 +35,55 @@ body {
     top: calc(90vh - (3em / 2));
    left:50%;
    transform: translate(-50%, -50%);
+   mix-blend-mode: hard-light;
+   width:310px;
+   height:310px;
+   background-image:url(https://i.imgur.com/bWaJLT8.png);
+   background-size:contain;
+   background-repeat:no-repeat;
+   cursor:pointer;
+   z-index:501;
+   transform: translate(-50%, -50%);
 }
 .image{
   pointer-events:none;
    position:absolute;
    z-index:499;
    height:100%;
-   left:50%;
+   left:45%;
    top:50%;
    transform: translate(-50%, -50%);
-   mix-blend-mode: overlay;
+mix-blend-mode: screen;
+      animation-name: pulse;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
+     filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));	
+}
+
+@keyframes pulse {
+    0%   {
+        filter: brightness(2);
+        filter: contrast(2);
+        -webkit-filter: brightness(2);
+        -webkit-filter: contrast(2);
+    }
+    50%  {
+        filter: brightness(1.2);
+        filter: contrast(1.2);
+        -webkit-filter: brightness(1.2);
+        -webkit-filter: contrast(1.2);
+    }
+    100% {
+        filter: brightness(2);
+        filter: contrast(2);
+        -webkit-filter: brightness(2);
+        -webkit-filter: contrast(2);
+    }
 }
 </style>
-<img src="https://i.imgur.com/CQfptrt.png" class="image">
-    <input type='button' value='Play' id='playB' onclick="startStuff();"></input>
+<img src="https://i.imgur.com/FcyRdiO.png" class="image">
+    <div value='Play' id='playB' onclick="startStuff();"></div>
     <canvas id="renderer" allow="autoplay"></canvas>
 
 
@@ -95,12 +132,12 @@ function animationLooper() {
     ctx = canvas.getContext("2d");
     // find the center of the window
     center_x = canvas.width / 2;
-    center_y = canvas.height / 2;
+    center_y = canvas.height / 1.2;
     radius = 100;
     // style the background
     var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-    gradient.addColorStop(0, "#000000");
-    gradient.addColorStop(1, "#081B10");
+    gradient.addColorStop(0, "#081B10");
+    gradient.addColorStop(1, "#000000");
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     //draw a circle
