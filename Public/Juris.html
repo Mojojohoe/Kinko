@@ -23,7 +23,7 @@ body {
    transform: translate(-50%, -50%);
    clip-path: circle(46% at 50% 50%);
 }
-#playB {
+#playB, #stopB{
     position: absolute;
     border-radius: 0%;
     font-size: 3em;
@@ -76,7 +76,118 @@ mix-blend-mode: screen;
         -webkit-filter: contrast(2);
     }
 }
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Monoton', cursive;
+	position:absolute;
+	display:inline-block;
+	top:20%;
+	text-align:justify;
+	margin:0px;
+	width:30vw;
+	
+}
+h1, h2{
+	color:#C8FF00;
+	font-size:6rem;
+	top:20%;
+	line-height:6rem;
+	font-weight:lighter;
+}
+h3, h4{
+	color:#00A656;
+	font-size:3rem;
+	top:30%;
+	line-height:3rem;
+	opacity:0.8;
+	font-weight:100;
+}
+h5, h6{
+	color:#00A656;
+	font-size:2rem;
+	top:37%;
+	line-height:2rem;
+	opacity:0.4;
+	font-weight:100;
+}
+h1, h3, h5{
+	left:8%;
+}
+h2, h4, h6{
+	right:8%;
+}
+#gradient{
+  width: 100vw;
+  height:100vh;
+  padding: 0px;
+  margin: 0px;
+  position:absolute;
+  z-index:520;
+  left:0;
+  top:0;
+mix-blend-mode: exclusion;
+pointer-events:none;
+opacity:0.5;
+}
+.scrollSmoke{
+position:absolute;
+bottom:0;
+left:0;
+mix-blend-mode: overlay;
+}
+.smoke1{
+	z-index:499;
+	   -moz-animation: marquee 260s linear infinite;
+      -webkit-animation: marquee 260s linear infinite;
+      animation: marquee 260s linear infinite;
+	  animation-delay: -100s;
+}
+.smoke2{
+	z-index:499;
+	 -moz-animation: marquee 120s linear infinite;
+      -webkit-animation: marquee 120s linear infinite;
+      animation: marquee 120s linear infinite;
+	  animation-delay: -60s;
+}
+.smoke3{
+	z-index:499;
+		   -moz-animation: marquee 200s linear infinite;
+      -webkit-animation: marquee 200s linear infinite;
+      animation: marquee 200s linear infinite;
+	  animation-delay: -120s;
+}
+.smoke4{
+	z-index:499;
+		   -moz-animation: marquee 165s linear infinite;
+      -webkit-animation: marquee 165s linear infinite;
+      animation: marquee 165s linear infinite;
+	  animation-delay: -80s;
+}
+.smoke5{
+	z-index:499;
+	   -moz-animation: marquee 260s linear infinite;
+      -webkit-animation: marquee 260s linear infinite;
+      animation: marquee 260s linear infinite;
+	  animation-delay: -200s;
+}
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
 </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+<div id="gradient"></div>
+<img class="scrollSmoke smoke1" src="https://i.imgur.com/xJ1RUUc.png">
+<img class="scrollSmoke smoke5" src="https://i.imgur.com/xJ1RUUc.png">
+<img class="scrollSmoke smoke2" src="https://i.imgur.com/XpEri6a.png">
+<img class="scrollSmoke smoke3" src="https://i.imgur.com/PvqquSk.png">
+<img class="scrollSmoke smoke4" src="https://i.imgur.com/awH4jnB.png">
+
+<h1 class="stretch">JURIS</h1><h2 class="stretch">DICTION</h2>
+<h3 class="stretch">FEMBOY</h3><h4 class="stretch">SUPERVILLAIN</h4>
+<!-- <h5 class="stretch">COMING</h3><h6 class="stretch">SOON</h4> -->
+
 <img src="https://i.imgur.com/FcyRdiO.png" class="image">
     <div value='Play' id='playB' onclick="startStuff();"></div>
     <canvas id="renderer" allow="autoplay"></canvas>
@@ -101,6 +212,7 @@ function startStuff() {
     context = new AudioContext();
     initPage();
     document.getElementById('playB').style.display = 'none';
+	document.getElementById('StopB').style.display = 'block';
 }
 
 function initPage() {
@@ -164,4 +276,98 @@ function drawBar(x1, y1, x2, y2, width, frequency) {
     ctx.lineTo(x2, y2);
     ctx.stroke();
 }
+</script>
+<script>
+$.fn.strech_text = function(){
+    var elmt          = $(this),
+        cont_width    = elmt.width(),
+        txt           = elmt.html(),
+        one_line      = $('<span class="stretch_it">' + txt + '</span>'),
+        nb_char       = elmt.text().length,
+        spacing       = cont_width/nb_char,
+        txt_width;
+    
+    elmt.html(one_line);
+    txt_width = one_line.width();
+    
+    if (txt_width < cont_width){
+        var  char_width     = txt_width/nb_char,
+             ltr_spacing    = spacing - char_width + (spacing - char_width)/nb_char ; 
+  
+        one_line.css({'letter-spacing': ltr_spacing});
+    } else {
+        one_line.contents().unwrap();
+        elmt.addClass('justify');
+    }
+};
+
+
+$(document).ready(function () {
+    $('.stretch').each(function(){
+        $(this).strech_text();
+    });
+});
+</script>
+<script>
+
+var colors = new Array(
+  [0,100,70],
+  [0,200,55],
+  [0,51,55],
+  [0,175,50],
+  [0,100,55],
+  [0,255,55]);
+
+var step = 0;
+//color table indices for: 
+// current color left
+// next color left
+// current color right
+// next color right
+var colorIndices = [0,1,2,3];
+
+//transition speed
+var gradientSpeed = 0.002;
+
+function updateGradient()
+{
+  
+  if ( $===undefined ) return;
+  
+var c0_0 = colors[colorIndices[0]];
+var c0_1 = colors[colorIndices[1]];
+var c1_0 = colors[colorIndices[2]];
+var c1_1 = colors[colorIndices[3]];
+
+var istep = 1 - step;
+var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+var color1 = "rgb("+r1+","+g1+","+b1+",0.2)";
+
+var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+var color2 = "rgb("+r2+","+g2+","+b2+",0.2)";
+
+ $('#gradient').css({
+   background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+    background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+  
+  step += gradientSpeed;
+  if ( step >= 1 )
+  {
+    step %= 1;
+    colorIndices[0] = colorIndices[1];
+    colorIndices[2] = colorIndices[3];
+    
+    //pick two new target color indices
+    //do not pick the same as the current one
+    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+    
+  }
+}
+
+setInterval(updateGradient,10);
 </script>
