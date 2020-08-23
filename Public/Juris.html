@@ -34,8 +34,18 @@ body {
    left:50%;
    transform: translate(-50%, -50%);
 }
+.image{
+  pointer-events:none;
+   position:absolute;
+   z-index:499;
+   height:100%;
+   left:50%;
+   top:50%;
+   transform: translate(-50%, -50%);
+   mix-blend-mode: overlay;
+}
 </style>
-
+<img src="https://i.imgur.com/CQfptrt.png" class="image">
     <input type='button' value='Play' id='playB' onclick="startStuff();"></input>
     <canvas id="renderer" allow="autoplay"></canvas>
 
