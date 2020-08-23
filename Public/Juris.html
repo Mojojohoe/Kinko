@@ -1,134 +1,125 @@
 <style>
-body{
+@charset "UTF-8";
+body {
+  background-image: radial-gradient(ellipse at center, #a3dbfd 33%, #4fb3d5 100%);
+  display: grid;
   margin: 0;
+  min-height: 100vh;
+  place-items: center;
+  position: relative;
 }
 
-.audio{
+#canvas {
+  display: block;
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 1;
 }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/98/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
-<div id="webgl"></div>
+#start {
+  align-items: center;
+  background-color: #000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  outline: 0;
+  padding: 0;
+  width: 70px;
+  z-index: 2;
+}
+#start::before {
+  border-bottom: 20px solid transparent;
+  border-left: 25px solid #fff;
+  border-top: 20px solid transparent;
+  content: "";
+  display: block;
+  transform: translate(5px);
+}
+#start.playing {
+  background-color: #feab12;
+  cursor: default;
+}
+#start.playing::before {
+  content: "🕶️";
+  border: none;
+  font-size: 80px;
+  transform: translate(0, 0);
+}
+
+
+</style>
+
+<canvas id="canvas"></canvas>
+<div id="start"></div>
 
 <script>
-class Audio { 
-  constructor(){
-    this.audio = this.createMedia();
-    this.AudioContext = window.AudioContext || window.webkitAudioContext;
-    this.audioCtx = new this.AudioContext();
-    this.analyser = this.audioCtx.createAnalyser();
-    this.analyser.smoothingTimeConstant = 0.3;
-    this.track = this.audioCtx.createMediaElementSource(this.audio);
-    
-    this.connectAudio();
-    this.getData = this.getData.bind(this);
-  }
-  
-  createMedia(){
-    let audio = document.createElement("audio");
-    audio.crossOrigin = "anonymous";
-    audio.src = "https://mojojohoe.github.io/Kinko/Public/WorldIsNotEnough.mp3";
-    audio.controls = true;
-    audio.style.width = 300 + "px";
-    audio.className = "audio";
-    document.body.appendChild(audio);
-    return audio;
-  }
-  
-  connectAudio(){
-    this.track.connect(this.analyser);
-    this.analyser.connect(this.audioCtx.destination);
-  }
-  
-  getData(){
-    let frequencyByteData = new Uint8Array(this.analyser.frequencyBinCount);
-    this.analyser.getByteFrequencyData(frequencyByteData);
-    return frequencyByteData;
-  }
-}
+const canvas = document.getElementById("canvas");
+const canvasCtx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let centerX = canvas.width / 2;
+let centerY = canvas.height / 2;
 
-class Particles extends Audio{
-  constructor(){
-    super();
-    this.canvas = document.getElementById("webgl");
-    this.light = this.setLight();
-    this.particles = this.setParticles();
-    this.camera = this.setCamera();
-    this.scene = this.setScene();
-    this.renderer = this.setRenderer();
-    
-    this.update = this.update.bind(this);
-    this.onResize = this.onResize.bind(this);
-    
-    this.canvas.appendChild(this.renderer.domElement);
-    window.addEventListener("resize", this.onResize);
-    TweenMax.ticker.addEventListener("tick", this.update);
-  }
-  
-  setLight(){
-    let light = new THREE.DirectionalLight("#ffffff", 1);
-    return light;
-  }
-  
-  setParticles(){
-    let geo = new THREE.SphereGeometry(10, 50, 50);
-    let pointsMaterial = new THREE.PointsMaterial({
-      color: "#ffffff",
-      size: 0.15
-    });
-    
-    geo.vertices.forEach(vertice => {
-      vertice.x += Math.random();
-      vertice.y += Math.random();
-      vertice.z += Math.random();
-    })
-    
-    let mesh = new THREE.Points(geo, pointsMaterial);
-    
-    return mesh;
-  }
-  
-  setCamera(){
-    let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.z = 30;
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
-    return camera;
-  }
-  
-  setScene(){
-    let scene = new THREE.Scene();
-    scene.add(this.light);
-    scene.add(this.particles);
-    return scene;
-  }
- 
-  setRenderer(){
-    let renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    return renderer;
-  }
-  
-  onResize(){
-    this.camera.aspect = window.innerWidth / window.innerHeight;
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth, window.innerHeight)
-  }
-  
-  update(){
-    this.particles.rotation.y += .001;
-    let average = (this.getData().reduce((a, b) => a + b))/this.getData().length;
-    TweenMax.to(this.particles.scale, .3, {x: (average * 0.005) + 0.5});
-    TweenMax.to(this.particles.scale, .3, {y: (average * 0.005) + 0.5});
-    TweenMax.to(this.particles.scale, .3, {z: (average * 0.005) + 0.5});
-    this.particles.geometry.verticesNeedUpdate = true;
-    this.renderer.render(this.scene, this.camera);
-  } 
-}
+const audio = new Audio();
+const start = document.getElementById("start");
 
-new Particles();
+start.addEventListener("click", () => {
+  if (!audio.paused) {
+    return;
+  }
+
+  start.classList.add("playing");
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const analyser = audioCtx.createAnalyser();
+
+  audio.src =
+    "https://mojojohoe.github.io/Kinko/Public/WorldIsNotEnough.mp3";
+  audio.crossOrigin = "anonymous";
+
+  const source = audioCtx.createMediaElementSource(audio);
+  source.connect(analyser);
+  analyser.connect(audioCtx.destination);
+
+  analyser.fftSize = 4096;
+  const bufferLength = analyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+
+  const draw = () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    centerX = canvas.width / 2;
+    centerY = canvas.height / 2;
+
+    analyser.getByteTimeDomainData(dataArray);
+    const lines = bufferLength / 1;
+
+    for (var i = 0; i < lines; i++) {
+      const height = dataArray[i] * 2;
+      const radius = 10;
+      const rads = Math.PI * 2 / lines;
+      const x1 = centerX + radius * Math.cos(rads * i);
+      const y1 = centerY + radius * Math.sin(rads * i);
+      const x2 = centerX + (radius + height) * Math.cos(rads * i);
+      const y2 = centerY + (radius + height) * Math.sin(rads * i);
+
+      canvasCtx.moveTo(x1, y1);
+      canvasCtx.lineTo(x2, y2);
+    }
+
+    canvasCtx.strokeStyle = "#feab12";
+    canvasCtx.stroke();
+    requestAnimationFrame(draw);
+  };
+  close;
+
+  audio.play();
+  draw();
+});
+
+audio.addEventListener("ended", () => {
+  start.classList.remove("playing");
+});
+
 </script>
