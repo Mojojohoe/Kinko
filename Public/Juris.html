@@ -55,7 +55,6 @@ audio {
  */
  function play(){
 !function(){!function(){var n=function(t){function e(e,a,c){if(y.audio=null!=t?t:new Audio,i=null!=e?e:32,u=null!=a?a:.1,s=null!=c?c:!1,"string"==typeof y.audio){var p=y.audio;y.audio=new Audio,y.audio.crossOrigin="anonymous",y.audio.controls=!0,y.audio.src=p}r=new n.AudioContext,d=r.createScriptProcessor(1024,1,1),l=r.createAnalyser(),l.smoothingTimeConstant=u,l.fftSize=2*i,f=!1,y.bands=new Uint8Array(l.frequencyBinCount),y.audio.addEventListener("play",o,!1)}function o(){f||(c=r.createMediaElementSource(y.audio),c.connect(l),l.connect(d),d.connect(r.destination),s||c.connect(r.destination),d.onaudioprocess=a,f=!0)}function a(n){l.getByteFrequencyData(y.bands);for(var t=n.outputBuffer.getChannelData(0),e=n.inputBuffer.getChannelData(0),o=0,a=0;a<e.length;a++)t[a]=0,o=e[a]>o?e[a]:o;y.energy=o,y.decibels=20*Math.log(Math.max(o,Math.pow(10,-3.6)))/Math.LN10,y.audio.paused||null!=y.onUpdate&&"function"==typeof y.onUpdate&&y.onUpdate(y.bands,y.decibels,y.energy)}var i,u,s,r,d,l,c,f,y=this;e()};n.prototype.start=function(){return this.audio.play()},n.prototype.stop=function(){return this.audio.pause()},n.AudioContext=window.AudioContext||window.webkitAudioContext,n.enabled=null!=n.AudioContext,window.AudioAnalyser=n}(),function(){window.Analyser=function(n){function t(){i++,Analyser.energy=Math.sin(i/u)*s;for(var n=0;n<Analyser.bands.length;n++)Analyser.bands[n]=Math.sin((n+i)/u)*(255*Math.random())}this.numOfBands=32,this.smoothing=.3;var e,o,a=16,i=0,u=15,s=.6,r=this;this.init=function(a,i){var u;u=n?n:"https://mojojohoe.github.io/Kinko/Public/WorldIsNotEnough.mp3",r.numOfBands=null!=a?a:32,r.smoothing=null!=i?i:.3,o=new AudioAnalyser(u,r.numOfBands,r.smoothing),o.onUpdate=function(n,o,a){null!=e&&(clearInterval(e),e=null),Analyser.bands=n,Analyser.decibels=o,Analyser.energy=a,0==a&&t(),null!=r.onUpdate&&"function"==typeof r.onUpdate&&r.onUpdate(n,o,Analyser.energy)}},this.start=function(){o.start(),e=setInterval(t,a)},this.stop=function(){o.stop()}},Analyser.bands=[],Analyser.decibels=0,Analyser.energy=0}(),function(){var n=function(){this.map=function(n,t,e,o,a){return o+(a-o)*(n-t)/(e-t)}};window.Calc=new n}()}();
- };
 /**
  * The sketch
  */
@@ -105,6 +104,8 @@ audio {
   var frameTime = 0, lastLoop = new Date, thisLoop;
   var fpsOut = document.getElementById('fps');
   
+   };
+   
   function setup() {
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
