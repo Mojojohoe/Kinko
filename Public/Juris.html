@@ -1,17 +1,12 @@
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-}
-
 html,
 body {
     width: 100vw;
     height: 100vh;
     overflow-X: hidden;
     text-align: center;
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Poiret One', cursive;
+	background:rgba(0,0,0,1.00);
 }
 .world{
    position:absolute;
@@ -54,6 +49,14 @@ mix-blend-mode: screen;
     animation-iteration-count: infinite;
     -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
      filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));	
+}
+.quote{
+	font-size-adjust:-2px;
+	font-style:italic;
+	color:rgba(219,247,164,1.00);
+	background:rgba(15,29,27,0.5);
+	border-radius:10px;
+	padding:12px;
 }
 
 @keyframes pulse {
@@ -211,6 +214,7 @@ mix-blend-mode: overlay;
     -moz-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
     -webkit-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
     box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
+animation: glowing 20s infinite;
 }
 .container2{
 	width: 100vw;
@@ -221,9 +225,7 @@ mix-blend-mode: overlay;
 	z-index:0;
 	background: linear-gradient(to bottom, #081b10 0%,#000000 100%) !important;
 	background-repeat:no-repeat;
-	display:none;
-		-webkit-animation: fade-in 2s ease-in-out both;
-	        animation: fade-in 2s ease-in-out both;
+	/* display:none; */
 }
 ::-webkit-scrollbar {
   width: 6px;
@@ -287,8 +289,9 @@ opacity:0.6;
   height: 344px;
   position:absolute;
   overflow: hidden;
-  filter: hue-rotate(-25deg) saturate(1.5);
-  top:0;
+  filter: hue-rotate(-25deg) saturate(1.5) brightness(1.5);
+  border-top: 7px solid #95FF22;
+    top:0;
 }
 .hero_fg {
   pointer-events: none;
@@ -313,7 +316,12 @@ opacity:0.6;
   	position: relative;
   	overflow: hidden;
     margin:2% 2% 0px 2%;
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Poiret One', cursive;
+	transition: ease-in-out 0.5s;
+  }
+  .tube:hover{
+	  transform: rotate(+90deg);
+	  transition: ease-in-out 0.5s;
   }
   .tube-inner{
   	position: absolute;
@@ -322,7 +330,7 @@ opacity:0.6;
   	width: 100%;
   	bottom: 0px;
   	text-align: center;
-  	font-size: 11px;
+  	font-size: 0.8rem;
   	transition: 400ms;
   	pointer-events: none;
 	z-index:19;
@@ -386,21 +394,21 @@ filter: hue-rotate(20deg);
   -webkit-animation-iteration-count: infinite;
   }
   .title1{
-	  transform: rotate(-90deg) translate(-50%, -330%);
+	  transform: rotate(-90deg) translate(-70%, -330%);
 	  color:#002212;
 	  position:absolute;
 	  z-index:20;
-	  font-size:24px;
+	  font-size:1.6rem;
 	  font-weight:bold;
 	  	  width:200px;
 		  text-align:left;
   }
     .title2{
-	  transform: rotate(-90deg) translate(-50%, -330%);
+	  transform: rotate(-90deg) translate(-70%, -330%);
 	  color:#BCF972;
 	  position:absolute;
 	  z-index:20;
-	  font-size:24px;
+	  font-size:1.6rem;
 	  width:200px;
   text-align:left;
   }
@@ -430,26 +438,24 @@ filter: hue-rotate(20deg);
 	background-color:rgba(0,11,7,0.55);
 	border-radius:10px;
 	color:rgba(202,243,21,1.00);
-	font-size:18px;
+	font-size:1.6rem;
 	text-align:center;
 	margin:auto;
-	border: 5px solid #276344;
-	width:60%;
-	padding:2%;
+	border: 1px solid #276344;
+	width:93%;
+	padding:3%;
+	border-radius: 4px;
 }
  details {
 	 color:rgba(223,251,136,1.00);
 	 background-color:rgba(0,11,7,0.55);
-	 border: 1px solid;
 	 cursor: pointer;
 	 transition: background 0.3s;
 	 border-radius: 4px;
 	 transition: all 0.3s;
-	 border: 5px solid #276344;
-}
- details:active {
-	 color: rgba(255, 255, 255, 0.9);
-	 border-color: #6d7380;
+	 border: 1px solid #276344;
+	 width:99vw;
+	 font-weight:lighter;
 }
  details ::-webkit-details-marker {
 	 display: none;
@@ -457,47 +463,153 @@ filter: hue-rotate(20deg);
  details + details {
 	 margin-top: 10px;
 }
- details.success:hover {
-	 border-color: #BFF008;
-	 color: rgba(255, 255, 255, 0.6);
-}
- details.success:active {
-	 color: rgba(255, 255, 255, 0.9);
-	 border-color: #529b2e;
-}
  details[open] {
 	 transition: all 0.6s;
 height:auto;
 }
  summary {
 	 outline: none;
-	 font-size: 28px;
+	 font-size:2rem;
 	 color:#276344;
 	 padding: 13px;
+	 width:90%;
+	 margin:auto;
 }
  summary:selection {
 	 background: transparent;
 }
  summary .close {
 	 display: none;
+	 padding-bottom:40px;
+	 padding-left:40px;
+	 background:url("data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAfCAMAAAB9EQVVAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACQFBMVEUAAACy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCz/wGz/wGy/wCy/wCy/wCz/wGz/wKz/wKy/wCy/wCy/wCy/wCy/wGz/wKz/wKy/wCy/wCz/wKy/wCy/wGy/wCy/wCy/wCy/wCz/wKz/wKz/wKy/wCy/wGz/wGy/wCz/wCz/wKy/wGy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wGy/wGy/wGy/wGy/wCz/wGz/wCz/wGy/wCz/wGz/wGz/wKz/wGy/wCy/wCy/wCy/wCy/wCy/wCz/wGy/wCz/wGy/wCy/wCy/wCy/wCy/wCy/wCy/wCz/wKz/wKz/wKy/wCy/wCy/wCy/wCy/wCz/wKz/wGy/wCy/wCz/wGz/wCy/wGz/wKy/wIAAAABROmlAAAAuXRSTlMABQsCBhQEARAPHzYvIxsWPUwIBypxlXyqgWWDjWOpkGaJRVZwQo7Nzn55rbFgMTdTaTQuLQMXXys6DDXh09Ly/PbZ7PrY/fPK6Ork+Pnct73exu3LyJOhr7rbzDIO7v70+/fJWASZ8fD+rxMhndXp/vs2Euvx4KgkGp677OHjweH27/P99hMJJRVKTWGHW0Btgqlxr3uIQ3ykbpbOpqdktJyFw891T0GSmqMnalpDVoQmHQpIPi8WDf1ZY4MAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAB0UlEQVQ4y2NgwAcYmZgZSAUsrGzsJGsaBaNgFEABO8n5h52NgQWHFBsHJ4TBCTeVi5uHl49fQJADKCvEhqFDWERUTFxCUkpaRlZOQl5BUVJJWUVVTV1DQlNLW0dXT9/AUM/IwJjBhMHUzNzC0koYaC6ztY2tnb2Do5Ozi6vbzp3OO909PL2cvH18/fwDAm2D7L1cfXyC/UJCw8IjIqOiw+RigFpizePiHXbuTEjcCQUObi6OQCrJOXGnvWOcL1gsKS7OPj7Z03Gn186UVKBz05LAKndiAsd0uKgbkJWRBCQys7IZGHJy8/L9fGFyu3YXAPEeDO1AoV279uzeuWdvYREDm1VxkFyJBsg18Yl7d+3dm7kXBErLMiCOBXoxcddeKNi5c++e8gqGYr5K7qpwlWr1nYE7d+7bWwORrK2rt1MPbShsdGvKzwhpboHo2tW6c6ePCDCo29oZOzq7unt6Jfv6J0ycJDd5iuLUadNnBITMnDV7ztx5OvNnLli4SHvxkqXLlguar1i5qkuYgZkfFGMsbMJMxavZmIUq+BnMQJEm0rtm7br1G/oZNxobVVox5VhuEgYJcxTz6AkjR+5mRgR7y1YQuW07PBURkdJ24JEDAJpEzgx6vJVGAAAAAElFTkSuQmCC");
+background-size:contain;
+background-repeat:no-repeat;
+transition: all 0.6s;
 }
  [open] summary .close {
 	 display: inline;
 }
  summary .open {
 	 display: inline;
+	 padding-bottom:40px;
+	 padding-left:40px;
+	 background:url("data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAMAAAANf8AYAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAC6FBMVEUAAACz/wKy/wCz/wGy/wCy/wCy/wCy/wCy/wGz/wKz/wKy/wGy/wCy/wCy/wCy/wCy/wCz/wGy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCz/wGy/wCy/wCy/wCy/wCz/wKy/wCz/wGy/wCy/wCy/wCz/wKy/wCy/wCz/wKy/wCy/wCy/wCz/wGy/wCy/wCy/wCy/wCy/wCz/wKy/wGy/wCy/wCy/wCy/wCy/wCy/wGy/wKy/wCy/wCy/wCy/wGy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCz/wGy/wGy/wCy/wGy/wGy/wCz/wGz/wGy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wGz/wGz/wKz/wGz/wKy/wKy/wCy/wCy/wCy/wCz/wKz/wKz/wKz/wKz/wKz/wGy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wGy/wGy/wCy/wCy/wCz/wKz/wKy/wCz/wGz/wKy/wCy/wCz/wKy/wGy/wCy/wCy/wCy/wCy/wCy/wCy/wCz/wGy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCz/wGy/wCy/wCz/wKy/wCy/wCz/wGz/wGy/wCy/wCz/wKz/wKz/wKy/wGz/wGy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCy/wCz/wKz/wGy/wCy/wGz/wCy/wIAAACHFd8gAAAA8XRSTlMAKTcPCQEMHWWYr5crSAbU2/G3j18HqPb+xSIk4tj9pAQCwfzwVQNRw8rsVxCD82o4gwqX9MC07vo2uNrzTBvL3vn90i/p+pXC/vkue9Hi5Wz1Fb+iXgjsDRMSGjNJo+gyDkALOR9DuYQ+TW5oU4FzoGs0gYSHxql0lmqzSjsRrNDGpqu5me/rybbZ+/zw8vv15uCqyJ0/IBeg++HW5Hjs+Av3qQVx+PL3xNPX3OP8zc7x763SWJyCus9SYktlmYuRTobVeGuFjiWKx5pvQVxyMXwZGCnPDy343+bZ/mGb9vn+zNNksKfnHu3Mryw1PGefOJ9T1wAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAANPSURBVEjHlZZ1XFNRFMevuGHPxD0Bn8zprGHM6VRUGMrswGCIQQmY2IGBHTBsbFRUFAO7uwvBVuzuvu88/dt7HxgfP/D57Pz+2T7nnu/OeSfeHSH5q5BLYaJSE+flWqRoseIlSpbCMJrSZSgtW658BTfnGZeKWoFKUiV3RBwPz8oAIlTxQjC6qqIe5GrVDQimRs1aokxr1zFi4nh71gVK6yEQ4lUfBJBoAxMGamgGxjTCIG6NLcBya9IUwRib+YiMad4CwbT09bMC9W/VGpNcgI0/TxsVhmkrALRrb+mAQDp2AqbOXbpi4viw3CCwSjcE4tadxxF79HSaUJMge10BhEAI/mPT/efTi1lyN9JI1CG9CenTt1+olgWykzADCSe9NaYgEhHs0ZIEcSeDgRgie/Z3jyIk3DU6ZsDAQYOHDI2NHaYHXrh+w0eMHNVj9Jix48bHNZ3gO7HrwEkRk+MjNEStmTJ1WvfpM2bOml2WzrHOTUh02B0OPQvzgybNmy8tkGjSwkXWxSCYxSVxyUuXLVcR9YqV7HwVzZMNtPpAUCTnmfzpT1mwCSIzrU5ZExsZRNzWrpNl1nRJliiVQIa/kiVJ5oZ/bKld9B7xZP0G5pmnH1CABKX2yteNRdII2bRqM1jNKWAT/JQzAdIdv31tYmiuq9UiWi02cGyBrSG8eNuSF0OZ7dbSoRmdUgUwg92+Q/ld2Al+KT67zLshdU/AXm2ysCU0Y9/+/hqGBB84eOjwkaPHjnufODn3VEyb02fOVj2nlGDG8fMX6ly8dLnblcyrl7KyNdeu37h5K03pZJrxFrkdnzsCBnKHfURV1PI9vcu6psyF6l7uIBgm6/KdHG7NidtuZaW8H5nfYUF68JDHeYTauSxWOok+foJATE89+W4/G6xznvHK4E2hz8MQcdRXWFflFwsPIBivicBzSxqAYDqk8DHwf4m5F3IA2ALJr14jGOObyvy98zAHUTfVUhsbHnFqVIjzjOmtmT9Q4njMZX/qnbI03ggm8q0tnTE7BiEYzRu+sZaTIxGpeTTmqWXWwNwL7w89AP2HPZn3EIx6TEY6fEz49BnBkC8stYBtX4MxTPyQbxu/189GMWwUDNHEXYX6U8HeFjqTpoCzX92t1pyZl4WwAAAAAElFTkSuQmCC");
+background-size:contain;
+background-repeat:no-repeat;
+transition: all 0.6s;	 
 }
  [open] summary .open {
 	 display: none;
+	 transition: all 0.6s;
 }
  [open] summary {
 	 display: inline;
+	 transition: all 0.6s;
 }
- 
+.text {
+  display: block;
+  text-indent: -9999px;
+  width: 99%;
+  height: 100vh;
+  background: url(JuriWeb.svg);
+  background-size:cover;
+}	
+@keyframes glowing {
+  0% {
+    -moz-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
+    -webkit-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
+    box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
+	   }
+  50% {
+    -moz-box-shadow:inset 0 -100px 100px -100px rgba(177,255,0,0.75);
+    -webkit-box-shadow:inset 0 -40px 100px -100px rgba(177,255,0,0.75);
+    box-shadow:inset 0 -100px 100px -100px rgba(177,255,0,0.75);
+	   }
+  100% { 
+    -moz-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
+    -webkit-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
+    box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
+  }
+} 
+.introtitle{
+	font-family: 'Saira Stencil One', cursive;
+	font-size:6rem;
+	color:rgba(0,0,0,0.00);
+	background: url("https://i.imgur.com/guaDjYE.png");
+  background-position: 0 50%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  line-height:7rem;
+}
+.pink{
+	font-family: 'Srisakdi', cursive;
+	color:rgba(241,109,204,1.00);
+	font-style:italic;
+	transform: scaleY(1.5) skewY(-8deg);
+	display:inline-block;
+		 -webkit-text-stroke: 0.015em rgba(247,109,212,0.8);
+	 -webkit-text-fill-color: transparent;
+	 text-shadow: 0 0.025em 0.0375em rgba(241,109,204,1.00), 0 0 0 rgba(255, 255, 255, 1);
+}
+.grey{
+		font-family: 'Saira Stencil One', cursive;
+	font-size:7rem;
+  	color:rgba(0,0,0,0.00);
+	background: url("https://i.imgur.com/THMH84I.png");
+  background-position: 0 50%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  line-height:6rem;
+}
+.grey2{
+		font-family: 'Saira Stencil One', cursive;
+	font-size:3rem;
+  	color:rgba(0,0,0,0.00);
+	background: url("https://i.imgur.com/THMH84I.png");
+  background-position: 0 50%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  line-height:3rem;
+}
+.lime{
+			font-family: 'Saira Stencil One', cursive;
+	font-size:3rem;
+	background: url("https://i.imgur.com/guaDjYE.png");
+  background-position: 0 50%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+}
+.name-container{
+	width:45%;
+	margin:auto;
+}
+.name-container img{
+	width:90%;
+	filter:saturate(1.5) brightness(1.2);
+	transform: translate(+12px, -24px);
+}
+.spacer{
+	height:100px;
+}
+a:link{text-decoration:none; color:#00ffcc;}
+a:visited{text-decoration:none; color:#560080;}
+a:hover{text-decoration:none; color:#ccff33;}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Srisakdi:wght@700&display=swap" rel="stylesheet">
 <div id="gradient"></div>
 <div class="smoker">
 <img class="scrollSmoke smoke1" src="https://i.imgur.com/xJ1RUUc.png">
@@ -531,14 +643,18 @@ height:auto;
   <div class="hero_fg"></div>
 </header>
 <br><br><br><br><br>
-<img src="https://i.imgur.com/gjm1JWF.png" width="40%"><br>
-<img src="https://i.imgur.com/TQJyZd0.png"><br>
+<span class="introtitle">UTTERLY <div class="pink">Perverted</div> SUPERVILLAIN</span><br>
+<div class="name-container">
+<span class="grey">JURIS D</span><span class="introtitle">I</span><span class="grey">CTION</span>
+<img src="https://i.imgur.com/Qqa2OCM.png"><br>
+</div>
+
 <img src="https://i.imgur.com/V7dYf5c.png"><br>
 <font size="24px" color="#7ED5B6"><i>"Ah, I see you have found where you belong. At my feet."</i></font><br><br>
 
 
 	<details class="success">
-		<summary><span class="close">-</span><span class="open">+</span> Origins <span class="open">+</span><span class="close">-</span></summary>
+		<summary><span class="close"></span><span class="open"></span> Origins <span class="open"></span><span class="close"></span></summary>
 		<div class="box">
 British born by a middle-class family. The boy kept his gender pronouns neutral in his later teens. Despite identifying as a male, he never made any conviction towards either side.<br><br>
 Juris was never the "quiet type", he was never a loner, or a genius. When he left school he, like everyone else found himself faced with a world filled with beauty, but also corruption. For most, this becomes a fact of life, something one alone cannot hope to repair. For without sadness there would be no happy.
@@ -558,7 +674,8 @@ It was the last step. Now he really was better than everyone else.<br>
 Of course, it was not something he could hide. The media got wind of the now rather unique boy. Bathed in lime-light, Juri went from recluse to world phenomenon. The British government offered him almost limitless resources to simply continue doing the research he had been doing already. With the obvious caveat that any research would belong to his country.<br>
 He accepted, and for 18 years this continued. Just by his research alone, England's relationship with other sovereign states grew more tumultuous. With the strides the UK was making in areas of military hardware, power generation and biological augmentation, it was impossible for the rest of the world to feel the scales were even.
 During those 18 years he was shot, blown up, burned, frozen and dropped from great heights. Either from agitated parties that wanted him desperately out of the picture, or his own radical approach to progress over work safety.<br>
-He seemed invulnerable, for the most part, and the realization of this was the final straw that turned Juri from a narcissist, to a Egotheist. In his own eyes, he was no-longer human. And if you're more than human in every conceivable way, why on earth would you waste time helping a broken world? Sure, some of them are good, some deserve death, but a good ant is still an ant. "I am the magnifying glass."<br>
+He seemed invulnerable, for the most part, and the realization of this was the final straw that turned Juri from a narcissist, to an egotheist. In his own eyes, he was no-longer human. And if you're more than human in every conceivable way, why on earth would you waste time helping a broken world? Sure, some of them are good, some deserve death. But...<br>
+<div class="quote">"A good ant is still an ant. And I am the magnifying glass."</div><br>
 <br><br>
 With that, Juri's objective shifted. Humanity was not something to be saved. Even if it did need a strong leader to guide it into the stars, he couldn't be bothered. No, he was going to have as much fun as possible.<br>
 "7 Billion humans. 7 billion test subjects. 7 billion disposable toys. Who is going to stop me?"<br>
@@ -573,7 +690,7 @@ He had siphoned away trillions. He had his own infrastructure, his own network o
 </div>
 	</details>
 	<details class="success">
-		<summary><span class="close">-</span><span class="open">+</span> Preferences <span class="open">+</span><span class="close">-</span></summary>
+		<summary><span class="close"></span><span class="open"></span> Preferences <span class="open"></span><span class="close"></span></summary>
      <div class="tube"><span class="title1">Dominant</span><div class="tube-inner t100"><span>100%</span></div></div>
     <div class="tube"><span class="title1">Vore</span><div class="tube-inner t50"><span>50%</span></div></div>
     <div class="tube"><span class="title1">Transformation</span><div class="tube-inner t90"><span>90%</span></div></div>
@@ -589,16 +706,37 @@ He had siphoned away trillions. He had his own infrastructure, his own network o
 <br>
 
 	</details>
+    
 	<details class="success">
-		<summary><span class="close">-</span><span class="open">+</span> Juris' Web <span class="open">+</span><span class="close">-</span></summary>
-        
-        
+		<summary><span class="close"></span><span class="open"></span> Juris' Web <span class="open"></span><span class="close"></span></summary>
+        		<div class="box">
+Juri has been building his sinister empire for over 10 years. Corporate entities to mind control. Black markets to charities. He has his hands in so many cookie jars, both other peoples and those of his own making.<br><br>
+
+Nobody would ever <i>truly</i> know the full extent of Juris Diction's influential network. Thankfully outside of roleplaying, one can read the full juicy details. <br><br>
+
+Certain role-plays may have an effect on Juri's web. Parts may be lost or shut-down by meddlesome agents. New branches may start up, or your character might become a permanent recruit. These sorts of canon changes should be discussed beforehand.<br><br>
+
+Need some inspiration?<br>
+It doesn't always have to be "My character infiltrates Juri's Lair" (not that I am opposed to such an idea! &#128154; )<br>
+Maybe you're working for the 2Yoo delivery company and discover something's not quite right. Do you keep your head down or speak up?<br>
+Or perhaps you're an Intel officer gathering intelligence and just learned about H.I.V.E, do you manage to get to your superiors in time?<br>
+If you're the type of player that enjoys lore, dreaming up ideas or just following threads on a flow chart, you can take a look at Juri's web of influence in the link below. The Web is made to feed the imagination and give Juris a more "Evil Genius" feeling; but as what the nefarious operations entail is all down to our interpretations and ideas.<br><br>
+
+Careful what you learn, it might make you a target.<br><br>
+
+<a href="https://mojojohoe.github.io/Kinko/Public/The%20Web.html" target="_blank"><font class="lime">> > ></font><font class="grey2"> EXAMINE THE WEB </font><font class="lime">< < < </font></a>
+<br><br>
+<u>Key</u><br>
+<font color="#BD4F51">Red Objects</font>: Physical Location on Earth<br>
+<font color="#4F9FBD">Blue Objects</font>: Physical Object/Location in Space<br>
+<font color="#9BBD4F">Green Objects</font>: Non-Physical Object / Situation<br>
+<font color="#636363">Black Objects</font>: Nefarious Activity / Evil Plan<br>
+
+</div>       
+   
 	</details>
-
-<br><br><br>
-
+<div class="spacer"></div>
 </div>
-
 <script>
 var canvas, ctx, center_x, center_y, radius, bars,
     x_end, y_end, bar_height, bar_width,
