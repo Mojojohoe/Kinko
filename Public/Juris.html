@@ -313,15 +313,19 @@ opacity:0.6;
   	height: 300px;
   	border-radius: 0px 0px 50px 50px;
   	box-shadow: 0px 2px 20px #204639;
+	background:#001108;
   	position: relative;
   	overflow: hidden;
     margin:2% 2% 0px 2%;
 	font-family: 'Poiret One', cursive;
 	transition: ease-in-out 0.5s;
+	z-index:499;
+	cursor:pointer;
   }
   .tube:hover{
 	  transform: rotate(+90deg);
 	  transition: ease-in-out 0.5s;
+	  z-index:500;
   }
   .tube-inner{
   	position: absolute;
@@ -603,6 +607,43 @@ transition: all 0.6s;
 a:link{text-decoration:none; color:#00ffcc;}
 a:visited{text-decoration:none; color:#560080;}
 a:hover{text-decoration:none; color:#ccff33;}
+.taunt{
+	 font-size:3rem;
+	 color:#DBF7A4;
+	 margin:2% 10% 2% 10%;
+	 }
+@media only screen and (max-width: 1500px) {
+h1, h2, h3, h4, h5, h6{
+	display:flex;
+	position:static;
+	text-align:justify;
+	margin:0px;
+	width:30vw;
+	opacity:0;
+}
+.intro1{
+	position:absolute;
+	margin:10%;
+	left:0;
+	top:0;
+}
+}
+@media only screen and (max-width: 1000px) {
+.tube{
+	margin: 2% 5% 0px 5%;
+}
+}
+@media only screen and (max-width: 420px) {
+h1, h2{
+	font-size:8rem;
+}
+.container2{
+	display:block;
+}
+#playB{
+	display:none;
+}
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -620,8 +661,10 @@ a:hover{text-decoration:none; color:#ccff33;}
 </div>
 
 <div class="container1">
-<h1 class="stretch title">JURIS</h1><h2 class="stretch title">DICTION</h2>
-<h3 class="stretch subtitle">FEMBOY</h3><h4 class="stretch subtitle">SUPERVILLAIN</h4>
+<div class="intro1">
+<h1 class="stretch title">JURIS</h1><h2 class="stretch title"> DICTION</h2>
+<h3 class="stretch subtitle">FEMBOY </h3><h4 class="stretch subtitle">SUPERVILLAIN</h4>
+</div>
 <!-- <h5 class="stretch">COMING</h3><h6 class="stretch">SOON</h4> -->
 
 <img src="https://i.imgur.com/FcyRdiO.png" class="image">
@@ -650,7 +693,7 @@ a:hover{text-decoration:none; color:#ccff33;}
 </div>
 
 <img src="https://i.imgur.com/V7dYf5c.png"><br>
-<font size="24px" color="#DBF7A4">"Ah, I see you have found where you belong.<i> At my feet."</i></font><br><br>
+<span class="taunt">"Ah, I see you have found where you belong.<i> At my feet."</i></span><br><br>
 
 
 	<details class="success">
