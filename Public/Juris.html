@@ -832,7 +832,7 @@ function initPage() {
     source.connect(analyser);
     analyser.connect(context.destination);
     frequency_array = new Uint8Array(analyser.frequencyBinCount);
-	audio.volume = 0.55;
+	audio.volume = 0.25;
     audio.play();
     animationLooper();
 }
