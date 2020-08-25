@@ -18,6 +18,7 @@ body {
    top: 83%;
    transform: translate(-50%, -50%);
    clip-path: circle(46% at 50% 50%);
+   overscroll-behavior-y: contain;
 }
 #playB, #stopB{
     position: absolute;
@@ -212,10 +213,6 @@ mix-blend-mode: overlay;
 	position:absolute;
 	left:0;
 	top:0;
-    -moz-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
-    -webkit-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
-    box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
-animation: glowing 20s infinite;
 }
 .container2{
 	width: 100vw;
@@ -227,6 +224,21 @@ animation: glowing 20s infinite;
 	background: linear-gradient(to bottom, #081b10 0%,#000000 100%) !important;
 	background-repeat:no-repeat;
 	display:block;
+}
+.ghost{
+	width: 100vw;
+    height: 100vh;
+    overflow-X: hidden;
+	position:absolute;
+	left:0;
+	top:0;
+    -moz-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
+    -webkit-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
+    box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
+animation: glowing 20s infinite;
+pointer-events:none;
+z-index:600;
+mix-blend-mode: lighten;
 }
 ::-webkit-scrollbar {
   width: 6px;
@@ -527,9 +539,9 @@ transition: all 0.6s;
     box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
 	   }
   50% {
-    -moz-box-shadow:inset 0 -100px 100px -100px rgba(177,255,0,0.75);
-    -webkit-box-shadow:inset 0 -40px 100px -100px rgba(177,255,0,0.75);
-    box-shadow:inset 0 -100px 100px -100px rgba(177,255,0,0.75);
+    -moz-box-shadow:inset 0 -200px 100px -200px rgba(177,255,0,0.75);
+    -webkit-box-shadow:inset 0 -200px 100px -200px rgba(177,255,0,0.75);
+    box-shadow:inset 0 -200px 100px -200px rgba(177,255,0,0.75);
 	   }
   100% { 
     -moz-box-shadow:inset 0 -40px 40px -40px rgba(177,255,0,0.75);
@@ -628,6 +640,19 @@ h1, h2, h3, h4, h5, h6{
 	left:0;
 	top:0;
 }
+ .volume {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 position:absolute;
+   z-index:601;
+   left:50%;
+   top:65%;
+   transform: translate(-50%, -50%);
+   display:none;
+   	-webkit-animation: fade-in 2s ease-in-out both;
+	        animation: fade-in 2s ease-in-out both;
+}
 }
 @media only screen and (max-width: 1000px) {
 .tube{
@@ -659,6 +684,53 @@ h1, h2, h3, h4, h5, h6{
 	display:none;
 }
 }
+
+ .volume {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 position:absolute;
+   z-index:601;
+   left:50%;
+   top:65%;
+   transform: translate(-50%, -50%);
+   display:none;
+   	-webkit-animation: fade-in 2s ease-in-out both;
+	        animation: fade-in 2s ease-in-out both;
+}
+ .volume input[type=range] {
+	 display: none;
+}
+ .volume .icon-size {
+	 font-size: 2rem;
+}
+ .volume .bar-hoverbox {
+	 padding: 10px 15px;
+	 opacity: 0.7;
+	 transition: opacity 0.2s;
+}
+ .volume .bar-hoverbox:hover {
+	 opacity: 1;
+	 cursor: pointer;
+}
+ .volume .bar {
+	 background:#011E17;
+	 height: 12px;
+	 width: 300px;
+	 border-radius: 15px;
+	 overflow: hidden;
+	 pointer-events: none;
+}
+ .volume .bar .bar-fill {
+	 background: #C0FF00;
+	 width: 0%;
+	 height: 100%;
+	 background-clip: border-box;
+	 pointer-events: none;
+}
+ .icon{
+	 color:#B8FF00;
+ }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -666,7 +738,12 @@ h1, h2, h3, h4, h5, h6{
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Srisakdi:wght@700&display=swap" rel="stylesheet">
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+
 <div id="gradient"></div>
+<div class="ghost"></div>
 <div class="smoker">
 <img class="scrollSmoke smoke1" src="https://i.imgur.com/xJ1RUUc.png">
 <img class="scrollSmoke smoke5" src="https://i.imgur.com/xJ1RUUc.png">
@@ -681,6 +758,18 @@ h1, h2, h3, h4, h5, h6{
 <h3 class="stretch subtitle">FEMBOY </h3><h4 class="stretch subtitle">SUPERVILLAIN</h4>
 </div>
 <!-- <h5 class="stretch">COMING</h3><h6 class="stretch">SOON</h4> -->
+
+<div class="volume">
+  <input type="range" min="0" max="100" value="20" class="volume-range">
+  <div class="icon">
+    <i class="fa fa-volume-up icon-size" aria-hidden="true"></i>
+  </div>
+  <div class="bar-hoverbox">
+    <div class="bar">
+      <div class="bar-fill"></div>
+    </div>
+  </div>
+</div>
 
 <img src="https://i.imgur.com/FcyRdiO.png" class="image">
     <div value='Play' id='playB' onclick="startStuff();"></div>
@@ -796,6 +885,69 @@ Careful what you learn, it might make you a target.<br><br>
 <div class="spacer"></div>
 </div>
 <script>
+"use strict";
+
+document.addEventListener("DOMContentLoaded", function () {
+  var range = document.querySelector(".volume input[type=range]");
+  var barHoverBox = document.querySelector(".volume .bar-hoverbox");
+  var fill = document.querySelector(".volume .bar .bar-fill");
+
+
+  var setValue = function setValue(value) {
+    fill.style.width = value + "%";
+    range.setAttribute("value", value);
+    range.dispatchEvent(new Event("change"));
+  }; 
+
+
+  setValue(range.value);
+
+  var calculateFill = function calculateFill(e) {
+    // Отнимаем ширину двух 15-пиксельных паддингов из css
+    var offsetX = e.offsetX;
+
+    if (e.type === "touchmove") {
+      offsetX = e.touches[0].pageX - e.touches[0].target.offsetLeft;
+    }
+
+    var width = e.target.offsetWidth - 30;
+    setValue(Math.max(Math.min( // Отнимаем левый паддинг
+    (offsetX - 15) / width * 100.0, 100.0), 0));
+  };
+
+  var barStillDown = false;
+  barHoverBox.addEventListener("touchstart", function (e) {
+    barStillDown = true;
+    calculateFill(e);
+  }, true);
+  barHoverBox.addEventListener("touchmove", function (e) {
+    if (barStillDown) {
+      calculateFill(e);
+    }
+  }, true);
+  barHoverBox.addEventListener("mousedown", function (e) {
+    barStillDown = true;
+    calculateFill(e);
+  }, true);
+  barHoverBox.addEventListener("mousemove", function (e) {
+    if (barStillDown) {
+      calculateFill(e);
+    }
+  });
+  barHoverBox.addEventListener("wheel", function (e) {
+    var newValue = +range.value + e.deltaY * 0.5;
+    setValue(Math.max(Math.min(newValue, 100.0), 0));
+  });
+  document.addEventListener("mouseup", function (e) {
+    barStillDown = false;
+  }, true);
+  document.addEventListener("touchend", function (e) {
+    barStillDown = false;
+  }, true);
+});
+</script>
+
+<script>
 var canvas, ctx, center_x, center_y, radius, bars,
     x_end, y_end, bar_height, bar_width,
     frequency_array;
@@ -811,10 +963,12 @@ function startStuff() {
 	//document.getElementById('StopB').style.display = 'block';
 	$(".title").addClass("fade-in");
 	 setTimeout(reveal, 2000);
+	 	$(".volume").css("display", "block");
 }
  function reveal() {     
     $(".subtitle").addClass("fade-in");
 	$(".container2").css("display", "block");
+
  }
 
  // use setTimeout() to execute
@@ -827,12 +981,22 @@ function initPage() {
     audio.controls = false;
     audio.crossOrigin = "anonymous";
     analyser = context.createAnalyser();
-    // audio.src = "sciophobia.mp3"; // the source path
+
     source = context.createMediaElementSource(audio);
     source.connect(analyser);
     analyser.connect(context.destination);
     frequency_array = new Uint8Array(analyser.frequencyBinCount);
-	audio.volume = 0.15;
+	audio.volume = 0.20;
+function volume(level) {     
+audio.volume = level;
+console.log(level);
+ }
+  document.querySelector(".volume input[type=range]").addEventListener("change", function (e) {
+	const allAudio = Array.from( document.querySelectorAll('audio') );
+	var level = e.target.value * 0.006;
+   volume(level);
+  }); 
+ 
     audio.play();
     animationLooper();
 }
